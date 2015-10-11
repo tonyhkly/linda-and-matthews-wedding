@@ -1,0 +1,28 @@
+$font-stack:    14px "Lucida Grande", Helvetica, Arial, sans-serif;
+$primary-color: #333;
+$body-padding: 50px;
+$h1-color: purple;
+$one-hundred-pc: 100%;
+
+h1 {
+  color: $h1-color;
+}
+
+body {
+  padding: $body-padding;
+  font: $font-stack;
+  color: $primary-color;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.img-wrapper {
+  overflow: hidden;
+}
+
+.comic {
+  width: $one-hundred-pc;
+}
+

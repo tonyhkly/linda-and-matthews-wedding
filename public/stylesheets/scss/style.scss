@@ -9,7 +9,6 @@ $header-font-size: 36px;
 
 .parallax-background {
   background-color: #0078A0;
-  height: 620px;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -17,6 +16,14 @@ $header-font-size: 36px;
   background-size: cover;
   position: fixed;
   width: 100%;
+}
+
+.hero {
+  background: $bg-centred;
+  background-image: $tonybg;
+  background-size: cover;
+  height: 80vh;
+  margin-bottom: 3rem;
 }
 
 .parallax-content {
@@ -28,18 +35,19 @@ $header-font-size: 36px;
   background-color: #fff;
 }
 
+
+@media only screen and (max-width: 480px) {
+  .parallax-content{
+    top: 410px;
+  }
+}
+
 .header {
   font-size: $header-font-size;
   font-weight: bold;
 }
 
-.hero {
-  background: $bg-centred;
-  background-image: $tonybg;
-  background-size: cover;
-  height: 100vh;
-  margin-bottom: 3rem;
-}
+
 /*http://zurb.com/building-blocks/hero-overlapping-grid*/
 .circle-bg, .quote {
   margin: 10% auto 0 auto;

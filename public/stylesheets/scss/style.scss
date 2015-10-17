@@ -3,26 +3,77 @@ $primary-color: #333;
 $body-padding: 50px;
 $h1-color: purple;
 $one-hundred-pc: 100%;
+$bg-centred: no-repeat center center;
+$tonybg:  url("/images/tony1.jpg");
+$header-font-size: 36px;
 
-h1 {
-  color: $h1-color;
+.parallax-background {
+  background-color: #0078A0;
+  height: 620px;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
 }
 
-body {
-  padding: $body-padding;
-  font: $font-stack;
-  color: $primary-color;
+.parallax-content {
+  max-width: 100%;
+  position: relative;
+  top: 500px;
+  padding: 50px;
+  font-size: 20px;
+  background-color: #fff;
 }
 
-a {
-  color: #00B7FF;
+.header {
+  font-size: $header-font-size;
+  font-weight: bold;
 }
 
-.img-wrapper {
-  overflow: hidden;
+.hero {
+  background: $bg-centred;
+  background-image: $tonybg;
+  background-size: cover;
+  height: 100vh;
+  margin-bottom: 3rem;
+}
+/*http://zurb.com/building-blocks/hero-overlapping-grid*/
+.circle-bg, .quote {
+  margin: 10% auto 0 auto;
 }
 
-.comic {
-  width: $one-hundred-pc;
+.circle-bg, .quote {
+  text-align: center;
+  opacity: 0.9;
+  border-radius: 50%;
+  height: 20rem;
+  width: 20rem;
 }
 
+@media only screen and (min-width: 64.063em) {
+  .circle-bg, .quote {
+/*    height: 13rem;
+    width: 13rem;*/
+  }
+}
+
+.circle-bg p, .quote p {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.quote {
+  background: #333;
+  color: #fff;
+  z-index: 9999999;
+  position: relative;
+}
+
+@media only screen and (min-width: 64.063em) {
+  .quote {
+  }
+}

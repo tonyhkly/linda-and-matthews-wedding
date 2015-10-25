@@ -2,44 +2,19 @@
 
 $hero-image: url("/images/hero-placeholder.jpg");
 $hero-height: 100vh;
-$nav-bar-height: 2.8125rem;
+$nav-bar-height: 50px;
 $white: #fff;
 $black: #000;
 
-//
 * {
   font-family: 'Open Sans', sans-serif !important;
   text-transform: uppercase;
 
 }
 
-.top-bar {
-  background: $white;
-}
-
-.top-bar .name h1 a,
-.top-bar .name h2 a,
-.top-bar .name h3 a,
-.top-bar .name h4 a,
-.top-bar .name p a,
-.top-bar .name span a {
+.navbar {
+  margin-bottom: 0;
   color: $black;
-}
-
-.top-bar .toggle-topbar a {
-  color: $black;
-}
-
-.nav-bar {
-  padding-top: 20px;
-}
-
-.top-bar-section li:not(.has-form) a:not(.button):hover,
-.top-bar-section ul li:hover:not(.has-form) > a,
-.top-bar-section li:not(.has-form) a:not(.button) {
-  background: $white;
-  color: $black;
-  text-transform: uppercase;
 }
 
 .hero {

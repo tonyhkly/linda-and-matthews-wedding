@@ -22,5 +22,8 @@ router.get('/wedding', function(req, res, next) {
   res.render('wedding', { title: 'Wedding', layout: false});
 });
 
+router.get('/weddingp', function(req, res, next) {
+  res.render('wedding-bootstrap', { title: 'Practice', layout: false});
+});
 
 module.exports = router;

@@ -1,17 +1,59 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+$hero-image: url("/images/hero-placeholder.jpg");
+$hero-height: 100vh;
+$nav-bar-height: 2.8125rem;
+$white: #fff;
+$black: #000;
+
+//
+* {
+  font-family: 'Open Sans', sans-serif !important;
+  text-transform: uppercase;
+
+}
+
+.top-bar {
+  background: $white;
+}
+
+.top-bar .name h1 a,
+.top-bar .name h2 a,
+.top-bar .name h3 a,
+.top-bar .name h4 a,
+.top-bar .name p a,
+.top-bar .name span a {
+  color: $black;
+
+}
+
+.nav-bar {
+  padding-top: 20px;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button):hover,
+.top-bar-section ul li:hover:not(.has-form) > a,
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background: $white;
+  color: $black;
+}
+
 .hero {
-  background: url('http://wallpoper.com/images/00/34/39/15/circuit-pcb_00343915.jpg') no-repeat center center;
+  background: $hero-image no-repeat center center;
   background-size: cover;
-  height: 100vh;
+  height: $hero-height;
   &:before {
+    margin-top: $nav-bar-height;
     content: '';
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
+    height: $hero-height;
     left: 0;
-    background-image: linear-gradient(to bottom right,#002f4b,#E0E0E0 );
+    //background-color: rgba(128, 91, 84, 0.498039);
     //background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
-    opacity: .8;
+    opacity: .3;
   }
   .intro {
     padding: 3rem;
@@ -26,6 +68,7 @@
     letter-spacing: -0.025em;
     font-weight: 300;
     text-align: center;
+    text-transform: uppercase;
   }
   p {
     color: #fff;
@@ -33,6 +76,7 @@
     font-weight: 200;
     text-align: center;
     margin-bottom: 2rem;
+    text-transform: uppercase;
   }
   .tech-img {
     background: url('http://static.pexels.com/wp-content/uploads/2015/02/apple-hand-iphone-6-4322-525x350.jpg') no-repeat center center;

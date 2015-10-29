@@ -3,57 +3,58 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{{title}}</title>
-    <!--<script type="text/javascript" src="/js/es5/helloworld.js"></script>-->
-    <link rel="stylesheet" href="/stylesheets/vendor/foundation.css"/>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+          integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"
+          integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX"
+          crossorigin="anonymous">
     <link rel='stylesheet' href='/stylesheets/css/wedding.css'/>
     <script src="/js/vendor/modernizr.js"></script>
-    <link rel="icon" href="/images/wedding.ico"/>
+    <link rel="icon" href="/images/bbc-favicon.ico"/>
 </head>
 <body>
-<script src='//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/js/foundation/foundation.topbar.min.js'></script>
-<!--<nav class="top-bar" data-topbar role="navigation">-->
-    <!--<ul class="title-area">-->
-        <!--<li class="name">-->
-            <!--<h1><a href="#">My Site</a></h1>-->
-        <!--</li>-->
-        <!--&lt;!&ndash; Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone &ndash;&gt;-->
-        <!--<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>-->
-    <!--</ul>-->
-
-    <!--<section class="top-bar-section">-->
-        <!--&lt;!&ndash; Right Nav Section &ndash;&gt;-->
-        <!--<ul class="right">-->
-            <!--<li class="active"><a href="#">Right Button Active</a></li>-->
-            <!--<li class="has-dropdown">-->
-                <!--<a href="#">Right Button Dropdown</a>-->
-                <!--<ul class="dropdown">-->
-                    <!--<li><a href="#">First link in dropdown</a></li>-->
-                    <!--<li class="active"><a href="#">Active link in dropdown</a></li>-->
-                <!--</ul>-->
-            <!--</li>-->
-        <!--</ul>-->
-
-        <!--&lt;!&ndash; Left Nav Section &ndash;&gt;-->
-        <!--<ul class="left">-->
-            <!--<li><a href="#">Left Nav Button</a></li>-->
-        <!--</ul>-->
-    <!--</section>-->
-<!--</nav>-->
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brian and Andrea</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Welcome</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#venue">Venue</a></li>
+                <li><a href="#getintouch">Get In Touch</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <section class="hero">
     <div class="row intro">
-        <div class="small-centered medium-uncentered medium-6 large-7 columns">
+        <div class="small-centered medium-uncentered col-md-6 col-lg-7">
             <h1>Brian and Andrea</h1>
 
             <p>Join us for the wedding</p>
         </div>
     </div>
 </section>
+<div class="container">
+    <h1>Join us for the wedding</h1>
+    <p>Join us for the wedding Join us for the wedding Join us for the wedding Join us for the wedding</p>
 </div>
+
+
 <script src="js/vendor/jquery-2.1.4.js"></script>
 <script src="js/vendor/knockout-3.3.0.js"></script>
-<script src="js/vendor/foundation.min.js"></script>
-<script>
-    $(document).foundation();
-</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+        integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+        crossorigin="anonymous"></script>
 </body>
 </html>

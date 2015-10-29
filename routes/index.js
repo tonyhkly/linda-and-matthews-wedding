@@ -19,11 +19,7 @@ router.get('/prac', function(req, res, next) {
 });
 
 router.get('/wedding', function(req, res, next) {
-  res.render('wedding', { title: 'Wedding', layout: false});
-});
-
-router.get('/weddingp', function(req, res, next) {
-  res.render('wedding-bootstrap', { title: 'Practice', layout: false});
+  res.render('wedding', { title: 'BBC - Home', layout: false});
 });
 
 module.exports = router;

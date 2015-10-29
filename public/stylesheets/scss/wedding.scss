@@ -2,44 +2,39 @@
 
 $hero-image: url("/images/hero-placeholder.jpg");
 $hero-height: 100vh;
-$nav-bar-height: 2.8125rem;
+$nav-bar-height: 50px;
 $white: #fff;
 $black: #000;
 
-//
 * {
   font-family: 'Open Sans', sans-serif !important;
   text-transform: uppercase;
 
 }
 
-.top-bar {
-  background: $white;
-}
+.navbar {
+  margin-bottom: 0;
 
-.top-bar .name h1 a,
-.top-bar .name h2 a,
-.top-bar .name h3 a,
-.top-bar .name h4 a,
-.top-bar .name p a,
-.top-bar .name span a {
-  color: $black;
-}
+  .navbar-brand {
+    font-size: 20px;
+  }
 
-.top-bar .toggle-topbar a {
-  color: $black;
-}
+  .navbar-nav a {
+    font-size: 16px;
+  }
 
-.nav-bar {
-  padding-top: 20px;
-}
+  .nav a, .navbar-brand {
+    color: $black;
+  }
 
-.top-bar-section li:not(.has-form) a:not(.button):hover,
-.top-bar-section ul li:hover:not(.has-form) > a,
-.top-bar-section li:not(.has-form) a:not(.button) {
-  background: $white;
-  color: $black;
-  text-transform: uppercase;
+  .icon-bar {
+    background: $black;
+  }
+
+  .container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 
 .hero {
@@ -55,6 +50,7 @@ $black: #000;
     bottom: 0;
     height: $hero-height;
     left: 0;
+    z-index: -1;
     //background-color: rgba(128, 91, 84, 0.498039);
     //background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
     opacity: .3;

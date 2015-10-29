@@ -14,7 +14,14 @@ $black: #000;
 
 .navbar {
   margin-bottom: 0;
-  color: $black;
+
+  .nav a, .navbar-brand {
+    color: $black;
+  }
+
+  .icon-bar {
+    background: $black;
+  }
 }
 
 .hero {
@@ -30,6 +37,7 @@ $black: #000;
     bottom: 0;
     height: $hero-height;
     left: 0;
+    z-index: -1;
     //background-color: rgba(128, 91, 84, 0.498039);
     //background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
     opacity: .3;

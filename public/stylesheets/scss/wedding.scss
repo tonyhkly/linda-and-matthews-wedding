@@ -4,6 +4,7 @@ $hero-image: url("/images/hero-placeholder.jpg");
 $hero-height: 100vh;
 $white: #fff;
 $black: #000;
+$nav-bar-height: 50px;
 
 * {
   font-family: 'Open Sans', sans-serif !important;
@@ -37,7 +38,7 @@ $black: #000;
   }
   h1 {
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 3rem;
     line-height: 1.5em;
     letter-spacing: -0.025em;
     font-weight: 300;
@@ -48,6 +49,7 @@ $black: #000;
     color: #fff;
     line-height: 1.75em;
     font-weight: 200;
+    font-size: 1.5rem;
     text-align: center;
     margin-bottom: 2rem;
     text-transform: uppercase;
@@ -69,9 +71,10 @@ $black: #000;
     h1 {
       padding-top: 4.5rem;
       text-align: right;
-      font-size: 2.5rem;
+      font-size: 5.5rem;
     }
     p {
+      font-size: 2.5rem;
       text-align: right;
     }
   }

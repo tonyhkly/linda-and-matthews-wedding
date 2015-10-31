@@ -9,7 +9,6 @@ $nav-bar-height: 50px;
 * {
   font-family: 'Open Sans', sans-serif !important;
   text-transform: uppercase;
-
 }
 
 .hero {
@@ -78,4 +77,9 @@ $nav-bar-height: 50px;
       text-align: right;
     }
   }
+}
+
+.info-banner {
+  width: 400px;
+  float: none;
 }

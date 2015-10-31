@@ -1,0 +1,26 @@
+$nav-bar-height: 50px;
+
+.navbar {
+  margin-bottom: 0;
+
+  .navbar-brand {
+    font-size: 20px;
+  }
+
+  .navbar-nav a {
+    font-size: 16px;
+  }
+
+  .nav a, .navbar-brand {
+    color: $black;
+  }
+
+  .icon-bar {
+    background: $black;
+  }
+
+  .container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}

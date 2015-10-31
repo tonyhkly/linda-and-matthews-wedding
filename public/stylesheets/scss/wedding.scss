@@ -2,7 +2,6 @@
 
 $hero-image: url("/images/hero-placeholder.jpg");
 $hero-height: 100vh;
-$nav-bar-height: 50px;
 $white: #fff;
 $black: #000;
 
@@ -10,31 +9,6 @@ $black: #000;
   font-family: 'Open Sans', sans-serif !important;
   text-transform: uppercase;
 
-}
-
-.navbar {
-  margin-bottom: 0;
-
-  .navbar-brand {
-    font-size: 20px;
-  }
-
-  .navbar-nav a {
-    font-size: 16px;
-  }
-
-  .nav a, .navbar-brand {
-    color: $black;
-  }
-
-  .icon-bar {
-    background: $black;
-  }
-
-  .container {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
 }
 
 .hero {

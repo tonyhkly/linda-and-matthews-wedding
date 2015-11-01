@@ -78,4 +78,9 @@ $nav-bar-height: 50px;
   @media only screen and (max-width: 40.063em) {
     width: 99.99%;
   }
+
+  a {
+    text-transform: none;
+    font-size: 18px;
+  }
 }

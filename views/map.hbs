@@ -1,16 +1,51 @@
-<div class="container">
+<div class="container map-page">
     <div class="row">
-        <div id="map" class="col-xs-12">
-            <h1>The Venue</h1>
+        <div class="col-xs-12">
+            <h1>The Venue - Pembroke Lodge</h1>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>The Wedding reception and after wedding precedings will be taking
+                        place at Pembroke Lodge in Richmond</p>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                        <strong>Full address:</strong><br>
+                        Pembroke Lodge, Richmond Park<br>
+                        Richmond<br>
+                        TW10 5HX<br>
+                        <a href="tel:02089408207">or call: 020 8940 8207</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="map" class="col-xs-12"></div>
+        <div class="col-xs-12">
+            Nearest Train Stations:
+            <ul>
+                <li class="train">St. Maragerets</li>
+                <li class="train">Twickenham</li>
+            </ul>
+
+        </div>
+        <div class="col-xs-12">
+            <p>Pembroke Lodge is situated within the heart of Richmond Park, seven miles from central London
+                and Heathrow Airport. There is a large public car park adjacent to the Lodge for 250 cars.</p>
         </div>
     </div>
 </div>
 <script type="text/javascript">
-    var map;
     function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: 51.44244339999999, lng: -0.2944414},
-            zoom: 13
+        var latLong = {lat: 51.44244339999999, lng: -0.2944414};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: latLong,
+            zoom: 14
+        });
+
+        var marker = new google.maps.Marker({
+            position: latLong,
+            map: map,
+            title: 'Hello World!'
         });
     }
 </script>

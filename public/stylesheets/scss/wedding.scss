@@ -53,20 +53,7 @@ $nav-bar-height: 50px;
     margin-bottom: 2rem;
     text-transform: uppercase;
   }
-  .tech-img {
-    background: url('http://static.pexels.com/wp-content/uploads/2015/02/apple-hand-iphone-6-4322-525x350.jpg') no-repeat center center;
-    background-size: cover;
-    height: 9rem;
-    width: 9rem;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto;
-  }
   @media only screen and (min-width: 40.063em) {
-    .tech-img {
-      height: 18rem;
-      width: 18rem;
-    }
     h1 {
       padding-top: 4.5rem;
       text-align: right;
@@ -81,14 +68,14 @@ $nav-bar-height: 50px;
 
 .infostitial {
   width: 66.66%;
+  padding: 45px 0;
   float: none;
-}
 
-@media only screen and (max-width: 40.063em) {
-  .infostitial {
-    width: 100%;
-    float: none;
+  p {
+    font-size: 20px;
   }
 
-
+  @media only screen and (max-width: 40.063em) {
+    width: 99.99%;
+  }
 }

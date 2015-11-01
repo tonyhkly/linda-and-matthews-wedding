@@ -10,7 +10,11 @@ router.get('/prac', function(req, res, next) {
 });
 
 router.get('/wedding', function(req, res, next) {
-  res.render('wedding', { title: 'Tony Hao Kin Ly', layout: 'wedding-layout'});
+  res.render('wedding', { title: 'Tony Hao Kin Ly - Michael & Anna', layout: 'wedding-layout'});
+});
+
+router.get('/venue', function(req, res, next) {
+    res.render('venue', { title: 'Venue', layout: 'wedding-layout'});
 });
 
 module.exports = router;

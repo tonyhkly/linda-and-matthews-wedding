@@ -41,9 +41,9 @@ gulp.task('jshint', function () {
         .pipe(jshint.reporter('jshint-stylish'));
 });
 
-gulp.task("js", function () {
+gulp.task("js-ify", function () {
     log("Generate js files " + (new Date()).toString());
-    gulp.src('public/js/es6/!*.js')
+    gulp.src('public/js/es6/*.js')
         .pipe(babel())
         .pipe(gulp.dest('public/js/es5'));
 });
@@ -51,7 +51,8 @@ gulp.task("js", function () {
 gulp.task("watch", function () {
     log("Watching js and scss files for modifications");
     gulp.watch('public/stylesheets/scss/*.scss', ["sass"]);
-    gulp.watch('public/js/**/*.js', ["js", "jshint"]);
+    gulp.watch('public/js/es6/*.js', ["js-ify"]);
+    gulp.watch('public/js/es5/*.js', ["jshint"]);
 });
 
-gulp.task('build', ["sass", "js", "jshint", "watch"]);
+gulp.task('build', ["sass", "js-ify", "jshint", "watch"]);

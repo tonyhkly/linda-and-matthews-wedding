@@ -1,7 +1,7 @@
 'use strict';
 
 var name = 'Hello';
-var surname = 'TonyLy';
+var surname = 'Lyss';
 
 document.addEventListener("DOMContentLoaded", function () {
     console.log(name);

@@ -613,7 +613,7 @@
             }
         }
 
-        var _isVideo = _this.isVideo(_src, index);
+        var _isVideo = false;
         if (!_this.$slide.eq(index).hasClass('lg-loaded')) {
             if (iframe) {
                 _this.$slide.eq(index).prepend('<div class="lg-video-cont" style="max-width:' + _this.s.iframeMaxWidth + '"><div class="lg-video"><iframe class="lg-object" frameborder="0" src="' + _src + '"  allowfullscreen="true"></iframe></div></div>');

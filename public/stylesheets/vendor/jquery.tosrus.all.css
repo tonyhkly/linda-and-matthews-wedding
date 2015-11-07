@@ -238,9 +238,9 @@
 
 .tos-close span:before,
 .tos-close span:after {
-  width: 6px;
-  height: 6px;
-  margin-top: -4px;
+  width: 10px;
+  height: 10px;
+  margin-top: -6px;
   margin-left: 0;
   margin-right: 0; }
 

@@ -9,7 +9,7 @@
     <link rel='stylesheet' href='/stylesheets/css/navbar.css'/>
     <link rel='stylesheet' href='/stylesheets/css/map.css'/>
     <link rel='stylesheet' href='/stylesheets/css/footer.css'/>
-    <link type="text/css" rel="stylesheet" href="/stylesheets/vendor/lightGallery.css" />
+    <link type="text/css" media="all" rel="stylesheet" href="/stylesheets/vendor/jquery.tosrus.all.css" />
     <script src="/js/vendor/modernizr.js"></script>
     <link rel="icon" href="/images/kakashi.ico"/>
 </head>
@@ -44,20 +44,30 @@
     </div>
 </footer>
 <script src="js/vendor/jquery-2.1.4.js"></script>
-<script src="js/vendor/lightgallery/lightgallery.js"></script>
-<script src="js/vendor/lightgallery/lg-fullscreen.js"></script>
-<script src="js/vendor/lightgallery/lg-thumbnail.js"></script>
-<script src="js/vendor/lightgallery/lg-autoplay.js"></script>
-<script src="js/vendor/lightgallery/lg-zoom.js"></script>
-<script src="js/vendor/lightgallery/lg-hash.js"></script>
-<script src="js/vendor/lightgallery/lg-pager.js"></script>
 <script src="js/vendor/knockout-3.3.0.js"></script>
 <script src="js/vendor/bootstrap-3.3.5.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
 <script src="js/es5/map.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $("#lightgallery").lightGallery();
+
+<script type="text/javascript" src="http://cdn.jsdelivr.net/hammerjs/2.0.3/hammer.min.js"></script>
+<script type="text/javascript" language="javascript" src="/js/vendor/FlameViewportScale.js"></script>
+<script type="text/javascript" language="javascript" src="/js/vendor/jquery.tosrus.min.all.js"></script>
+
+<script type="text/javascript" language="javascript">
+    jQuery(function( $ ) {
+        //	Add a custom filter to recognize images from lorempixel (that don't end with ".jpg" or something similar)
+        $.tosrus.defaults.media.image = {
+            filterAnchors: function( $anchor ) {
+                return true;
+            }
+        };
+
+        $('#lightboxgallery a').tosrus({
+            buttons: 'inline',
+            pagination	: {
+                add			: true,
+                type		: 'thumbnails'
+            }
+        });
     });
 </script>
 </body>

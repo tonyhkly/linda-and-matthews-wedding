@@ -15,3 +15,8 @@ function initMap() {
         title: 'Michael & Anna\'s Wedding venue!'
     });
 }
+
+/*
+(function () {
+})();
+*/

@@ -49,25 +49,13 @@
 <script src="js/es5/map.js"></script>
 
 <script type="text/javascript" src="http://cdn.jsdelivr.net/hammerjs/2.0.3/hammer.min.js"></script>
-<script type="text/javascript" language="javascript" src="/js/vendor/FlameViewportScale.js"></script>
-<script type="text/javascript" language="javascript" src="/js/vendor/jquery.tosrus.min.all.js"></script>
+<script type="text/javascript" src="/js/vendor/FlameViewportScale.js"></script>
+<script type="text/javascript" src="/js/vendor/jquery.tosrus.min.all.js"></script>
+<script src="js/es5/lightboxgallery.js"></script>
 
-<script type="text/javascript" language="javascript">
+<script>
     jQuery(function( $ ) {
-        //	Add a custom filter to recognize images from lorempixel (that don't end with ".jpg" or something similar)
-        $.tosrus.defaults.media.image = {
-            filterAnchors: function( $anchor ) {
-                return true;
-            }
-        };
-
-        $('#lightboxgallery a').tosrus({
-            buttons: 'inline',
-            pagination	: {
-                add			: true,
-                type		: 'thumbnails'
-            }
-        });
+        initLightboxGallery();
     });
 </script>
 </body>

@@ -9,8 +9,8 @@ router.get('/prac', function(req, res, next) {
   res.render('prac', { title: 'Tony Hao Kin Ly', layout: false});
 });
 
-router.get('/wedding', function(req, res, next) {
-  res.render('wedding', { title: 'Tony Hao Kin Ly - Michael & Anna', layout: 'wedding-layout'});
+router.get('/poo', function(req, res, next) {
+  res.render('wedding', { title: 'Tony Hao Kin Ly', layout: 'wedding-layout'});
 });
 
 router.get('/getting-there', function(req, res, next) {

@@ -22,10 +22,9 @@
                 <a href="/getting-there">See On Map</a></p>
         </div>
     </div>
-    
-    <div id="lightboxgallery" class="row thumbnail-gallery">
-        <a class="col-xs-6 col-sm-3" href="http://www.placecage.com/gif/280/300">
-            <img class="img-responsive" src="http://www.placecage.com/gif/280/300">
+    <div id="lightboxgallery" class="row thumbnail-gallery" data-bind="foreach: photos">
+        <a class="col-xs-6 col-sm-3" data-bind="attr: {href: photoUrl}">
+            <img class="img-responsive" data-bind="attr: {src: thumbnailUrl}" />
         </a>
     </div>
 </div>

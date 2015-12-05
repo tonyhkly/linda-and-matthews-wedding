@@ -14,11 +14,14 @@ $centreTransform: translate(-50%,-50%);
     position: absolute;
     left: $fiftyPercent;
     top: $fiftyPercent;
-    height: 100%;
-    width: auto;
     -webkit-transform: $centreTransform;
     -ms-transform: $centreTransform;
     transform: $centreTransform;
+  }
+
+  img.landscape {
+    height: 100%;
+    width: auto;
   }
 
   img.portrait {

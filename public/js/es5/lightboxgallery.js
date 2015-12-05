@@ -9,10 +9,18 @@ function initLightboxGallery() {
     };
 
     $('#lightboxgallery a').tosrus({
-        buttons: 'inline',
+        //drag: true,
+        infinite: true,
         pagination: {
-            add: true,
-            type: 'thumbnails'
+            add: true
+        },
+        keys: {
+            prev: true,
+            next: true,
+            close: true
+        },
+        wrapper: {
+            onClick: 'close'
         }
     });
 }

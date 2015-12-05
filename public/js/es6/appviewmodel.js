@@ -23,8 +23,8 @@ function AppViewModel() {
         new Photo("manna-13"),
         new Photo("manna-14"),
         new Photo("manna-15"),
-        new Photo("manna-16"),
-        new Photo("manna-17")
+        new Photo("manna-16")
+        //new Photo("manna-17")
     ];
 }
 

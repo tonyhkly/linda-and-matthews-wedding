@@ -1,15 +1,15 @@
-<!--<section class="hero">
+<section class="hero">
     <div class="intro">
         <div class="col-md-6 col-lg-7">
             <h1>Michael and Anna</h1>
 
-            <p>Join us for the wedding</p>
+            <p>Join us for our wedding</p>
         </div>
     </div>
-</section>-->
+</section>
 <div class="container">
     <div class="row">
-<!--        <div class="col-sm-12 infostitial center-block text-center">
+        <div class="col-sm-12 infostitial center-block text-center">
             <h2>Ceremony and Reception</h2>
 
             <p>Sunday, June 12, 2015<br>
@@ -21,11 +21,17 @@
                 TW10 5HX<br>
                 <a href="/getting-there">See On Map</a>
             </p>
-        </div>-->
+        </div>
     </div>
-    <div id="lightboxgallery" class="row thumbnail-gallery" data-bind="foreach: photos">
-        <a class="col-xs-6 col-sm-3 thumbnail-link" data-bind="attr: {href: photoUrl}">
-            <img class="thumbnail-img" data-bind="attr: {src: thumbnailUrl}" />
-        </a>
+</div>
+<div class="container gallery-container">
+    <div class="row">
+        <div id="lightboxgallery" class="thumbnail-gallery" data-bind="foreach: photos">
+            <a class="thumbnail-link col-xs-6 col-sm-4" data-bind="attr: {href: photoUrl}">
+                <img class="thumbnail-img" data-bind="attr: {src: thumbnailUrl}"/>
+                <!--<img class="thumbnail-img" src="http://placehold.it/257x250"/>-->
+            </a>
+        </div>
     </div>
+
 </div>

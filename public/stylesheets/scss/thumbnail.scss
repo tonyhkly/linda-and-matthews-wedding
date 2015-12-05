@@ -1,6 +1,15 @@
 $fiftyPercent: 50%;
 $centreTransform: translate(-50%,-50%);
 
+.gallery-container {
+  //text-align: center;
+  //background: deeppink;
+  //width: 1000px;
+  //margin-left: auto;
+  //margin-right: auto;
+  //margin-right: 0; his made it work
+}
+
 .thumbnail-gallery {
 
   a {
@@ -8,21 +17,23 @@ $centreTransform: translate(-50%,-50%);
     width: 250px;
     height: 250px;
     overflow: hidden;
+    margin: 0 20px 20px 0;
   }
 
   img {
     position: absolute;
     left: $fiftyPercent;
     top: $fiftyPercent;
+    height: 100%;
+    width: auto;
     -webkit-transform: $centreTransform;
     -ms-transform: $centreTransform;
     transform: $centreTransform;
   }
 
-  img.landscape {
-    height: 100%;
-    width: auto;
-  }
+  //.img-sm-4 {
+  //  display: inline-block;
+  //}
 
   img.portrait {
     width: 100%;

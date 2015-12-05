@@ -9,8 +9,6 @@ function addPortraitClassToImg() {
 
         if (height > width) {
             $(this).addClass("portrait");
-        } else {
-            $(this).addClass("landscape");
         }
     });
 }

@@ -1,5 +1,4 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
-
 $hero-image: url("/images/hero-placeholder.jpg");
 $hero-height: 100vh;
 $white: #fff;
@@ -9,6 +8,10 @@ $nav-bar-height: 50px;
 * {
   font-family: 'Open Sans', sans-serif !important;
   text-transform: uppercase;
+}
+
+body {
+  min-width: 575px !important;
 }
 
 .hero {

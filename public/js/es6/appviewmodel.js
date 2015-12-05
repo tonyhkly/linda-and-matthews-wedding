@@ -6,7 +6,7 @@ function Photo(photo) {
     self.photoUrl = `/images/manna/full/${photo}.jpg`;
 }
 
-function appViewModel() {
+function AppViewModel() {
     this.photos = [
         new Photo("manna-1"),
         new Photo("manna-2"),
@@ -28,4 +28,4 @@ function appViewModel() {
     ];
 }
 
-ko.applyBindings(new appViewModel());
+ko.applyBindings(new AppViewModel());

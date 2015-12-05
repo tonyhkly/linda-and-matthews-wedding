@@ -8,6 +8,7 @@
     <link rel='stylesheet' href='/stylesheets/css/wedding.css'/>
     <link rel='stylesheet' href='/stylesheets/css/navbar.css'/>
     <link rel='stylesheet' href='/stylesheets/css/map.css'/>
+    <link rel='stylesheet' href='/stylesheets/css/thumbnail.css'/>
     <link rel='stylesheet' href='/stylesheets/css/footer.css'/>
     <link type="text/css" media="all" rel="stylesheet" href="/stylesheets/vendor/jquery.tosrus.all.css" />
     <script src="/js/vendor/modernizr.js"></script>
@@ -24,11 +25,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/wedding">Brian and Andrea</a>
+            <a class="navbar-brand" href="/">Michael and Anna</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/wedding">Welcome</a></li>
+                <li><a href="/">Welcome</a></li>
                 <li><a href="/getting-there">Getting There</a></li>
                 <li><a href="#contactus">Contact Us</a></li>
             </ul>
@@ -53,10 +54,16 @@
 <script src="js/es5/lightboxgallery.js"></script>
 <script src="js/vendor/knockout-3.3.0.js"></script>
 <script src="js/es5/appviewmodel.js"></script>
+<script src="js/es5/thumbnailgallery.js"></script>
 
 <script>
     jQuery(function( $ ) {
         initLightboxGallery();
+    });
+</script>
+<script>
+    jQuery(function( $ ) {
+        addPortraitClassToImg();
     });
 </script>
 </body>

@@ -1,0 +1,29 @@
+$fiftyPercent: 50%;
+$centreTransform: translate(-50%,-50%);
+
+.thumbnail-gallery {
+
+  a {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  img {
+    position: absolute;
+    left: $fiftyPercent;
+    top: $fiftyPercent;
+    height: 100%;
+    width: auto;
+    -webkit-transform: $centreTransform;
+    -ms-transform: $centreTransform;
+    transform: $centreTransform;
+  }
+
+  img.portrait {
+    width: 100%;
+    height: auto;
+  }
+
+}

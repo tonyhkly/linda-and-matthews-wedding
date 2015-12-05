@@ -1,16 +1,19 @@
 $fiftyPercent: 50%;
 $centreTransform: translate(-50%,-50%);
 
-.gallery-container {
-  //text-align: center;
-  //background: deeppink;
-  //width: 1000px;
-  //margin-left: auto;
-  //margin-right: auto;
-  //margin-right: 0; his made it work
-}
-
 .thumbnail-gallery {
+
+  //Shitty Hack
+  margin-left: 35px;
+
+  @media only screen and (min-width: 985px) and (max-width: 1199px) {
+    margin-left: 72px;
+  }
+
+  @media only screen and (min-width: 0px) and (max-width: 984px) {
+    margin-left: 25px;
+  }
+  //Shitty Hack end
 
   a {
     position: relative;

@@ -1,6 +1,25 @@
 $fiftyPercent: 50%;
 $centreTransform: translate(-50%,-50%);
 
+.thumbnail-img {
+  //max-width: none !important;
+  //height: 100% !important;
+  //width: auto !important;
+}
+
+.thumbnail-link {
+  position: relative;
+  //width: 250px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.thumbnail-link.portrait {
+  height: auto;
+  width: 250px;
+}
+
+/*
 .thumbnail-gallery {
 
   //Shitty Hack
@@ -39,4 +58,4 @@ $centreTransform: translate(-50%,-50%);
     height: auto;
   }
 
-}
+}*/

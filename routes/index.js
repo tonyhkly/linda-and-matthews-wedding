@@ -10,8 +10,7 @@ router.get('/prac', function(req, res, next) {
 
 router.get('/', function(req, res, next) {
   res.render('wedding', {
-      title: 'Welcome',
-      //title: 'Michael And Anna - Welcome',
+      title: 'Michael And Anna - Welcome',
       layout: 'wedding-layout'
   });
 });

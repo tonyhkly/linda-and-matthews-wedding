@@ -7,13 +7,16 @@ router.get('/prac', function(req, res, next) {
 
 router.get('/', function(req, res, next) {
   res.render('wedding', {
-      title: 'Tony Hao Kin Ly',
+      title: 'Michael And Anna - Welcome',
       layout: 'wedding-layout'
   });
 });
 
 router.get('/getting-there', function(req, res, next) {
-    res.render('map', { title: 'Getting There', layout: 'wedding-layout'});
+    res.render('map', {
+            title: 'Michael And Anna - Getting There',
+            layout: 'wedding-layout'
+        });
 });
 
 module.exports = router;

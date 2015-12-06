@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('tonyhaokinly-node-web:server');
+var debug = require('debug')('michael-and-anna-web:server');
 var http = require('http');
 
 /**

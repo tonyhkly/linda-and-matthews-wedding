@@ -1,3 +1,3 @@
-# tonyhaokinly-node-web
+# michael-and-anna-web
 
-### Tony Hao Kin Ly Website Node web app###
+### Michael and Anna web app###

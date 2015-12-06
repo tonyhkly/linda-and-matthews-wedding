@@ -6,7 +6,7 @@ function initLightboxGallery() {
     };
 
     $('#lightboxgallery a').tosrus({
-        //drag: true,
+        drag: true,
         infinite: true,
         pagination: {
             add: true

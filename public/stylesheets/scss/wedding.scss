@@ -10,6 +10,11 @@ $nav-bar-height: 50px;
   text-transform: uppercase;
 }
 
+.navbar-border {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .hero {
   background: $hero-image no-repeat center center;
   background-size: cover;

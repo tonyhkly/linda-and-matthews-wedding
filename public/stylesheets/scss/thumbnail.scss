@@ -1,61 +1,26 @@
 $fiftyPercent: 50%;
-$centreTransform: translate(-50%,-50%);
-
-.thumbnail-img {
-  //max-width: none !important;
-  //height: 100% !important;
-  //width: auto !important;
-}
+$zoomscale: scale(1.3, 1.3);
 
 .thumbnail-link {
   position: relative;
-  //width: 250px;
-  height: 250px;
   overflow: hidden;
+  margin-bottom: 25px !important;
+  display: block;
 }
 
-.thumbnail-link.portrait {
-  height: auto;
-  width: 250px;
+.thumbnail-hover {
+  -webkit-transform:$zoomscale;
+  -moz-transform:$zoomscale;
+  -o-transform:$zoomscale;
+  -ms-transform:$zoomscale;
+  transform:$zoomscale;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
 }
 
-/*
-.thumbnail-gallery {
-
-  //Shitty Hack
-  margin-left: 35px;
-
-  @media only screen and (min-width: 985px) and (max-width: 1199px) {
-    margin-left: 72px;
-  }
-
-  @media only screen and (min-width: 0px) and (max-width: 984px) {
-    margin-left: 25px;
-  }
-  //Shitty Hack end
-
-  a {
-    position: relative;
-    width: 250px;
-    height: 250px;
-    overflow: hidden;
-    margin: 0 20px 20px 0;
-  }
-
-  img {
-    position: absolute;
-    left: $fiftyPercent;
-    top: $fiftyPercent;
-    height: 100%;
-    width: auto;
-    -webkit-transform: $centreTransform;
-    -ms-transform: $centreTransform;
-    transform: $centreTransform;
-  }
-
-  img.portrait {
-    width: 100%;
-    height: auto;
-  }
-
-}*/
+.thumbnail-link:hover {
+  transition: all 0.3s ease-in-out;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}

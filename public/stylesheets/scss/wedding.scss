@@ -30,6 +30,7 @@ $nav-bar-height: 50px;
     right: 0;
     bottom: 0;
     height: $hero-height;
+    min-height: 0;
     width: -webkit-calc(100% - 0px);
     left: 0;
     z-index: -1;

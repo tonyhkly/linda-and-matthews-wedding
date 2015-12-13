@@ -2,8 +2,16 @@
 
 function Photo(photo) {
     var self = this;
-    self.thumbnailUrl = `/images/manna/thumb/${photo}.png`;
+    self.thumbnailUrl = `${thumbDirectory()}/${photo}.png`;
     self.photoUrl = `/images/manna/full/${photo}.jpg`;
+}
+
+function thumbDirectory() {
+    if (isMobile()) {
+        return '/images/manna/mobile-thumb';
+    } else {
+        return '/images/manna/thumb';
+    }
 }
 
 function AppViewModel() {

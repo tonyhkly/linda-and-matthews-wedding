@@ -3,7 +3,7 @@
 function initLightboxGallery() {
     var iOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g);
     if (iOS) {
-        $('.hero').addClass('hero-ios');
+        $('body').addClass('ios');
     }
 
     $.tosrus.defaults.media.image = {

@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 $hero-image: url("/images/hero.jpg");
 $hero-height: 100vh;
+$ios-hero-height: 450px;
 $white: #fff;
 $black: #000;
 $nav-bar-height: 50px;
@@ -9,8 +10,9 @@ $nav-bar-height: 50px;
   font-family: 'Open Sans', sans-serif !important;
   text-transform: uppercase;
 }
+
 .mobile {
-  background: lightpink;
+  //background: lightpink;
 }
 
 .navbar-seperator {
@@ -30,8 +32,6 @@ $nav-bar-height: 50px;
     right: 0;
     bottom: 0;
     height: $hero-height;
-    min-height: 0;
-    width: -webkit-calc(100% - 0px);
     left: 0;
     z-index: -1;
     //background-color: rgba(128, 91, 84, 0.498039);
@@ -73,6 +73,10 @@ $nav-bar-height: 50px;
       text-align: right;
     }
   }
+}
+
+.hero-ios {
+  height: $ios-hero-height;
 }
 
 .infostitial {

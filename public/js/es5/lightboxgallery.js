@@ -1,6 +1,11 @@
 'use strict';
 
 function initLightboxGallery() {
+    var iOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g);
+    if (iOS) {
+        $('.hero').css('min-height', '0');
+    }
+
     $.tosrus.defaults.media.image = {
         filterAnchors: function filterAnchors($anchor) {
             return true;

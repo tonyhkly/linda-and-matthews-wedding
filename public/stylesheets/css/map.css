@@ -5,7 +5,13 @@
 .ios #map {
   height: 600px; }
 
-.map-page p {
-  text-transform: none; }
+.address {
+  margin: 0; }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1hcC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBYTtFQUNiLG9CQUFvQixFQUZoQjs7QUFLRDtFQUNILGNBQWMsRUFETDs7QUFLVDtFQUNFLHFCQUFxQixFQURwQiIsImZpbGUiOiJtYXAuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI21hcCB7XG4gIGhlaWdodDogODB2aDtcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcbn1cblxuLmlvcyAjbWFwIHtcbiAgaGVpZ2h0OiA2MDBweDtcbn1cblxuLm1hcC1wYWdlIHtcbiAgcCB7XG4gICAgdGV4dC10cmFuc2Zvcm06IG5vbmU7XG4gIH1cbn0iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */
+.maps-link {
+  margin: 4px 0 7px 0; }
+  .maps-link a {
+    font-weight: bold;
+    font-size: 15px; }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1hcC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBYTtFQUNiLG9CQUFvQixFQUZoQjs7QUFLRDtFQUNILGNBQWMsRUFETDs7QUFJWDtFQUNFLFVBQVUsRUFERjs7QUFJVjtFQUNFLG9CQUFtQixFQURUO0VBR1Y7SUFDRSxrQkFBa0I7SUFDbEIsZ0JBQWdCLEVBRmYiLCJmaWxlIjoibWFwLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNtYXAge1xuICBoZWlnaHQ6IDgwdmg7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG59XG5cbi5pb3MgI21hcCB7XG4gIGhlaWdodDogNjAwcHg7XG59XG5cbi5hZGRyZXNzIHtcbiAgbWFyZ2luOiAwO1xufVxuXG4ubWFwcy1saW5rIHtcbiAgbWFyZ2luOiA0cHggMCA3cHggMDtcblxuICBhIHtcbiAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICBmb250LXNpemU6IDE1cHg7XG4gIH1cbn0iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */

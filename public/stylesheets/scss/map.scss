@@ -7,8 +7,15 @@
   height: 600px;
 }
 
-.map-page {
-  p {
-    text-transform: none;
+.address {
+  margin: 0;
+}
+
+.maps-link {
+  margin: 4px 0 7px 0;
+
+  a {
+    font-weight: bold;
+    font-size: 15px;
   }
 }

@@ -19,3 +19,37 @@
     font-size: 15px;
   }
 }
+
+.stations {
+  padding-bottom: 5px;
+}
+
+.station-list {
+  list-style: none;
+  padding-left: 10px;
+}
+
+.icon {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  float: left;
+  background: no-repeat;
+}
+
+.icon-first {
+  margin-right: 5px;
+}
+
+.icon-last {
+  margin-right: 6px;
+}
+
+.station {
+  background-image: url("/images/icons/station.png");
+}
+
+.tube {
+  background-image: url("/images/icons/tube.png");
+}

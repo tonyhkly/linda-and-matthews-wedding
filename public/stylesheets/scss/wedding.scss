@@ -17,6 +17,10 @@ strong {
   text-transform: uppercase;
 }
 
+.transform-none {
+  text-transform: none;
+}
+
 .mobile .hero {
   background-image: $hero-mobile; //kk
 }

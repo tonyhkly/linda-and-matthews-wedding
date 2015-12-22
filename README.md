@@ -14,7 +14,7 @@ Checking Out
 ##### Getting Started
 To Run: npm start
 
-###### Gulp Commands:
+##### Gulp Commands:
 * gulp watch
 * gulp build
 * gulp sass

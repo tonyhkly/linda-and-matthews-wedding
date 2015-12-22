@@ -12,7 +12,7 @@ Checking Out
 * Handlebars
 
 ##### Getting Started
-To Run: npm start
+**To Run:** npm start
 
 ##### Gulp Commands:
 * gulp watch

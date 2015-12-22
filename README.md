@@ -1,5 +1,5 @@
-michael-and-anna-web
-==========
+Michael and Anna Web
+====================
 
 A Node web app
 

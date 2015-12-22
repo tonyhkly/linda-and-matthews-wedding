@@ -13,6 +13,7 @@ Checking Out
 
 ##### Getting Started
 To Run: npm start
+
 ###### Gulp Commands:
 * gulp watch
 * gulp build

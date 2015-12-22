@@ -1,3 +1,20 @@
-# michael-and-anna-web
+michael-and-anna-web
+==========
 
-### Michael and Anna web app###
+A Node web app
+
+Checking Out
+-------------
+* Node
+* Gulp
+* Babel
+* Sass
+* Handlebars
+
+##### Getting Started
+To Run: npm start
+###### Gulp Commands:
+* gulp watch
+* gulp build
+* gulp sass
+* gulp js

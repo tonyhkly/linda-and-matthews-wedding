@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/prac', function(req, res) {
-  res.render('prac', {
+router.get('/wedding-parallax', function(req, res) {
+  res.render('wedding-parallax', {
       title: 'Tony Hao Kin Ly',
       layout: false
   });
@@ -16,9 +16,9 @@ router.get('/', function(req, res) {
   });
 });
 
-router.get('/getting-there', function(req, res) {
+router.get('/the-venue', function(req, res) {
     res.render('map', {
-            title: 'Michael And Anna - Getting There',
+            title: 'Michael And Anna - The Venue',
             layout: 'wedding-layout',
             pageId: 'map-page'
     });

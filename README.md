@@ -3,7 +3,7 @@ Michael and Anna Web
 
 A Node web app
 
-Checking Out
+Technologies Used
 -------------
 * Node
 * Gulp

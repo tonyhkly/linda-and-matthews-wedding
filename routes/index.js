@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/prac', function(req, res, next) {
+router.get('/prac', function(req, res) {
   res.render('prac', {
       title: 'Tony Hao Kin Ly',
       layout: false
   });
 });
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.render('wedding', {
       title: 'Michael And Anna - Welcome',
       layout: 'wedding-layout',
@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/getting-there', function(req, res, next) {
+router.get('/getting-there', function(req, res) {
     res.render('map', {
             title: 'Michael And Anna - Getting There',
             layout: 'wedding-layout',

@@ -1,19 +1,34 @@
 $white: #fff;
 $black: #000;
+$default: #c4c4c4;
 
 .navbar {
   margin-bottom: 0;
 
   .navbar-brand {
     font-size: 20px;
+    color: $black;
+    letter-spacing: 2px;
+  }
+
+  .nav a {
+    color: $default;
   }
 
   .navbar-nav a {
     font-size: 16px;
   }
 
-  .nav a, .navbar-brand {
-    color: $black;
+  .nav a:hover {
+    background: none !important;
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    color: #dedede !important;
+    //color: #f7f7f7;
   }
 
   .icon-bar {
@@ -25,3 +40,9 @@ $black: #000;
     margin-bottom: 10px;
   }
 }
+
+.home-page .nav-welcome a,
+.map-page .nav-map a {
+  color: $black;
+}
+

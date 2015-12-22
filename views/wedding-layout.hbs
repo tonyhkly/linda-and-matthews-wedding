@@ -15,7 +15,7 @@
     <link rel="icon" href="/images/wedding.ico"/>
     <script src="js/es5/map.js"></script>
 </head>
-<body data-bind="css: mobile">
+<body data-bind="css: mobile" class={{{pageId}}}>
 <div class="wrapper">
 <nav class="navbar navbar-static-top">
     <div class="container text-uppercase">
@@ -31,8 +31,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/">Welcome</a></li>
-                <li><a href="/getting-there" data-ajax="false">Getting There</a></li>
+                <li class="nav-welcome"><a href="/">Welcome</a></li>
+                <li class="nav-map"><a href="/getting-there" data-ajax="false">Getting There</a></li>
                 <li><a href="/contact-us">Contact Us</a></li>
             </ul>
         </div>
@@ -64,25 +64,13 @@
 <script src="js/es5/lightboxgallery.js"></script>
 <script src="js/vendor/knockout-3.3.0.js"></script>
 <script src="js/es5/appviewmodel.js"></script>
+<script src="js/es5/calendersettings.js"></script>
 
 <script>
     jQuery(function( $ ) {
         initLightboxGallery();
     });
-</script>
-<script>
-    addeventatc.settings({
-        license    : "00000000000000000000",
-        mouse      : false,
-        css        : true,
-        outlook    : {show:true, text:"Outlook"},
-        google     : {show:true, text:"Google <em>(online)</em>"},
-        yahoo      : {show:false, text:"Yahoo <em>(online)</em>"},
-        outlookcom : {show:true, text:"Outlook.com <em>(online)</em>"},
-        appleical  : {show:true, text:"Apple Calendar"},
-        facebook   : {show:true, text:"Facebook Event"},
-        dropdown   : {order:"google,appleical,facebook,outlook,outlookcom"}
-    });
+    initCalenderSettings();
 </script>
 </body>
 </html>

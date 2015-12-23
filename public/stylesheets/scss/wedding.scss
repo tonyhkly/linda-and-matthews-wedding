@@ -1,12 +1,21 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+//Hero Images
 $hero-image: url("/images/hero/hero.jpg");
 $hero-mobile: url("/images/hero/hero-mobile.jpg");
-$hero-height: 100vh;
-$ios-hero-height: 550px;
-$white: #fff;
-$black: #000;
-$nav-bar-height: 50px;
+$hero-height: 800px;
+$ios-hero-height: 600px;
+$mobile-hero-height: 500px;
+//Colours
 $purple: #8d2159;
+$light-purple: #A73B73;
+//Font Sizes
+$h2-font-size: 54px;
+$h3-font-size: 28px;
+$h1-font-size: 3.2rem;
+$parallax-bg-h1-font-size: 6em;
+$hero-p-font-size:1.9rem;
+$h1-vcenter:4.5em;
 
 * {
   font-family: 'Open Sans', sans-serif !important;
@@ -31,53 +40,90 @@ strong {
   margin-bottom: 0;
 }
 
-.hero {
-  background: $hero-image no-repeat center center fixed;
+.parallax-bg {
+  color: #fff;
+  display: table;
+  height: 800px;
+  position: relative;
+  width: 100%;
+  background: no-repeat center center fixed;
   background-size: cover;
-  height: $hero-height;
-  .intro {
-    padding: 3rem;
-    position: relative;
-    top: 45%;
-    transform: translateY(-50%);
-  }
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.parallax-bg h1 {
+  letter-spacing: 4px;
+  font-size: $parallax-bg-h1-font-size;
+  font-weight: normal;
+}
+
+//#hero { background-image: $hero-image; background-position: center 25px }
+#hero { background-image: $hero-image; background-position: center top } //Add Tablet specific support so you dont have to do this
+#proposal { background-image: url("/images/hero/hero-2.jpg"); }
+#yes { background-image: url("/images/hero/hero-3.jpg"); }
+
+.hero {
+  height: 100vh;
+
   h1 {
-    color: #fff;
-    font-size: 3.2rem;
+    font-size: $h1-font-size;
     line-height: 1.6em;
     font-weight: 300;
     text-align: center;
   }
   p {
-    color: #fff;
     line-height: 1.75em;
     font-weight: 200;
-    font-size: 1.9rem;
+    font-size: $hero-p-font-size;
     text-align: center;
     margin-bottom: 2rem;
   }
   @media only screen and (min-width: 992px) {
     h1 {
-      padding-top: 4.5rem;
-      text-align: right;
       font-size: 5.5rem;
     }
     p {
       font-size: 2.5rem;
-      text-align: right;
     }
   }
 }
 
-.ios .hero {
+.ios .parallax-bg {
   height: $ios-hero-height;
-  background: $hero-image no-repeat center center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
 }
 
-//col-xs <768px
-//col-sm >=768px
-//col-md>=992px
-//col-lg>=1200px
+.mobile .parallax-bg {
+  height: $mobile-hero-height;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+}
+
+/* padded section */
+.pad-section {
+  padding: 50px 0;
+}
+.pad-section img {
+  width: 100%;
+}
+
+/* vertical-centered text */
+.text-vcenter {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.text-vcenter h1 {
+  font-size: $h1-vcenter;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
 
 .infostitial {
   width: 66.66%;
@@ -89,11 +135,8 @@ strong {
   border-color: $purple #A73B73 #c0548c;
 
   h2 {
-    color: #A73B73;
+    color: $light-purple;
   }
-
-  //A73B73
-  //C0548C
   //DA6EA6
   p {
     font-size: 20px;
@@ -105,5 +148,21 @@ strong {
 
   a {
     font-size: 18px;
+  }
+}
+
+.text-section {
+  border: none;
+  padding: 130px 15px;
+
+  h2 {
+    margin-top: 0;
+    color: #000;
+    font-size: $h2-font-size;
+  }
+
+  h3 {
+    color: $light-purple;
+    font-size: $h3-font-size;
   }
 }

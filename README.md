@@ -19,3 +19,8 @@ Technologies Used
 * gulp build
 * gulp sass
 * gulp js
+
+//col-xs <768px
+//col-sm >=768px
+//col-md>=992px
+//col-lg>=1200px

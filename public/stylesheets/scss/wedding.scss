@@ -63,6 +63,7 @@ strong {
 #hero { background-image: $hero-image; background-position: center top } //Add Tablet specific support so you dont have to do this
 #proposal { background-image: url("/images/hero/hero-2.jpg"); }
 #yes { background-image: url("/images/hero/hero-3.jpg"); }
+#happy { background-image: url("/images/hero/hero-4.jpg"); }
 
 .hero {
   height: 100vh;
@@ -127,6 +128,11 @@ strong {
 
 #hero h1 {
   font-size: 3.2em;
+}
+
+.info-row {
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .infostitial {

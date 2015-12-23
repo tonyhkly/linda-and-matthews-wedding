@@ -82,10 +82,10 @@ strong {
   }
   @media only screen and (min-width: 992px) {
     h1 {
-      font-size: 5.5rem;
+      font-size: 5.5rem !important;
     }
     p {
-      font-size: 2.5rem;
+      font-size: 2.5rem !important;
     }
   }
 }
@@ -125,6 +125,10 @@ strong {
   padding: 0;
 }
 
+#hero h1 {
+  font-size: 3.2em;
+}
+
 .infostitial {
   width: 66.66%;
   margin-top: 70px;
@@ -150,6 +154,13 @@ strong {
     font-size: 18px;
   }
 }
+
+@media only screen and (max-width: 992px) {
+  #hero h1 {
+    font-size: 2.2em !important;
+  }
+}
+
 
 .text-section {
   border: none;

@@ -6,6 +6,7 @@ $ios-hero-height: 550px;
 $white: #fff;
 $black: #000;
 $nav-bar-height: 50px;
+$purple: #8d2159;
 
 * {
   font-family: 'Open Sans', sans-serif !important;
@@ -80,9 +81,20 @@ strong {
 
 .infostitial {
   width: 66.66%;
-  padding: 45px 0;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  padding: 20px 0;
   float: none;
+  border: 3px solid;
+  border-color: $purple #A73B73 #c0548c;
 
+  h2 {
+    color: #A73B73;
+  }
+
+  //A73B73
+  //C0548C
+  //DA6EA6
   p {
     font-size: 20px;
   }

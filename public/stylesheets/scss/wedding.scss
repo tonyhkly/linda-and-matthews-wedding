@@ -12,9 +12,9 @@ $h2-font-size: 54px;
 $h3-font-size: 28px;
 $h4-font-size: 22px;
 $h1-font-size: 3.2rem;
-$parallax-bg-h1-font-size: 6em;
+$parallax-bg-h1-font-size: 5em;
+$parallax-bg-mobile-h1-font-size: 3.2em;
 $hero-p-font-size: 2rem;
-$h1-vcenter: 4.5em;
 
 * {
   font-family: 'Open Sans', sans-serif !important;
@@ -84,7 +84,11 @@ h4 {
 }
 
 @media (max-width: 768px) {
-  #hero {
+  .parallax-bg h1 {
+    font-size: $parallax-bg-mobile-h1-font-size;
+  }
+
+    #hero {
     background-image: url("/images/hero/mobile/hero.jpg");
   }
 
@@ -181,7 +185,6 @@ h4 {
 }
 
 .text-vcenter h1 {
-  font-size: $h1-vcenter;
   font-weight: 700;
   margin: 0;
   padding: 0;

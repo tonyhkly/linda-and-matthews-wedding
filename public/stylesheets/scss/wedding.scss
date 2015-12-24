@@ -1,8 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 //Hero Images
-$hero-image: url("/images/hero/full/hero.jpg");
-$hero-mobile: url("/images/hero/mobile/hero.jpg");
 $hero-height: 800px;
 $ios-hero-height: 600px;
 $mobile-hero-height: 500px;
@@ -70,25 +68,41 @@ h4 {
   font-weight: normal;
 }
 
-.mobile #hero {
-  background-image: $hero-mobile;
+@media (max-width: 768px) {
+  #hero {
+    background-image: url("/images/hero/mobile/hero.jpg");
+  }
+
+  #proposal {
+    background-image: url("/images/hero/mobile/hero-2.jpg");
+  }
+
+  #yes {
+    background-image: url("/images/hero/mobile/hero-3.jpg");
+  }
+
+  #happy {
+    background-image: url("/images/hero/mobile/hero-4.jpg");
+  }
 }
 
-#hero {
-  background-image: $hero-image;
-  background-position: center top
-}
+@media (min-width: 769px) {
+  #hero {
+    background-image: url("/images/hero/full/hero.jpg");
+    background-position: center top
+  }
 
-#proposal {
-  background-image: url("/images/hero/full/hero-2.jpg");
-}
+  #proposal {
+    background-image: url("/images/hero/full/hero-2.jpg");
+  }
 
-#yes {
-  background-image: url("/images/hero/full/hero-3.jpg");
-}
+  #yes {
+    background-image: url("/images/hero/full/hero-3.jpg");
+  }
 
-#happy {
-  background-image: url("/images/hero/full/hero-4.jpg");
+  #happy {
+    background-image: url("/images/hero/full/hero-4.jpg");
+  }
 }
 
 .hero {
@@ -193,7 +207,7 @@ h4 {
   h2 {
     color: $light-purple;
   }
-  //DA6EA6
+
   p {
     font-size: 20px;
   }

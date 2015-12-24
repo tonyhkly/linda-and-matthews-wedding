@@ -67,3 +67,26 @@
 .tube {
   background-image: url("/images/icons/tube.png");
 }
+
+#info-window {
+  h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  .action-list {
+    list-style: square;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-top: 5px;
+  }
+
+  img {
+    width: 165px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}

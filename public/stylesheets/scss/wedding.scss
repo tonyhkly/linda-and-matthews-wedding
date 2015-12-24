@@ -49,17 +49,32 @@ h4 {
   margin-bottom: 0;
 }
 
+.ios .parallax-bg,
+.mobile .parallax-bg {
+  background-attachment: scroll;
+}
+
+.ios .parallax-bg {
+  height: $ios-hero-height;
+}
+
 .parallax-bg {
   color: #fff;
   display: table;
   height: 800px;
   position: relative;
   width: 100%;
-  background: no-repeat center center fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+}
+
+.mobile .parallax-bg {
+  height: $mobile-hero-height;
 }
 
 .parallax-bg h1 {
@@ -147,20 +162,6 @@ h4 {
       margin-top: 0;
     }
   }
-}
-
-.ios .parallax-bg {
-  height: $ios-hero-height;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: scroll;
-}
-
-.mobile .parallax-bg {
-  height: $mobile-hero-height;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: scroll;
 }
 
 /* padded section */

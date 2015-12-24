@@ -15,8 +15,8 @@ $h3-font-size: 28px;
 $h4-font-size: 22px;
 $h1-font-size: 3.2rem;
 $parallax-bg-h1-font-size: 6em;
-$hero-p-font-size:1.9rem;
-$h1-vcenter:4.5em;
+$hero-p-font-size: 2rem;
+$h1-vcenter: 4.5em;
 
 * {
   font-family: 'Open Sans', sans-serif !important;
@@ -30,11 +30,17 @@ strong {
   text-transform: uppercase;
 }
 
-h3, h4 { color: $light-purple; }
+h3, h4 {
+  color: $light-purple;
+}
 
-h3 { font-size: $h3-font-size; }
+h3 {
+  font-size: $h3-font-size;
+}
 
-h4 { font-size: $h4-font-size; }
+h4 {
+  font-size: $h4-font-size;
+}
 
 .transform-none {
   text-transform: none;
@@ -68,11 +74,22 @@ h4 { font-size: $h4-font-size; }
   font-weight: normal;
 }
 
-//#hero { background-image: $hero-image; background-position: center 25px }
-#hero { background-image: $hero-image; background-position: center top } //Add Tablet specific support so you dont have to do this
-#proposal { background-image: url("/images/hero/hero-2.jpg"); }
-#yes { background-image: url("/images/hero/hero-3.jpg"); }
-#happy { background-image: url("/images/hero/hero-4.jpg"); }
+#hero {
+  background-image: $hero-image;
+  background-position: center top
+}
+
+#proposal {
+  background-image: url("/images/hero/hero-2.jpg");
+}
+
+#yes {
+  background-image: url("/images/hero/hero-3.jpg");
+}
+
+#happy {
+  background-image: url("/images/hero/hero-4.jpg");
+}
 
 .hero {
   height: 100vh;
@@ -83,19 +100,37 @@ h4 { font-size: $h4-font-size; }
     font-weight: 300;
     text-align: center;
   }
+
   p {
     line-height: 1.75em;
     font-weight: 200;
     font-size: $hero-p-font-size;
     text-align: center;
+    margin-top: 13px;
     margin-bottom: 2rem;
   }
+
+  .text-shadow {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+  }
+
   @media only screen and (min-width: 992px) {
     h1 {
       font-size: 5.5rem !important;
     }
     p {
-      font-size: 2.5rem !important;
+      font-size: 3rem !important;
+      margin-top: 8px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .text-shadow {
+      background: none;
+    }
+    p {
+      margin-top: 0;
     }
   }
 }
@@ -118,6 +153,7 @@ h4 { font-size: $h4-font-size; }
 .pad-section {
   padding: 50px 0;
 }
+
 .pad-section img {
   width: 100%;
 }
@@ -128,6 +164,7 @@ h4 { font-size: $h4-font-size; }
   text-align: center;
   vertical-align: middle;
 }
+
 .text-vcenter h1 {
   font-size: $h1-vcenter;
   font-weight: 700;
@@ -175,7 +212,6 @@ h4 { font-size: $h4-font-size; }
     font-size: 2.2em !important;
   }
 }
-
 
 .text-section {
   border: none;

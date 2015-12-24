@@ -1,8 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 //Hero Images
-$hero-image: url("/images/hero/hero.jpg");
-$hero-mobile: url("/images/hero/hero-mobile.jpg");
+$hero-image: url("/images/hero/full/hero.jpg");
+$hero-mobile: url("/images/hero/mobile/hero.jpg");
 $hero-height: 800px;
 $ios-hero-height: 600px;
 $mobile-hero-height: 500px;
@@ -46,10 +46,6 @@ h4 {
   text-transform: none;
 }
 
-.mobile .hero {
-  background-image: $hero-mobile;
-}
-
 .navbar-seperator {
   margin-top: 0;
   margin-bottom: 0;
@@ -74,21 +70,25 @@ h4 {
   font-weight: normal;
 }
 
+.mobile #hero {
+  background-image: $hero-mobile;
+}
+
 #hero {
   background-image: $hero-image;
   background-position: center top
 }
 
 #proposal {
-  background-image: url("/images/hero/hero-2.jpg");
+  background-image: url("/images/hero/full/hero-2.jpg");
 }
 
 #yes {
-  background-image: url("/images/hero/hero-3.jpg");
+  background-image: url("/images/hero/full/hero-3.jpg");
 }
 
 #happy {
-  background-image: url("/images/hero/hero-4.jpg");
+  background-image: url("/images/hero/full/hero-4.jpg");
 }
 
 .hero {

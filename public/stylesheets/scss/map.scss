@@ -1,3 +1,5 @@
+$light-purple: #A73B73;
+
 #map {
   height: 80vh;
 }
@@ -76,10 +78,27 @@
   }
 
   .action-list {
-    list-style: square;
+    list-style: none;
     font-size: 14px;
-    padding-left: 20px;
+    padding:0;
+    margin:0;
+    padding-left: 15px;
     padding-top: 5px;
+
+    a {
+      padding-left: 5px;
+    }
+  }
+
+  li {
+    text-indent: -.7em;
+  }
+
+  li:before {
+    content: "■";
+    font-family:"Arial Black";
+    color: $light-purple;
+    vertical-align: text-bottom;
   }
 
   img {

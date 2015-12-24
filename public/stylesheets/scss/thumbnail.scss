@@ -20,13 +20,28 @@ $light-purple: #A73B73;
   display: block;
 }
 
+/*//Mkaes thumbnails smaller
+.thumbnail-gallery {
+  margin-right: 50px;
+  margin-left: 50px;
+}*/
+
 @media (min-width: 1200px) {
   .gallery-container {
-    width: 1060px;
+    width: 985px;
   }
 }
 
-.thumbnail-hover {
+/*
+@media (min-width: 769px) and (max-width: 992px) {
+  .thumbnail-gallery {
+    margin-right: 500px;
+    margin-left: 400px;
+  }
+}
+*/
+
+.desktop .thumbnail-hover {
   -webkit-transform:$zoomscale;
   -moz-transform:$zoomscale;
   -o-transform:$zoomscale;
@@ -37,7 +52,7 @@ $light-purple: #A73B73;
   filter: alpha(opacity=80);
 }
 
-.thumbnail-link:hover {
+.desktop .thumbnail-link:hover {
   transition: all 0.3s ease-in-out;
   opacity: 0.8;
   filter: alpha(opacity=80);

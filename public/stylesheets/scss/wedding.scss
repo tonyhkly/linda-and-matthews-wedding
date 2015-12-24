@@ -12,6 +12,7 @@ $light-purple: #A73B73;
 //Font Sizes
 $h2-font-size: 54px;
 $h3-font-size: 28px;
+$h4-font-size: 22px;
 $h1-font-size: 3.2rem;
 $parallax-bg-h1-font-size: 6em;
 $hero-p-font-size:1.9rem;
@@ -23,9 +24,17 @@ $h1-vcenter:4.5em;
 
 h1,
 h2,
+h3,
+h4,
 strong {
   text-transform: uppercase;
 }
+
+h3, h4 { color: $light-purple; }
+
+h3 { font-size: $h3-font-size; }
+
+h4 { font-size: $h4-font-size; }
 
 .transform-none {
   text-transform: none;
@@ -176,10 +185,5 @@ strong {
     margin-top: 0;
     color: #000;
     font-size: $h2-font-size;
-  }
-
-  h3 {
-    color: $light-purple;
-    font-size: $h3-font-size;
   }
 }

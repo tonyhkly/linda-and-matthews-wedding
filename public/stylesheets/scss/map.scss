@@ -1,23 +1,37 @@
 #map {
   height: 80vh;
-  margin-bottom: 20px;
 }
 
 .ios #map {
   height: 600px;
 }
 
-.address {
-  margin: 0;
+.map-section {
+  margin-bottom: 10px;
+
+  h4 {
+    margin-bottom: 0;
+    margin-top: 10px;
+  }
 }
 
-.maps-link {
-  margin: 4px 0 7px 0;
-
-  a {
-    font-weight: bold;
-    font-size: 15px;
+.directions {
+  .first-p {
+    margin-top: 10px;
   }
+}
+
+.above-map-link {
+  margin: 4px 0 7px 0;
+}
+
+.map-link {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.address {
+  margin: 0;
 }
 
 .stations {

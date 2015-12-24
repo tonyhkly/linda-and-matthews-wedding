@@ -1,9 +1,4 @@
 function initLightboxGallery() {
-    var iOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g);
-    if(iOS){
-        $('body').addClass('ios');
-    }
-
     $.tosrus.defaults.media.image = {
         filterAnchors: function ($anchor) {
             return true;

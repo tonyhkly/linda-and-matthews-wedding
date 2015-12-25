@@ -17,7 +17,11 @@ function thumbDirectory() {
 function fullscreenDirectory() {
     if (isMobile()) {
         return '/images/manna/mobile-full';
-    } else {
+    }
+    else if (isTablet()){
+        return '/images/manna/tablet-full';
+    }
+    else {
         return '/images/manna/full';
     }
 }

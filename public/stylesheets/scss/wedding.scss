@@ -16,34 +16,6 @@ $parallax-bg-h1-font-size: 5em;
 $parallax-bg-mobile-h1-font-size: 3.2em;
 $hero-p-font-size: 2rem;
 
-* {
-  font-family: 'Open Sans', sans-serif !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-strong {
-  text-transform: uppercase;
-}
-
-h3, h4 {
-  color: $light-purple;
-}
-
-h3 {
-  font-size: $h3-font-size;
-}
-
-h4 {
-  font-size: $h4-font-size;
-}
-
-.transform-none {
-  text-transform: none;
-}
-
 .navbar-seperator {
   margin-top: 0;
   margin-bottom: 0;

@@ -2,14 +2,16 @@ $fiftyPercent: 50%;
 $zoomscale: scale(1.3, 1.3);
 $light-purple: #A73B73;
 
-.gallery-container {
-  padding-top: 60px;
+.gallery-section {
+  padding-top: 65px;
   padding-bottom: 50px;
 
   h2 {
     color: $light-purple;
-    margin-top: 20px;
-    margin-bottom: 35px;
+  }
+
+  .gallery-text {
+    margin-bottom: 25px;
   }
 }
 
@@ -27,7 +29,7 @@ $light-purple: #A73B73;
 }*/
 
 @media (min-width: 1200px) {
-  .gallery-container {
+  .gallery-section {
     width: 975px;
   }
 }

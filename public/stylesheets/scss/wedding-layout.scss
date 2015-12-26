@@ -1,0 +1,37 @@
+$light-purple: #A73B73;
+$h3-font-size: 28px;
+$h4-font-size: 22px;
+
+* {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+strong {
+  text-transform: uppercase;
+}
+
+h3, h4 {
+  color: $light-purple;
+}
+
+h3 {
+  font-size: $h3-font-size;
+}
+
+h4 {
+  font-size: $h4-font-size;
+}
+
+.desktop .desktop-hidden,
+.tablet .tablet-hidden,
+.mobile .phone-hidden {
+  display: none !important;
+}
+
+.transform-none {
+  text-transform: none;
+}

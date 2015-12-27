@@ -1,10 +1,11 @@
-$scroll-spy-colour: #000;
+$scroll-spy-colour-light: #fff;
+$scroll-spy-colour-dark: #000;
 
-#scrollspy-menu {
+.scrollspy-menu {
   position: fixed;
   z-index: 52;
-  top: 48%;
-  right: 20px;
+  top: 47%;
+  right: 15px;
   list-style: none;
   text-align: right;
 
@@ -17,15 +18,17 @@ $scroll-spy-colour: #000;
     border-radius: 50%;
     height: 12px;
     width: 12px;
-    background: $scroll-spy-colour;
-    border: 2px solid $scroll-spy-colour;
+    background: $scroll-spy-colour-light;
+    border: 2px solid $scroll-spy-colour-light;
   }
 
   a .text {
     display: none;
-    color: $scroll-spy-colour;
+    color: $scroll-spy-colour-light;
     text-transform: uppercase;
     padding-right: 5px;
+    font-size: 15px;
+    letter-spacing: 1px;
   }
 
   a:hover .circle,
@@ -41,4 +44,33 @@ $scroll-spy-colour: #000;
       text-decoration: none;
     }
   }
+
+  @media only screen and (max-width: 992px) {
+    display: none;
+  }
 }
+
+.proposal-active {
+  .circle {
+    background: $scroll-spy-colour-light;
+    border-color: $scroll-spy-colour-light;
+  }
+
+  a .text {
+    color: $scroll-spy-colour-light;
+  }
+}
+
+.our-story-active,
+.venue-details-active,
+.gallery-section-active {
+  .circle {
+    background: $scroll-spy-colour-dark;
+    border-color: $scroll-spy-colour-dark;
+  }
+
+  a .text {
+    color: $scroll-spy-colour-dark;
+  }
+}
+

@@ -26,7 +26,7 @@ function isDesktop() {
     return !isMobile() && !isTablet();
 }
 
-function appendDeviceClasses() {
+function addDeviceClasses() {
     var classes = '';
 
     if (isiOS()) {

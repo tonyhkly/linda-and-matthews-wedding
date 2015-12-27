@@ -16,11 +16,6 @@ $parallax-bg-h1-font-size: 5em;
 $parallax-bg-mobile-h1-font-size: 3.2em;
 $hero-p-font-size: 2rem;
 
-.navbar-seperator {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 .ios .parallax-bg,
 .mobile .parallax-bg {
   background-attachment: scroll;
@@ -188,12 +183,16 @@ $hero-p-font-size: 2rem;
     font-size: 20px;
   }
 
-  @media only screen and (max-width: 40.063em) {
-    width: 99.99%;
-  }
-
   a {
     font-size: 18px;
+  }
+
+  .copyx {
+    display: none !important;
+  }
+
+  @media only screen and (max-width: 40.063em) {
+    width: 99.99%;
   }
 }
 

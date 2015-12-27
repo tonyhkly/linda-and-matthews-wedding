@@ -46,7 +46,7 @@ function AppViewModel() {
         new Photo("manna-16")
     ];
 
-    this.deviceClasses = appendDeviceClasses();
+    this.deviceClasses = addDeviceClasses();
 }
 
 ko.applyBindings(new AppViewModel());

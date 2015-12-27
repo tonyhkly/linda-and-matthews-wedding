@@ -1,0 +1,44 @@
+$scroll-spy-colour: #000;
+
+#scrollspy-menu {
+  position: fixed;
+  z-index: 52;
+  top: 48%;
+  right: 20px;
+  list-style: none;
+  text-align: right;
+
+  li {
+    margin-bottom: 8px;
+  }
+
+  .circle {
+    display: inline-block;
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+    background: $scroll-spy-colour;
+    border: 2px solid $scroll-spy-colour;
+  }
+
+  a .text {
+    display: none;
+    color: $scroll-spy-colour;
+    text-transform: uppercase;
+    padding-right: 5px;
+  }
+
+  a:hover .circle,
+  li.active .circle {
+    background: transparent;
+  }
+
+  a:hover {
+    text-decoration: none;
+
+    .text {
+      display: inline;
+      text-decoration: none;
+    }
+  }
+}

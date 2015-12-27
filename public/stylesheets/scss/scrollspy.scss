@@ -19,13 +19,11 @@ $scroll-spy-colour-dark: #000;
     border-radius: 50%;
     height: 12px;
     width: 12px;
-    background: $scroll-spy-colour-light;
-    border: 2px solid $scroll-spy-colour-light;
+    border: 2px solid;
   }
 
   a .text {
     display: none;
-    color: $scroll-spy-colour-light;
     text-transform: uppercase;
     padding-right: 5px;
     font-size: 15px;
@@ -45,16 +43,13 @@ $scroll-spy-colour-dark: #000;
       text-decoration: none;
     }
   }
-/*
-21px
-19px
-20px
-*/
+
   @media only screen and (max-width: 992px) {
     display: none;
   }
 }
 
+.scrollspy-menu,
 .proposal-active {
   .circle {
     background: $scroll-spy-colour-light;

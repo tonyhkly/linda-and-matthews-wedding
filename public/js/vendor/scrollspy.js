@@ -1,7 +1,6 @@
 // Cache selectors
 var lastId,
     topMenu = $("#scrollspy-menu"),
-    topMenuHeight = topMenu.outerHeight() + 15,
 // All list items
     menuItems = topMenu.find("a"),
 // Anchors corresponding to menu items
@@ -15,8 +14,8 @@ var lastId,
 // Bind click handler to menu items
 // so we can get a fancy scroll animation
 menuItems.click(function (e) {
-    var href = $(this).attr("href"),
-        offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+    var href = $(this).attr("href");
+    var offsetTop = href === "#" ? 0 : $(href).offset().top + 1;
     $('html, body').stop().animate({
         scrollTop: offsetTop
     }, 300);
@@ -26,7 +25,7 @@ menuItems.click(function (e) {
 // Bind to scroll
 $(window).scroll(function () {
     // Get container scroll position
-    var fromTop = $(this).scrollTop() + topMenuHeight;
+    var fromTop = $(this).scrollTop() + 420; //increase number to make scroll spy activate sooner
 
     // Get id of current scroll item
     var cur = scrollItems.map(function () {
@@ -48,14 +47,6 @@ $(window).scroll(function () {
             .removeClass('venue-details-active')
             .removeClass('-active')
             .addClass(id + '-active');
-
-        /*
-         * var prefix = "prefix";
-         var classes = el.className.split(" ").filter(function(c) {
-         return c.lastIndexOf(prefix, 0) !== 0;
-         });
-         el.className = $.trim(classes.join(" "));
-         */
 
         menuItems
             .parent().removeClass("active")

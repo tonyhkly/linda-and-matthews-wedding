@@ -24,4 +24,13 @@ router.get('/the-venue', function(req, res) {
     });
 });
 
+router.get('/contact-us', function(req, res) {
+    res.render('contact-us', {
+        title: 'Michael And Anna - Contact Us',
+        layout: 'wedding-layout',
+        pageId: 'contact-us'
+    });
+});
+
+
 module.exports = router;

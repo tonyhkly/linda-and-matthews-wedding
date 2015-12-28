@@ -5,8 +5,9 @@ $hero-height: 800px;
 $ios-hero-height: 600px;
 $mobile-hero-height: 500px;
 //Colours
-$purple: #8d2159;
+$purple: rgba(167, 59, 115, 1);
 $light-purple: #A73B73;
+$lighter-purple: rgba(167, 59, 115, 0.6);
 //Font Sizes
 $h2-font-size: 54px;
 $h3-font-size: 28px;
@@ -194,6 +195,27 @@ $hero-p-font-size: 2rem;
   @media only screen and (max-width: 40.063em) {
     width: 99.99%;
   }
+}
+
+.backtotop {
+  .snack-bar {
+    display: inline-block;
+    border-radius: 16px;
+    height:40px;
+    width: 150px;
+    border: 2px solid $lighter-purple;
+    font-size: 15px;
+  }
+
+  a {
+    padding-top: 7px;
+    color: #000;
+  }
+
+  a:hover, a:active, a:focus, a:visited {
+    text-decoration: none;
+  }
+
 }
 
 @media only screen and (max-width: 992px) {

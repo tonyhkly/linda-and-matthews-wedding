@@ -1,6 +1,7 @@
 'use strict';
 
-$('#backtotop').click(function () {
+$('#backtotop').click(function (e) {
+    e.preventDefault();
     animatedScroll(0);
 });
 

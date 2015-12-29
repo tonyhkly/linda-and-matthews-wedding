@@ -49,6 +49,11 @@ $scroll-spy-colour-dark: #000;
   }
 }
 
+.mobile .scrollspy-menu,
+.tablet .scrollspy-menu {
+  display: none;
+}
+
 .scrollspy-menu,
 .proposal-active {
   .circle {

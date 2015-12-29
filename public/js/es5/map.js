@@ -1,7 +1,10 @@
 "use strict";
 
 function initMap() {
-    var latLong = { lat: 51.44244339999999, lng: -0.2944414 };
+    var latLong = {
+        lat: 51.44244339999999,
+        lng: -0.2944414
+    };
 
     var map = new google.maps.Map(document.getElementById('map'), {
         center: latLong,
@@ -35,8 +38,3 @@ function isMobile() {
     })(navigator.userAgent || navigator.vendor || window.opera);
     return check;
 }
-
-/*
-(function () {
-})();
-*/

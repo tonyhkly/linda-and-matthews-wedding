@@ -9,7 +9,7 @@ function initMap() {
         draggable: !isMobile()
     });
 
-    var contentString = '<div id="info-window">' + '<h4>Pembroke Lodge</h4>' + '<a href="https://goo.gl/maps/YHvbFPW7f9Q2" target="_blank"><img class="img-responsive" src="/images/pembroke.jpg"></a>' + '<ul class="action-list">' + '<li><a href="https://goo.gl/maps/YHvbFPW7f9Q2" target="_blank">See on Google maps</a></li>' + '<li><a href="https://goo.gl/maps/aUs2Cu8RqLm" target="_blank">Get directions</a></li>' + '</ul>' + '</div>';
+    var contentString = '<div id="info-window">' + '<h4>Pembroke Lodge</h4>' + '<a href="https://goo.gl/maps/YHvbFPW7f9Q2" target="_blank">' + '<img class="img-responsive" src="/images/pembroke.jpg">' + '</a>' + '<ul class="action-list">' + '<li><a href="https://goo.gl/maps/YHvbFPW7f9Q2" target="_blank">See on Google maps</a></li>' + '<li><a href="https://goo.gl/maps/aUs2Cu8RqLm" target="_blank">Get directions</a></li>' + '</ul>' + '</div>';
 
     var infowindow = new google.maps.InfoWindow({
         content: contentString,

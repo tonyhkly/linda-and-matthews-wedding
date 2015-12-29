@@ -8,5 +8,5 @@ $('#backtotop').click(function (e) {
 function animatedScroll(scrollTop) {
     $('html, body').stop().animate({
         scrollTop: scrollTop
-    }, 800);
+    }, 700);
 }

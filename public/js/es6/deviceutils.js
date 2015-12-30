@@ -13,7 +13,7 @@ function isiOS() {
 
 function isTablet() {
     var userAgent = navigator.userAgent.toLowerCase();
-    return (userAgent.indexOf("android") > -1 && userAgent.indexOf("mobile")) || (navigator.userAgent.match("iPad"));
+    return (userAgent.indexOf("android") > -1 && !userAgent.indexOf("mobile")) || (navigator.userAgent.match("iPad"));
 }
 
 function isAndroid() {
@@ -28,19 +28,17 @@ function isDesktop() {
 function addDeviceClasses() {
     var classes = '';
 
-    if(isiOS()) {
+    if (isiOS()) {
         classes = classes.concat('ios ');
     }
 
     if (isMobile()) {
         classes = classes.concat('mobile ');
     }
-
-    if (isTablet()) {
+    else if (isTablet()) {
         classes = classes.concat('tablet');
     }
-
-    if (isDesktop()) {
+    else {
         classes = classes.concat('desktop');
     }
 

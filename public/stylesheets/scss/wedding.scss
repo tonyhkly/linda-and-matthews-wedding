@@ -7,7 +7,7 @@ $mobile-hero-height: 500px;
 //Colours
 $purple: rgba(167, 59, 115, 1);
 $light-purple: #A73B73;
-$lighter-purple: rgba(167, 59, 115, 0.6);
+$lighter-purple: rgba(167, 59, 115, 0.9);
 //Font Sizes
 $h2-font-size: 54px;
 $h3-font-size: 28px;
@@ -200,10 +200,13 @@ $hero-p-font-size: 2rem;
 .backtotop {
   .snack-bar {
     display: inline-block;
-    border-radius: 16px;
+    border-radius: 18px;
     height:47px;
-    width: 180px;
-    border: 2px solid $lighter-purple;
+    width: 178px;
+    color: #fff;
+    background: $lighter-purple;
+    border: none;
+    //opacity: 0.9;
     font-size: 15px;
   }
 

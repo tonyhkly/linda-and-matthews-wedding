@@ -203,11 +203,14 @@ $hero-p-font-size: 2rem;
     border-radius: 18px;
     height:47px;
     width: 178px;
-    color: #fff;
-    background: $lighter-purple;
-    border: none;
-    //opacity: 0.9;
+    color: $lighter-purple;
+    border: 2px solid $lighter-purple;
     font-size: 15px;
+  }
+
+  .snack-bar:hover {
+    background: $lighter-purple;
+    color: #fff;
   }
 
   a {

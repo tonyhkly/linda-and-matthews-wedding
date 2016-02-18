@@ -1,0 +1,157 @@
+<div class="patternTopic"> <h1><a name="Consumer_Driven_Contracts_CDCs_O"></a> Consumer Driven Contracts (CDCs) Overview </h1>
+    <p>
+        To be able to move quickly in software development we need to be confident that changes that we have made have not broken existing functionality. To move truly quickly, we need to build that confidence fast.
+    </p><p>
+        A microservices architecture can make it a slow and brittle process to verify the APIs of your services if you rely on full end to end integration tests. Relying on these types of tests will also typically delay verification of changes to a service until later on in the software development lifecycle.
+    </p><p>
+        In addition, it is difficult to deprecate public APIs. Even if you think you know all of your service’s consumers there may be an undocumented consumer which makes the process of deprecating an API a potentially painful process.
+    </p><h2><a name="Centralised_Contracts"></a> Centralised Contracts </h2>
+    <p>
+        CDCs attempt to resolve some of the problems identified above by providing a set of contracts that the consumer and provider of an API can be tested against.
+    </p><p>
+        The consumers drive the API design of the provider and so if a consumer has not created a contract documenting expected use then there are no consumers using that feature and it is safe to remove it.
+    </p><p>
+        Undocumented consumers have no contract with the provider and so the provider is not obligated to continue to provide a deprecated feature. This places a limitation on the reach of CDCs to be used only in environments where consumers are able to publish contracts into a location that the producer can access and is monitoring.
+    </p><p>
+        Published contracts should be placed in a centralised location and downloaded by the provider during each build.
+    </p><p>
+        This ensures that changes have not broken any contracts and also ensures that published consumers do not run ahead of a producer.
+    </p><h2><a name="Creating_a_new_feature"></a> Creating a new feature </h2> <ol>
+        <li> Consumer identifies a need from a provider that is currently not available.
+        </li> <li> Consumer collaborates with service provider to define API that will satisfy the consumer’s needs whilst considering the constraints and considerations of the provider. Result is a contract that the provider must abide by.
+    </li> <li> Provider implements the API to honour the contract, whilst still satisfying all other existing contracts.
+    </li> <li> Provider runs an automated test to verify the contract has been satisfied as far as the API is concerned. Functionality is tested via Unit, Integration and other appropriate tests.
+    </li> <li> Provider publishes changes.
+    </li> <li> Consumer publishes contract and consumes new provider API.
+    </li></ol>
+    <img class="img-responsive" src="http://twiki.rightmove.com/twiki/pub/Rightmove/CDCOverview/cdc1.jpg">
+    <p>
+    </p><h2><a name="Updating_an_existing_feature"></a> Updating an existing feature </h2> <ol>
+        <li> Consumer identifies a change to an existing endpoint for a provider.
+        </li> <li> Consumer collaborates with service provider and any other existing consumers to define API that will satisfy all consumer’s needs whilst considering the constraints and considerations of the provider. Result is a contract that the provider must abide by.
+    </li> <li> Provider implements the API to honour the contract, whilst still satisfying all other existing contracts.
+    </li> <li> Provider runs an automated test to verify the contract has been satisfied as far as the API is concerned. Functionality is tested via Unit, Integration and other appropriate tests.
+    </li> <li> Provider publishes changes.
+    </li> <li> Consumer publishes new contract, removes old redundant contract and consumes updated provider API.
+    </li> <li> Remaining consumers publish new contracts, remove redundant contracts and consume updated provider API.
+    </li> <li> Provider removes deprecated API.
+    </li></ol>
+    <img class="img-responsive" src="http://twiki.rightmove.com/twiki/pub/Rightmove/CDCOverview/cdc2.png">
+    <h2><a name="Postels_law"></a> Postel’s law </h2>
+    <p>
+        To improve the utility of CDC tests, services should follow the robustness principle. That is, be conservative in what you send and liberal in what you accept.
+    </p><p>
+        In terms of CDCs, the contracts should only verify the essential structure of payloads for the consuming service and ignore any extra data returned. This will allow endpoints to be used and evolved by multiple consumers and maintain a tight API.
+    </p><p>
+        CDCs should not verify the values of the payload unless specific behaviour of the provider needs to be documented in the contract. Typically, behaviour should be covered in functional tests.
+    </p><h2><a name="Technical_details_for_using_CDCs"></a> Technical details for using CDCs in Rightmove </h2>
+    <p>
+        We use a CDC framework called pact from realestate.com.au called pact:
+    </p><p>
+        <a href="https://github.com/realestate-com-au/pact/" target="_top">https://github.com/realestate-com-au/pact/</a>
+    </p><p>
+        The original framework has been written in Ruby, we are using a JVM implementation from here:
+    </p><p>
+        <a href="https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-consumer-junit" target="_top">https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-consumer-junit</a>
+    </p><p>
+        Pact is the literal meaning of the word: "a formal agreement between individuals or parties."
+    </p><p>
+        <strong>Note: Within this section of the document, a contract will be referred to as pacts.</strong>
+    </p><h3><a name="Stub_out_downstream_services"></a> Stub out downstream services </h3>
+    <p>
+        To keep CDC tests fast but also provide a tangible level of confidence, provide the ability to stub out your downstream services such as CRUDs or messaging queues.
+    </p><p>
+        This has been achieved in Odin using “stubbed” profiles for provider services. When started up with this profile active, the services are started up as usual but have stubbed downstream dependencies.
+    </p><p>
+        For an example, search “stubbed” (including quotes) in property search:
+    </p><p>
+        <a href="http://git.rightmove.com/projects/ODIN/repos/property-search/browse" target="_top">http://git.rightmove.com/projects/ODIN/repos/property-search/browse</a>
+    </p><h3><a name="Creating_a_consumer_pact_test"></a> Creating a consumer pact test </h3>
+    <p>
+        Pacts are defined in JSON. To be able to generate the pact in the correct format you can define a <strong>PactFragment</strong> in Java that describes the contract the provider must satisfy.
+    </p><p>
+        You can run a <strong>PactVerification</strong> test against it to verify that the pact works as you expect against a mock of the provider service.
+    </p><p>
+        The generated JSON file will eventually be run against the real provider service (with stubbed out dependencies) as part of the build pipeline or locally against a local instance of the provider service for development purposes. This will be described later on.
+    </p><p>
+        The <span class="twikiNewLink"><a href="/twiki/bin/edit/Rightmove/PactFragment?topicparent=Rightmove.CDCOverview;nowysiwyg=0" rel="nofollow" title="PactFragment (this topic does not yet exist; you can create it)">PactFragment</a></span> should be created in a class that describes the endpoint you are building a contract for. Keep your pacts in their own module called cdc-test. Optionally, you can separate your CDCs into packages describing the provider service.
+    </p><p>
+        Creating a pact:
+    </p><p>
+        <span style="background-color: transparent;">1. To begin with, create your class in cdc-test under a package of the provider service. E.g.:</span>
+    </p><p>
+        <span style="white-space: pre;"> </span>property-web\cdc-test\src\test\java\com\rightmove\location\uk\RetrieveOutcodeById.java
+    </p><p>
+        <span style="background-color: transparent;">2. Add a <span class="twikiNewLink"><a href="/twiki/bin/edit/Rightmove/PactRule?topicparent=Rightmove.CDCOverview;nowysiwyg=0" rel="nofollow" title="PactRule (this topic does not yet exist; you can create it)">PactRule</a></span> which will start up a mock of the provider service for each test on a given port and hostname. The mock will be torn down at the end of each test:</span>
+    </p><p>
+        <span style="white-space: pre;"> </span><img class="img-responsive" src="http://twiki.rightmove.com/twiki/pub/Rightmove/CDCOverview/pactRule.png">
+    </p><p>
+        3. <span style="background-color: transparent;">You are able to <a href="/twiki/bin/view/Rightmove/TDD" class="twikiLink">TDD</a> your pacts so before you create your <span class="twikiNewLink"><a href="/twiki/bin/edit/Rightmove/PactFragment?topicparent=Rightmove.CDCOverview;nowysiwyg=0" rel="nofollow" title="PactFragment (this topic does not yet exist; you can create it)">PactFragment</a></span> you can create a <span class="twikiNewLink"><a href="/twiki/bin/edit/Rightmove/PactVerification?topicparent=Rightmove.CDCOverview;nowysiwyg=0" rel="nofollow" title="PactVerification (this topic does not yet exist; you can create it)">PactVerification</a></span> test.</span>
+    </p><p>
+        <span style="background-color: transparent;"> </span><span style="background-color: transparent;"><span style="white-space: pre;"> </span>1. Inside the <span class="twikiNewLink"><a href="/twiki/bin/edit/Rightmove/PactVerification?topicparent=Rightmove.CDCOverview;nowysiwyg=0" rel="nofollow" title="PactVerification (this topic does not yet exist; you can create it)">PactVerification</a></span> annotation, describe the type of contract you are going to test.</span>
+    </p><p>
+        <span style="background-color: transparent;"> </span><span style="background-color: transparent;"><span style="white-space: pre;"> </span>2. The rest client will hit the mock you created in the <span class="twikiNewLink"><a href="/twiki/bin/edit/Rightmove/PactRule?topicparent=Rightmove.CDCOverview;nowysiwyg=0" rel="nofollow" title="PactRule (this topic does not yet exist; you can create it)">PactRule</a></span> in number 2.</span>
+    </p><p>
+        <span style="background-color: transparent;"> </span><span style="background-color: transparent;"><span style="white-space: pre;"> </span>3. Test the response with assertions.</span>
+    </p><p>
+        E.g:
+    </p><p>
+        <img class="img-responsive" src="http://twiki.rightmove.com/twiki/pub/Rightmove/CDCOverview/pactVerification.png">
+    </p><p>
+        <span style="background-color: transparent;">4. Finally, create your <span class="twikiNewLink"><a href="/twiki/bin/edit/Rightmove/PactFragment?topicparent=Rightmove.CDCOverview;nowysiwyg=0" rel="nofollow" title="PactFragment (this topic does not yet exist; you can create it)">PactFragment</a></span>.</span>
+    </p><p>
+        <span style="background-color: transparent;"> </span><span style="background-color: transparent;"><span style="white-space: pre;"> </span>1. Inside the Pact annotation, set the </span> <strong>state</strong> <span style="background-color: transparent;"> to match the type of contract defined in the <span class="twikiNewLink"><a href="/twiki/bin/edit/Rightmove/PactVerification?topicparent=Rightmove.CDCOverview;nowysiwyg=0" rel="nofollow" title="PactVerification (this topic does not yet exist; you can create it)">PactVerification</a></span> annotation in the test.</span>
+    </p><p>
+        <span style="background-color: transparent;"> </span><span style="background-color: transparent;"><span style="white-space: pre;"> </span>2. Set the </span> <strong>provider</strong> <span style="background-color: transparent;"> to be the name of the provider service.</span>
+    </p><p>
+        <span style="background-color: transparent;"><span style="white-space: pre;"> </span>3. Set the </span> <strong>consumer</strong> <span style="background-color: transparent;"> to be the name of the consuming service.</span>
+    </p><p>
+        <span style="background-color: transparent;"><span style="white-space: pre;"> </span>4. Use the given in <span class="twikiNewLink"><a href="/twiki/bin/edit/Rightmove/ConsumerPactBuilder?topicparent=Rightmove.CDCOverview;nowysiwyg=0" rel="nofollow" title="ConsumerPactBuilder (this topic does not yet exist; you can create it)">ConsumerPactBuilder</a></span> to build your pact.</span>
+    </p><p>
+        <span style="background-color: transparent;"><br></span>
+    </p><p>
+        The builder provides with two parts to define an interaction; uponReceiving and willRespondWith. These two parts define the contract of this specific interaction.
+    </p><p>
+        In the willRespondWith part, the body section expects a DSLPart. This describes the structure of the response body. You can define the fields and types. You can also use matchers to validate response values however this will make your tests brittle.
+    </p><p>
+        <strong>Note: it is possible to chain multiple interactions inside a single <span class="twikiNewLink"><a href="/twiki/bin/edit/Rightmove/ConsumerPactBuilder?topicparent=Rightmove.CDCOverview;nowysiwyg=0" rel="nofollow" title="ConsumerPactBuilder (this topic does not yet exist; you can create it)">ConsumerPactBuilder</a></span>.</strong>
+    </p><p>
+        <img class="img-responsive" src="http://twiki.rightmove.com/twiki/pub/Rightmove/CDCOverview/pactFragment.png">
+    </p><p>
+        A completed class should look something like:
+    </p><p>
+        <a href="http://git.rightmove.com/projects/ODIN/repos/property-web/browse/cdc-test/src/test/java/com/rightmove/location/uk/RetrieveOutcodeById.java" target="_top">http://git.rightmove.com/projects/ODIN/repos/property-web/browse/cdc-test/src/test/java/com/rightmove/location/uk/RetrieveOutcodeById.java</a>
+    </p><p>
+        Now that you have built your pact generator you can generate your pacts by running the tests under cdc-test. The generated pacts can be found under \cdc-test\target\pacts.
+    </p><p>
+        Here is an example of the generated pact for the example we’ve been working through:
+    </p><pre><img class="img-responsive" src="http://twiki.rightmove.com/twiki/pub/Rightmove/CDCOverview/pactJSON.png">
+</pre>
+    <p>
+        Running pacts on provider side locally
+    </p><p>
+        To run your pacts locally, follow the given steps: </p><ol>
+        <li> In the <strong>consumer</strong> project, create or update your pactVerification test and your pact
+        </li> <li> Run the test gradle task in the <strong>consumer</strong> cdc-test module to generate the pact
+    </li> <li> Start the <strong>provider</strong> in stubbed mode
+    </li> <li> In the <strong>provider</strong> cdc-test module, run the downloadProviderPactFile gradle task to get the latest contracts against <em>all</em> consumers.
+    </li> <li> Copy the newly-updated pact from the consumer’s cdc-test/target/pacts directory to the same directory on the provider.
+    </li> <li> In the <strong>provider</strong> cdc-test module, run the pactVerify-provider-web gradle task (it should fail!)
+    </li> <li> Update the provider, run pactVerify again and the test should pass.
+    </li> <li> Verify you haven’t made a breaking change by running downloadProviderPactFile and pactVerify (checking against the current pact).
+    </li> <li> Commit changes to the provider. Merge changes into develop, then master branch to release them.
+    </li></ol>
+    You can use the following script to automate this for you:
+    <p>
+        <a href="http://git.rightmove.com/projects/ODIN/repos/provider-cdc-runner/browse" target="_top">http://git.rightmove.com/projects/ODIN/repos/provider-cdc-runner/browse</a>
+    </p><h2><a name="Other_considerations"></a> Other considerations </h2>
+    <p>
+        If it is valid for your API to be used by anonymous consumers (i.e. your API is published on the internet) then it is more difficult to use CDCs. It is not convenient to collaborate with endless consumers to drive your API nor is it feasible to expect all clients to build, publish and remove contracts in a timely manner. A traditional approach to API evolution is probably more appropriate here.
+    </p><p>
+        If CDCs need to change often between two mature services in a single consumer environment it may be a sign that the services are too tightly coupled and the service boundaries may need to be re-evaluated.
+    </p><p>
+        Further Reading </p><ul>
+        <li> <a href="https://github.com/realestate-com-au/pact/wiki/Using-pact-where-the-consumer-team-is-different-from-the-provider-team" target="_top">https://github.com/realestate-com-au/pact/wiki/Using-pact-where-the-consumer-team-is-different-from-the-provider-team</a>
+        </li> <li> <a href="http://techblog.realestate.com.au/enter-the-pact-matrix-or-how-to-decouple-the-release-cycles-of-your-microservices/" target="_top">http://techblog.realestate.com.au/enter-the-pact-matrix-or-how-to-decouple-the-release-cycles-of-your-microservices/</a>
+    </li> <li> <a href="http://martinfowler.com/articles/consumerDrivenContracts.html" target="_top">http://martinfowler.com/articles/consumerDrivenContracts.html</a>
+    </li></ul>  </div>

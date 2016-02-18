@@ -32,5 +32,28 @@ router.get('/contact-us', function(req, res) {
     });
 });
 
+router.get('/cdc', function(req, res) {
+    res.render('cdc', {
+        title: 'CDC',
+        layout: 'wedding-layout',
+        pageId: 'contact-us'
+    });
+});
+
+router.get('/arch', function(req, res) {
+    res.render('arch', {
+        title: 'Arch',
+        layout: 'wedding-layout',
+        pageId: 'arch'
+    });
+});
+
+router.get('/fed', function(req, res) {
+    res.render('fed', {
+        title: 'fed',
+        layout: 'wedding-layout',
+        pageId: 'fed'
+    });
+});
 
 module.exports = router;

@@ -10,7 +10,7 @@ router.get('/wedding-parallax', function(req, res) {
 
 router.get('/', function(req, res) {
   res.render('wedding', {
-      title: 'Michael And Anna - Welcome',
+      title: 'Anna And Michael - Welcome',
       layout: 'wedding-layout',
       pageId: 'home-page'
   });
@@ -18,7 +18,7 @@ router.get('/', function(req, res) {
 
 router.get('/the-venue', function(req, res) {
     res.render('map', {
-            title: 'Michael And Anna - The Venue',
+            title: 'Anna And Michael - The Venue',
             layout: 'wedding-layout',
             pageId: 'map-page'
     });
@@ -26,7 +26,7 @@ router.get('/the-venue', function(req, res) {
 
 router.get('/contact-us', function(req, res) {
     res.render('contact-us', {
-        title: 'Michael And Anna - Contact Us',
+        title: 'Anna And Michael - Contact Us',
         layout: 'wedding-layout',
         pageId: 'contact-us'
     });

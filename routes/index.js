@@ -1,12 +1,7 @@
 var express = require('express');
 var router = express.Router();
-
-router.get('/wedding-parallax', function(req, res) {
-  res.render('wedding-parallax', {
-      title: 'Tony Hao Kin Ly',
-      layout: false
-  });
-});
+var nodemailer = require("nodemailer");
+var smtpTransport = require('nodemailer-smtp-transport');
 
 router.get('/', function(req, res) {
   res.render('wedding', {
@@ -24,35 +19,45 @@ router.get('/the-venue', function(req, res) {
     });
 });
 
+router.get('/send-email', function(req, res) {
+    var options = {
+        service: 'gmail',
+        auth: {
+            user: "tonyhkly@gmail.com",
+            pass: "haokin88"
+        }
+    };
+
+    var transporter = nodemailer.createTransport(smtpTransport(options))
+
+    // setup e-mail data with unicode symbols
+    var mailOptions = {
+        from: "Tony Ly ✔ <tonyhkly@gmail.com>", // sender address
+        to: "tonyhkly@gmail.com, tonyhkly@gmail.com", // list of receivers
+        subject: "Hello ✔", // Subject line
+        text: "Hello world ✔", // plaintext body
+        html: "<b>Hello world ✔</b>" // html body
+    }
+
+
+// send mail with defined transport object
+    transporter.sendMail(mailOptions, function(error, response){
+        if(error){
+            console.log(error);
+        }else{
+            console.log("Message sent: " + response.message);
+        }
+
+        // if you don't want to use this transport object anymore, uncomment following line
+        transporter.close(); // shut down the connection pool, no more messages
+    });
+});
+
 router.get('/contact-us', function(req, res) {
     res.render('contact-us', {
         title: 'Anna And Michael - Contact Us',
         layout: 'wedding-layout',
         pageId: 'contact-us'
-    });
-});
-
-router.get('/cdc', function(req, res) {
-    res.render('cdc', {
-        title: 'CDC',
-        layout: 'wedding-layout',
-        pageId: 'contact-us'
-    });
-});
-
-router.get('/arch', function(req, res) {
-    res.render('arch', {
-        title: 'Arch',
-        layout: 'wedding-layout',
-        pageId: 'arch'
-    });
-});
-
-router.get('/fed', function(req, res) {
-    res.render('fed', {
-        title: 'fed',
-        layout: 'wedding-layout',
-        pageId: 'fed'
     });
 });
 

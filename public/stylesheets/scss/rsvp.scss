@@ -4,6 +4,12 @@
   }
 }
 
+@media (min-width: 992px) {
+  .form-container {
+    width: 700px;
+  }
+}
+
 .form {
   margin-top: 20px;
 }

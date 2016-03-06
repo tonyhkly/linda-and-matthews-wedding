@@ -2,10 +2,6 @@ var express = require('express');
 var router = express.Router();
 var nodemailer = require("nodemailer");
 var smtpTransport = require('nodemailer-smtp-transport');
-var bodyParser = require('body-parser');
-var app = express();
-
-app.use(bodyParser.json());
 
 router.get('/', function (req, res) {
     res.render('wedding', {
@@ -32,8 +28,12 @@ router.get('/rsvp', function (req, res) {
 });
 
 router.post('/send-email', function (req, res) {
-    console.log('Name:' + req.query.name);
-    console.log('Body:' + req.query.email);
+    var name = req.body.name;
+    var email = req.body.email;
+    var attending = req.body.attending;
+
+    console.log('Name:' + name);
+    console.log('Body:' + email);
 
     var options = {
         service: 'gmail',
@@ -48,14 +48,17 @@ router.post('/send-email', function (req, res) {
     // setup e-mail data with unicode symbols
     var mailOptions = {
         from: "Tony Ly <tonyhkly@gmail.com>",
-        to: req.query.email,
-        subject: "RSVP Anna & Michael's Wedding",
+        to: email,
+        subject: name + "'s RSVP",
         text: "RSVP Anna & Michael's Wedding!",
-        html: "<b>Hi "+ req.query.name + ". Your RSVP has been recieved!</b>"
+        html: "<p>Hi there Anna & Michael!</p>" +
+        "<p>We've just received " + name + "'s RSVP</b></p>" +
+        "<p>they " + attending + "</b></p>" +
+        "<p><b>Their message to you:</b> " + req.body.comment + "</p>"
     };
 
 
-// send mail with defined transport object
+    // send mail with defined transport object
     transporter.sendMail(mailOptions, function (error, response) {
         if (error) {
             console.log(error);

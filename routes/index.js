@@ -2,24 +2,28 @@ var express = require('express');
 var router = express.Router();
 var nodemailer = require("nodemailer");
 var smtpTransport = require('nodemailer-smtp-transport');
+var bodyParser = require('body-parser');
+var app = express();
 
-router.get('/', function(req, res) {
-  res.render('wedding', {
-      title: 'Anna And Michael - Welcome',
-      layout: 'wedding-layout',
-      pageId: 'home-page'
-  });
-});
+app.use(bodyParser.json());
 
-router.get('/the-venue', function(req, res) {
-    res.render('map', {
-            title: 'Anna And Michael - The Venue',
-            layout: 'wedding-layout',
-            pageId: 'map-page'
+router.get('/', function (req, res) {
+    res.render('wedding', {
+        title: 'Anna And Michael - Welcome',
+        layout: 'wedding-layout',
+        pageId: 'home-page'
     });
 });
 
-router.get('/rsvp', function(req, res) {
+router.get('/the-venue', function (req, res) {
+    res.render('map', {
+        title: 'Anna And Michael - The Venue',
+        layout: 'wedding-layout',
+        pageId: 'map-page'
+    });
+});
+
+router.get('/rsvp', function (req, res) {
     res.render('rsvp', {
         title: 'Anna And Michael - RSVP',
         layout: 'wedding-layout',
@@ -27,7 +31,10 @@ router.get('/rsvp', function(req, res) {
     });
 });
 
-router.post('/send-email', function(req, res) {
+router.post('/send-email', function (req, res) {
+    console.log('Name:' + req.query.name);
+    console.log('Body:' + req.query.email);
+
     var options = {
         service: 'gmail',
         auth: {
@@ -40,20 +47,20 @@ router.post('/send-email', function(req, res) {
 
     // setup e-mail data with unicode symbols
     var mailOptions = {
-        from: "Tony Ly ✔ <tonyhkly@gmail.com>",
-        to: "tonyhkly@gmail.com",
-        subject: "Hello again ✔",
-        text: "Hello world, Again ✔",
-        html: "<b>Hello world ✔</b>"
+        from: "Tony Ly <tonyhkly@gmail.com>",
+        to: req.query.email,
+        subject: "RSVP Anna & Michael's Wedding",
+        text: "RSVP Anna & Michael's Wedding!",
+        html: "<b>Hi "+ req.query.name + ". Your RSVP has been recieved!</b>"
     };
 
 
 // send mail with defined transport object
-    transporter.sendMail(mailOptions, function(error, response){
-        if(error){
+    transporter.sendMail(mailOptions, function (error, response) {
+        if (error) {
             console.log(error);
             res.sendStatus(500)
-        }else{
+        } else {
             console.log("Message sent: " + response.message);
             res.sendStatus(200);
         }
@@ -63,7 +70,7 @@ router.post('/send-email', function(req, res) {
     });
 });
 
-router.get('/contact-us', function(req, res) {
+router.get('/contact-us', function (req, res) {
     res.render('contact-us', {
         title: 'Anna And Michael - Contact Us',
         layout: 'wedding-layout',

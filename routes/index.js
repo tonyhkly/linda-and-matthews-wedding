@@ -52,8 +52,7 @@ router.post('/send-email', function (req, res) {
         subject: name + "'s RSVP",
         text: "RSVP Anna & Michael's Wedding!",
         html: "<p>Hi there Anna & Michael!</p>" +
-        "<p>We've just received " + name + "'s RSVP</b></p>" +
-        "<p>they " + attending + "</b></p>" +
+        "<p>We've just received " + name + "'s RSVP. " + attending + "</p>" +
         "<p><b>Their message to you:</b> " + req.body.comment + "</p>"
     };
 

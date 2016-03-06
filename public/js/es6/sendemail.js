@@ -6,16 +6,19 @@ $('.rsvp-form').validator().on('submit', function (e) {
         var data = getFormData();
 
         console.log("Name: " + data.name);
-        console.log("Email: "+data.email);
+        console.log("Email: " + data.email);
 
         $.ajax({
             url: '/send-email',
             data: data,
             type: 'POST',
             success: function (data) {
-                console.log('Email Sent!' + data);
+                console.log('RSVP Sent!' + data);
+                $('.email-sent').addClass('display-block');
+                $('.rsvp-form').addClass('display-none');
             }
         });
+
     }
 });
 
@@ -25,10 +28,10 @@ function getFormData() {
     var comment = $('.rsvp #comment').val();
     var attending;
 
-    if ($('#attending').checked == true) {
-        attending = 'they will be attending';
-    } else if($('#not-attending').checked == true) {
-        attending = 'they will not be attending';
+    if ($('#attending').is(':checked')) {
+        attending = 'They will be attending!';
+    } else if($('#not-attending').is(':checked')) {
+        attending = 'They will not be attending. Because they\'re gay';
     }
 
     return {

@@ -1,17 +1,26 @@
 <hr class="navbar-seperator"/>
 <div class="container form-container">
     <h2>RSVP</h2>
+    <div class="email-sent">
+        <div class="alert alert-success" role="alert">
+            <strong>RSVP Sent!</strong> A confirmation has been emailed to you. <i class="em em-sunglasses"></i>
+        </div>
+        <div class="center-block text-center">
+            <img class="img-responsive display-inline-block hello-kitty" src="/images/hellokitty.jpg"/>
+        </div>
+    </div>
     <form class="rsvp-form form" role="form" data-toggle="validator" data-disable="false">
         <div class="form-group">
             <label class="control-label" for="pwd"><strong>Name:</strong></label>
 
             <div>
+                <!--<input type="text" class="form-control" id="name" oninvalid="this.setCustomValidity('Please enter your name')"  placeholder="Your name" required>-->
                 <input type="text" class="form-control" id="name" placeholder="Your name" required>
                 <div class="help-block with-errors"></div>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" for="email" ><strong>Email:</strong></label>
+            <label class="control-label" for="email"><strong>Email:</strong></label>
 
             <div>
                 <input type="email" class="form-control" id="email" placeholder="Enter email" required>
@@ -27,10 +36,10 @@
         <label for="comment"><strong>RSVP Reply:</strong></label>
 
         <div class="radio">
-            <label><input id="attending" type="radio" name="optionsRadios" value="true" required>I will be attending. Its gonna be awesome!</label>
+            <label><input id="attending" type="radio" name="optionsRadios" value="" required>I will be attending. Its gonna be awesome!</label>
         </div>
         <div class="radio">
-            <label><input id="not-attending" type="radio" name="optionsRadios" value="false" required>No I can't come, because i'm so stupid</label>
+            <label><input id="not-attending" type="radio" name="optionsRadios" value="" required>No I can't come, because i'm so stupid</label>
         </div>
 
         <div class="form-group">

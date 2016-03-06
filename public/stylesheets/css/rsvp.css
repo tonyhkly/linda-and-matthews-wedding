@@ -1,0 +1,18 @@
+@media (min-width: 1200px) {
+  .form-container {
+    width: 800px; } }
+
+.form {
+  margin-top: 20px; }
+
+.send {
+  margin-top: 10px;
+  width: 210px;
+  height: 50px;
+  font-size: 16px; }
+
+.hello-kitty {
+  margin-top: 20px;
+  height: 70px; }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJzdnAuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFO0lBQ0UsYUFBYSxFQURFLEVBQUE7O0FBS25CO0VBQ0UsaUJBQWlCLEVBRFo7O0FBSVA7RUFDRSxpQkFBaUI7RUFDakIsYUFBYTtFQUNiLGFBQWE7RUFDYixnQkFBZ0IsRUFKWDs7QUFPUDtFQUNFLGlCQUFpQjtFQUNqQixhQUFhLEVBRkQiLCJmaWxlIjoicnN2cC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcbkBtZWRpYSAobWluLXdpZHRoOiAxMjAwcHgpIHtcbiAgLmZvcm0tY29udGFpbmVyIHtcbiAgICB3aWR0aDogODAwcHg7XG4gIH1cbn1cblxuLmZvcm0ge1xuICBtYXJnaW4tdG9wOiAyMHB4O1xufVxuXG4uc2VuZCB7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG4gIHdpZHRoOiAyMTBweDtcbiAgaGVpZ2h0OiA1MHB4O1xuICBmb250LXNpemU6IDE2cHg7XG59XG5cbi5oZWxsby1raXR0eSB7XG4gIG1hcmdpbi10b3A6IDIwcHg7XG4gIGhlaWdodDogNzBweDtcbn0iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */

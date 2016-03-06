@@ -10,6 +10,7 @@
     <link rel='stylesheet' href='/stylesheets/css/scrollspy.css'/>
     <link rel='stylesheet' href='/stylesheets/css/navbar.css'/>
     <link rel='stylesheet' href='/stylesheets/css/map.css'/>
+    <link rel='stylesheet' href='/stylesheets/css/rsvp.css'/>
     <link rel='stylesheet' href='/stylesheets/css/thumbnail.css'/>
     <link rel='stylesheet' href='/stylesheets/css/footer.css'/>
     <link type="text/css" media="all" rel="stylesheet" href="/stylesheets/vendor/jquery.tosrus.all.css" />
@@ -40,6 +41,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-welcome"><a href="/">Welcome</a></li>
+                <li class="nav-rsvp"><a href="/rsvp" data-ajax="false">RSVP</a></li>
                 <li class="nav-map"><a href="/the-venue" data-ajax="false">The Venue</a></li>
             </ul>
         </div>
@@ -71,6 +73,7 @@
 <script src="js/vendor/knockout-3.3.0.js"></script>
 <script src="js/es5/appviewmodel.js"></script>
 <script src="js/es5/scrollhelper.js"></script>
+<script src="js/es5/sendemail.js"></script>
 
 <script>
     jQuery(function( $ ) {

@@ -19,7 +19,15 @@ router.get('/the-venue', function(req, res) {
     });
 });
 
-router.get('/send-email', function(req, res) {
+router.get('/rsvp', function(req, res) {
+    res.render('rsvp', {
+        title: 'Anna And Michael - RSVP',
+        layout: 'wedding-layout',
+        pageId: 'rsvp'
+    });
+});
+
+router.post('/send-email', function(req, res) {
     var options = {
         service: 'gmail',
         auth: {
@@ -28,24 +36,26 @@ router.get('/send-email', function(req, res) {
         }
     };
 
-    var transporter = nodemailer.createTransport(smtpTransport(options))
+    var transporter = nodemailer.createTransport(smtpTransport(options));
 
     // setup e-mail data with unicode symbols
     var mailOptions = {
-        from: "Tony Ly ✔ <tonyhkly@gmail.com>", // sender address
-        to: "tonyhkly@gmail.com, tonyhkly@gmail.com", // list of receivers
-        subject: "Hello ✔", // Subject line
-        text: "Hello world ✔", // plaintext body
-        html: "<b>Hello world ✔</b>" // html body
-    }
+        from: "Tony Ly ✔ <tonyhkly@gmail.com>",
+        to: "tonyhkly@gmail.com",
+        subject: "Hello again ✔",
+        text: "Hello world, Again ✔",
+        html: "<b>Hello world ✔</b>"
+    };
 
 
 // send mail with defined transport object
     transporter.sendMail(mailOptions, function(error, response){
         if(error){
             console.log(error);
+            res.sendStatus(500)
         }else{
             console.log("Message sent: " + response.message);
+            res.sendStatus(200);
         }
 
         // if you don't want to use this transport object anymore, uncomment following line

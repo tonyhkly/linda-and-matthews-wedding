@@ -3,6 +3,8 @@ $('.rsvp-form').validator().on('submit', function (e) {
         console.log('An error occurred');
     } else {
         e.preventDefault();
+        $('.overlay').addClass('overlay-show');
+
         var data = getFormData();
 
         console.log("Name: " + data.name);
@@ -14,6 +16,7 @@ $('.rsvp-form').validator().on('submit', function (e) {
             type: 'POST',
             success: function (data) {
                 console.log('RSVP Sent!' + data);
+                $('.overlay').removeClass('overlay-show');
                 $('.email-sent').addClass('display-block');
                 $('.rsvp-form').addClass('display-none');
             }

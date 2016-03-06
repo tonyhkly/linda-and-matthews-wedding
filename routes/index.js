@@ -48,7 +48,7 @@ router.post('/send-email', function (req, res) {
     // setup e-mail data with unicode symbols
     var mailOptions = {
         from: "Tony Ly <tonyhkly@gmail.com>",
-        to: email + ",annasycheng@hotmail.co.uk",
+        to: email,
         subject: name + "'s RSVP",
         text: "RSVP Anna & Michael's Wedding!",
         html: "<p>Hi there Anna & Michael!</p>" +

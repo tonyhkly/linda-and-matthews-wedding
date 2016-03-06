@@ -19,6 +19,7 @@ $('.rsvp-form').validator().on('submit', function (e) {
                 $('.overlay').removeClass('overlay-show');
                 $('.email-sent').addClass('display-block');
                 $('.rsvp-form').addClass('display-none');
+                animatedScroll(0);
             }
         });
 

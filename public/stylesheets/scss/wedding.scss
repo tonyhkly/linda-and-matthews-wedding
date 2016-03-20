@@ -49,6 +49,19 @@ $hero-p-font-size: 2rem;
   height: $mobile-hero-height;
 }
 
+#our-story {
+
+  p {
+    margin-bottom: 13px;
+  }
+
+  .yes {
+    margin-top: 2px;
+    margin-bottom: 15px;
+  }
+
+}
+
 .parallax-bg h1 {
   letter-spacing: 4px;
   font-size: $parallax-bg-h1-font-size;

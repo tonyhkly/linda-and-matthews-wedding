@@ -28,27 +28,37 @@ router.get('/rsvp', function (req, res) {
 });
 
 router.post('/send-email', function (req, res) {
-    var name = req.body.name;
-    var email = req.body.email;
-    var attending = req.body.attending;
-
-    console.log('Name:' + name);
-    console.log('Body:' + email);
+    //var toAnnaAndMichaelMailOptions = req.body.toAnnaAndMichaelMailOptions;
+    //var toSenderMailOptions = req.body.toSenderMailOptions;
+    //var testing = req.body.testing;
+    //var testingObject = req.body.testingObject;
 
     var options = {
         service: 'gmail',
         auth: {
-            user: "tonyhkly@gmail.com",
-            pass: "haokin88"
+            user: "annaandmichael8@gmail.com",
+            pass: "hellokudo"
         }
     };
 
     var transporter = nodemailer.createTransport(smtpTransport(options));
 
     // setup e-mail data with unicode symbols
-    var mailOptions = {
-        from: "Tony Ly <tonyhkly@gmail.com>",
+    var toSenderMailOptions = {
+        from: "Anna and Michael <annaandmichael8@gmail.com>",
         to: email,
+        subject: name + "'s RSVP",
+        text: "RSVP Anna & Michael's Wedding!", //DOnt know what this is
+        html: "<p>Thanks " + name + "</p>" +
+        "<p>We've got your rsvp" + attending + "</p>" +
+        "<p><b>Your message to them:</b> " + req.body.comment + "</p>"
+    };
+
+
+    // setup e-mail data with unicode symbols
+    var toAnnaAndMichaelMailOptions = {
+        from: "Anna and Michael <annaandmichael8@gmail.com>",
+        to: 'annaandmichael8@gmail.com',
         subject: name + "'s RSVP",
         text: "RSVP Anna & Michael's Wedding!",
         html: "<p>Hi there Anna & Michael!</p>" +
@@ -57,8 +67,7 @@ router.post('/send-email', function (req, res) {
     };
 
 
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, function (error, response) {
+    transporter.sendMail(toAnnaAndMichaelMailOptions, function (error, response) {
         if (error) {
             console.log(error);
             res.sendStatus(500)
@@ -66,9 +75,16 @@ router.post('/send-email', function (req, res) {
             console.log("Message sent: " + response.message);
             res.sendStatus(200);
         }
+    });
 
-        // if you don't want to use this transport object anymore, uncomment following line
-        transporter.close(); // shut down the connection pool, no more messages
+    transporter.sendMail(toSenderMailOptions, function (error, response) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log("Message sent: " + response.message);
+        }
+
+        transporter.close();
     });
 });
 

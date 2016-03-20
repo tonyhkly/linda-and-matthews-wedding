@@ -28,10 +28,9 @@ router.get('/rsvp', function (req, res) {
 });
 
 router.post('/send-email', function (req, res) {
-    //var toAnnaAndMichaelMailOptions = req.body.toAnnaAndMichaelMailOptions;
-    //var toSenderMailOptions = req.body.toSenderMailOptions;
-    //var testing = req.body.testing;
-    //var testingObject = req.body.testingObject;
+    var name = req.body.name;
+    var email = req.body.email;
+    var attending = req.body.attending;
 
     var options = {
         service: 'gmail',
@@ -75,8 +74,12 @@ router.post('/send-email', function (req, res) {
             console.log("Message sent: " + response.message);
             res.sendStatus(200);
         }
+
+        // if you don't want to use this transport object anymore, uncomment following line
+        transporter.close(); // shut down the connection pool, no more messages
     });
 
+    // send mail with defined transport object
     transporter.sendMail(toSenderMailOptions, function (error, response) {
         if (error) {
             console.log(error);
@@ -84,7 +87,8 @@ router.post('/send-email', function (req, res) {
             console.log("Message sent: " + response.message);
         }
 
-        transporter.close();
+        // if you don't want to use this transport object anymore, uncomment following line
+        transporter.close(); // shut down the connection pool, no more messages
     });
 });
 

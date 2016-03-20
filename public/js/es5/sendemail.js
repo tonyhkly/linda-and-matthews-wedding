@@ -52,17 +52,10 @@ function getFormData() {
         html: "<p>Hi there Anna & Michael!</p>" + "<p>We've just received " + name + "'s RSVP. " + attending + "</p>" + "<p><b>Their message to you:</b> " + comment + "</p>"
     };
 
-    var testing = 'Testing';
-    var testingObject = { Testing: 'hello' };
-
     return {
         name: name,
         email: email,
         comment: comment,
-        attending: attending,
-        toAnnaAndMichaelMailOptions: toAnnaAndMichaelMailOptions,
-        toSenderMailOptions: toSenderMailOptions,
-        testing: testing,
-        testingObject: testingObject
+        attending: attending
     };
 }

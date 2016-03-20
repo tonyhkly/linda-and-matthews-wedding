@@ -56,17 +56,10 @@ function getFormData() {
         "<p><b>Their message to you:</b> " + comment + "</p>"
     };
 
-    var testing = 'Testing';
-    var testingObject = {Testing : 'hello'};
-
     return {
         name: name,
         email: email,
         comment: comment,
-        attending: attending,
-        toAnnaAndMichaelMailOptions: toAnnaAndMichaelMailOptions,
-        toSenderMailOptions: toSenderMailOptions,
-        testing: testing,
-        testingObject: testingObject
+        attending: attending
     };
 }

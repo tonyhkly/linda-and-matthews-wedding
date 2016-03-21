@@ -42,11 +42,14 @@
         <h2>Our Story</h2>
 
         <p>On a breezy summer's day in 2011, Anna and Michael met for the first time.</p>
+
         <p>
             After 3 and half years together (while becoming the most powerful Pucca Restaurant couple in the world!)
             Michael popped the question at the Peak of the Dragon's Back hike in Hong Kong.
         </p>
-        <p class="yes"><strong>Anna said... YES!</strong> </p>
+
+        <p class="yes"><strong>Anna said... YES!</strong></p>
+
         <p> Just over a year from that special moment we are finally ready to make it official!</p>
     </div>
 </div>
@@ -76,10 +79,8 @@
         </div>
     </div>
     <div id="lightboxgallery" class="row thumbnail-gallery" data-bind="foreach: photos">
-        <div class="col-xs-6 col-md-3">
-            <a class="thumbnail-link" data-bind="attr: {href: photoUrl}">
-                <img class="img-responsive thumbnail-img" data-bind="attr: {src: thumbnailUrl}"/>
-            </a>
+        <div class="col-xs-6 col-md-3 thumbnail-wrapper">
+            <img class="img-responsive thumbnail-img" data-bind="attr: {src: thumbnailUrl}"/>
         </div>
     </div>
 </div>

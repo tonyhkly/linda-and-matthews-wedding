@@ -12,6 +12,7 @@ $('.rsvp-form').validator().on('submit', function (e) {
         $.ajax({
             url: '/send-email',
             data: data,
+            //data: {dto: JSON.stringify(data)},
             type: 'POST',
             success: function success(data) {
                 console.log('RSVP Sent!' + data);
@@ -29,11 +30,18 @@ function getFormData() {
     var email = $('.rsvp #email').val();
     var comment = $('.rsvp #comment').val();
     var attending;
+    var foodOption;
 
     if ($('#attending').is(':checked')) {
         attending = 'They will be attending!';
     } else if ($('#not-attending').is(':checked')) {
         attending = 'They will not be attending. Because they\'re gay';
+    }
+
+    if ($('#chicken').is(':checked')) {
+        foodOption = 'chicken';
+    } else if ($('#fish').is(':checked')) {
+        foodOption = 'fish';
     }
 
     var toSenderMailOptions = {
@@ -56,6 +64,9 @@ function getFormData() {
         name: name,
         email: email,
         comment: comment,
-        attending: attending
+        attending: attending,
+        foodOption: foodOption,
+        toSenderMailOptions: toSenderMailOptions,
+        toAnnaAndMichaelMailOptions: toAnnaAndMichaelMailOptions
     };
 }

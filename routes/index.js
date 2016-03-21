@@ -31,6 +31,7 @@ router.post('/send-email', function (req, res) {
     var name = req.body.name;
     var email = req.body.email;
     var attending = req.body.attending;
+    var foodOption = req.body.foodOption;
 
     var options = {
         service: 'gmail',
@@ -50,6 +51,7 @@ router.post('/send-email', function (req, res) {
         text: "RSVP Anna & Michael's Wedding!", //DOnt know what this is
         html: "<p>Thanks " + name + "</p>" +
         "<p>We've got your rsvp" + attending + "</p>" +
+        "<p>Food Option: " + foodOption + "</p>" +
         "<p><b>Your message to them:</b> " + req.body.comment + "</p>"
     };
 
@@ -62,6 +64,7 @@ router.post('/send-email', function (req, res) {
         text: "RSVP Anna & Michael's Wedding!",
         html: "<p>Hi there Anna & Michael!</p>" +
         "<p>We've just received " + name + "'s RSVP. " + attending + "</p>" +
+        "<p>Food Option: " + foodOption + "</p>" +
         "<p><b>Their message to you:</b> " + req.body.comment + "</p>"
     };
 

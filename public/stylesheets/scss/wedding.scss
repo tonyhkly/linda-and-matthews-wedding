@@ -144,6 +144,16 @@ $hero-p-font-size: 2rem;
   }
 
   @media only screen and (max-width: 768px) {
+    #ponyo {
+      height: auto;
+      width: 50px;
+    }
+
+    #panda {
+      height: auto;
+      width: 54px;
+    }
+
     .text-shadow {
       background: none;
     }

@@ -3,7 +3,6 @@
 function Photo(photo) {
     var self = this;
     self.thumbnailUrl = `${thumbDirectory()}/${photo}.png`;
-    self.photoUrl = `${fullscreenDirectory()}/${photo}.jpg`;
 }
 
 function thumbDirectory() {
@@ -11,18 +10,6 @@ function thumbDirectory() {
         return '/images/manna/mobile-thumb';
     } else {
         return '/images/manna/thumb';
-    }
-}
-
-function fullscreenDirectory() {
-    if (isMobile()) {
-        return '/images/manna/mobile-full';
-    }
-    else if (isTablet()){
-        return '/images/manna/tablet-full';
-    }
-    else {
-        return '/images/manna/full';
     }
 }
 

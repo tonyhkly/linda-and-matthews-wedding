@@ -10,7 +10,7 @@ function initCalenderSettings() {
         yahoo: { show: false, text: "Yahoo <em>(online)</em>" },
         outlookcom: { show: true, text: "Outlook.com <em>(online)</em>" },
         appleical: { show: true, text: "Apple Calendar" },
-        facebook: { show: true, text: "Facebook Event" },
+        facebook: { show: false, text: "Facebook Event" },
         dropdown: { order: "google,appleical,facebook,outlookcom" }
     });
 }

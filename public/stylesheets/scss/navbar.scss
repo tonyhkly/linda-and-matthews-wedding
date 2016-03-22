@@ -9,20 +9,27 @@ $default: #c4c4c4;
     font-size: 20px;
     color: $black;
     letter-spacing: 2px;
-    padding-right: 6px;
+    padding: 8px 6px 15px 4px;
+    padding-left: 15px !important;
   }
 
   .navbar-icon {
     display: inline-block;
+    display: -moz-inline-stack;
     height: auto;
     width: 45px;
-    padding-top: 3px;
+    padding-bottom: 5px;
   }
 
   @media only screen and (max-width: 768px) {
     .navbar-icon {
       width: 35px;
       padding-top: 8px;
+    }
+
+    .nav-icons .navbar-icon {
+      padding-top: 0;
+      margin-left: 10px;
     }
   }
 

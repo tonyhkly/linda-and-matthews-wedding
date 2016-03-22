@@ -8,8 +8,8 @@ function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
         center: latLong,
-        zoom: 15,
-        draggable: !isMobile()
+        zoom: 15
+        //draggable: !isMobile()
     });
 
     var contentString =

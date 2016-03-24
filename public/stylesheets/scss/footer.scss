@@ -1,4 +1,4 @@
-$footer-colour: #f5f5f5;
+$footer-colour: #878787;
 $light-green: #adefd6;
 $light-green2: #94D6BD;
 $light-green3: #7ABCA3;
@@ -7,8 +7,9 @@ $light-green5: #478970;
 $light-green7: #2E7057;
 
 .footer-basic-centered {
-  color: #000;
-  background-color: $light-green2;
+  color: #fff;
+  //color: #000;
+  background-color: $footer-colour;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   text-align: center;

@@ -30,8 +30,11 @@ router.get('/rsvp', function (req, res) {
 router.post('/send-email', function (req, res) {
     var name = req.body.name;
     var email = req.body.email;
+    var attendingText = req.body.attendingText;
     var attending = req.body.attending;
     var foodOption = req.body.foodOption;
+    var foodOptionText = foodOption != null  || foodOption != undefined ? foodOption : 'None Selected';
+    var comment = req.body.comment;
 
     var options = {
         service: 'gmail',
@@ -43,29 +46,41 @@ router.post('/send-email', function (req, res) {
 
     var transporter = nodemailer.createTransport(smtpTransport(options));
 
-    // setup e-mail data with unicode symbols
+
+    var senderIntroHtml = 'Thanks ' + name + '! We\'ve got your RSVP.';
+    var senderAttendingHtml = '<b>Attending: </b>' + attending;
+    var senderFoodOptionHtml = '<b>Food Option: </b>' + foodOptionText;
+    var senderCommentHtml = comment ? '<b>Your message to them: </b>' + comment : '';
+
     var toSenderMailOptions = {
         from: "Anna and Michael <annaandmichael8@gmail.com>",
         to: email,
+        text: "RSVP Anna & Michael's Wedding!",
         subject: name + "'s RSVP",
-        text: "RSVP Anna & Michael's Wedding!", //DOnt know what this is
-        html: "<p>Thanks " + name + "</p>" +
-        "<p>We've got your rsvp" + attending + "</p>" +
-        "<p>Food Option: " + foodOption + "</p>" +
-        "<p><b>Your message to them:</b> " + req.body.comment + "</p>"
+        html: "<p>" + senderIntroHtml + "</p>" +
+        "<p><b>Your RSVP Details:</b></p>" +
+        "<p>" + senderAttendingHtml + "</p>" +
+        "<p>" + senderFoodOptionHtml + "</p>" +
+        "<p>" + senderCommentHtml + "</p>"
     };
 
+    var mannaIntroHtml = 'We\'ve just received ' + name + '\'s RSVP.';
+    var mannaRsvp = '<b>RSVP Details:</b>';
+    var mannaAttendingHtml = '<b>Attending: </b>' + attending;
+    var mannaFoodOptionHtml = '<b>Food Option: </b>' + foodOptionText;
+    var mannaCommentHtml = comment ? '<b>Their message to you: </b>' + comment : '';
 
-    // setup e-mail data with unicode symbols
     var toAnnaAndMichaelMailOptions = {
         from: "Anna and Michael <annaandmichael8@gmail.com>",
         to: 'annaandmichael8@gmail.com',
         subject: name + "'s RSVP",
         text: "RSVP Anna & Michael's Wedding!",
         html: "<p>Hi there Anna & Michael!</p>" +
-        "<p>We've just received " + name + "'s RSVP. " + attending + "</p>" +
-        "<p>Food Option: " + foodOption + "</p>" +
-        "<p><b>Their message to you:</b> " + req.body.comment + "</p>"
+        "<p>" + mannaIntroHtml + "</p>" +
+        "<p>" + mannaRsvp + "</p>" +
+        "<p>" + mannaAttendingHtml + "</p>" +
+        "<p>" + mannaFoodOptionHtml + "</p>" +
+        "<p>" + mannaCommentHtml + "</p>"
     };
 
 
@@ -78,11 +93,9 @@ router.post('/send-email', function (req, res) {
             res.sendStatus(200);
         }
 
-        // if you don't want to use this transport object anymore, uncomment following line
-        transporter.close(); // shut down the connection pool, no more messages
+        transporter.close();
     });
 
-    // send mail with defined transport object
     transporter.sendMail(toSenderMailOptions, function (error, response) {
         if (error) {
             console.log(error);
@@ -90,8 +103,7 @@ router.post('/send-email', function (req, res) {
             console.log("Message sent: " + response.message);
         }
 
-        // if you don't want to use this transport object anymore, uncomment following line
-        transporter.close(); // shut down the connection pool, no more messages
+        transporter.close();
     });
 });
 

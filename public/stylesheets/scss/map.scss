@@ -1,4 +1,5 @@
 $light-purple: #A73B73;
+$light-green2: #94D6BD;
 
 .tablet .map-page .row {
   margin-left: 19px;
@@ -102,7 +103,7 @@ $light-purple: #A73B73;
   li:before {
     content: "■";
     font-family:"Arial Black";
-    color: $light-purple;
+    color: $light-green2;
     vertical-align: text-bottom;
   }
 

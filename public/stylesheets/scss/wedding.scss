@@ -8,6 +8,13 @@ $mobile-hero-height: 500px;
 $purple: rgba(167, 59, 115, 1);
 $light-purple: #A73B73;
 $lighter-purple: rgba(167, 59, 115, 0.9);
+$light-green: #adefd6;
+$light-green2: #94D6BD;
+$light-green3: #7ABCA3;
+$light-green4: #61A38A;
+$light-green5: #478970;
+$light-green5: #2E7057;
+$light-green5: #14563D;
 //Font Sizes
 $h2-font-size: 54px;
 $h3-font-size: 28px;
@@ -201,10 +208,10 @@ $hero-p-font-size: 2rem;
   padding: 20px 0;
   float: none;
   border: 3px solid;
-  border-color: $purple #A73B73 #c0548c;
+  border-color: $light-green2 $light-green3 $light-green2;
 
   h2 {
-    color: $light-purple;
+    color: $light-green2;
   }
 
   p {
@@ -230,13 +237,14 @@ $hero-p-font-size: 2rem;
     border-radius: 18px;
     height:47px;
     width: 178px;
-    color: $lighter-purple;
-    border: 2px solid $lighter-purple;
+    color: $light-green3;
+    border: 2px solid $light-green3;
     font-size: 15px;
   }
 
   .snack-bar:hover {
-    background: $lighter-purple;
+    background: $light-green2;
+    border-color: $light-green2;
     color: #fff;
   }
 

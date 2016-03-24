@@ -1,5 +1,12 @@
 $light-purple: #A73B73;
-//Wedding theme - Light Green #adefd6
+$light-green: #adefd6;
+$light-green2: #94D6BD;
+$light-green3: #7ABCA3;
+$light-green4: #61A38A;
+$light-green6: #478970;
+$light-green7: #2E7057;
+$light-green8: #14563D;
+$h2-font-size: 54px;
 $h3-font-size: 28px;
 $h4-font-size: 22px;
 
@@ -10,6 +17,7 @@ $h4-font-size: 22px;
 .navbar-seperator {
   margin-top: 0;
   margin-bottom: 0;
+  border-color: $light-green4;
 }
 
 h1,
@@ -21,7 +29,12 @@ strong {
 }
 
 h3, h4 {
-  color: $light-purple;
+  color: $light-green2;
+}
+
+.big-heading {
+  font-size: $h2-font-size !important;
+  color: #000 !important;
 }
 
 h3 {

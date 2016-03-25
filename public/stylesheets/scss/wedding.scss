@@ -56,6 +56,24 @@ $hero-p-font-size: 2rem;
   height: $mobile-hero-height;
 }
 
+.peach-blossom {
+  height: 120px;
+  padding-bottom: 17px;
+  padding-left: 10px;
+  width: auto !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .peach-blossom.first {
+    padding-left: 0;
+  }
+
+  .peach-blossom {
+    height: 90px;
+  }
+
+}
+
 #our-story {
 
   p {
@@ -80,7 +98,7 @@ $hero-p-font-size: 2rem;
     font-size: $parallax-bg-mobile-h1-font-size;
   }
 
-    #hero {
+  #hero {
     background-image: url("/images/hero/mobile/hero.jpg");
   }
 
@@ -235,7 +253,7 @@ $hero-p-font-size: 2rem;
   .snack-bar {
     display: inline-block;
     border-radius: 18px;
-    height:47px;
+    height: 47px;
     width: 178px;
     color: $light-green3;
     border: 2px solid $light-green3;

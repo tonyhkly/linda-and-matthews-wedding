@@ -10,6 +10,16 @@ $h2-font-size: 54px;
 $h3-font-size: 28px;
 $h4-font-size: 22px;
 
+@media (min-width: 1200px) {
+  #tea-gallery-section {
+    width: 1000px;
+  }
+}
+
+.tea-wrapper {
+  margin-bottom: 25px;
+}
+
 * {
   font-family: 'Open Sans', sans-serif !important;
 }

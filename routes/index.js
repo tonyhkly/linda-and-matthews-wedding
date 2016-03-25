@@ -19,6 +19,14 @@ router.get('/the-venue', function (req, res) {
     });
 });
 
+router.get('/tea-ceremony', function (req, res) {
+    res.render('tea-ceremony', {
+        title: 'Anna And Michael - Tea Ceremony',
+        layout: 'wedding-layout',
+        pageId: 'tea-ceremony'
+    });
+});
+
 router.get('/rsvp', function (req, res) {
     res.render('rsvp', {
         title: 'Anna And Michael - RSVP',

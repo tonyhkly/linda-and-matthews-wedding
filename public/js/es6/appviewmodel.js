@@ -5,6 +5,11 @@ function Photo(photo) {
     self.thumbnailUrl = `${thumbDirectory()}/${photo}`;
 }
 
+function TeaPhoto(photo) {
+    var self = this;
+    self.url = `/images/tea/${photo}`;
+}
+
 function thumbDirectory() {
     if (isMobile()) {
         return '/images/manna/mobile-thumb';
@@ -31,6 +36,17 @@ function AppViewModel() {
         new Photo("manna-14.jpeg"),
         new Photo("manna-15.png"),
         new Photo("manna-16.jpeg")
+    ];
+
+    this.teaPhotos = [
+        new TeaPhoto("tea-1.JPG"),
+        new TeaPhoto("tea-2.JPG"),
+        new TeaPhoto("tea-3.JPG"),
+        new TeaPhoto("tea-4.JPG"),
+        new TeaPhoto("tea-5.JPG"),
+        new TeaPhoto("tea-6.JPG"),
+        new TeaPhoto("tea-7.JPG"),
+        new TeaPhoto("tea-8.JPG")
     ];
 
     shuffle(this.photos);

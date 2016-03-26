@@ -64,12 +64,13 @@ router.post('/send-email', function (req, res) {
         from: "Anna and Michael <annaandmichael8@gmail.com>",
         to: email,
         text: "RSVP Anna & Michael's Wedding!",
-        subject: name + "'s RSVP",
+        subject: "Your RSVP to Anna & Michael's wedding",
         html: "<p>" + senderIntroHtml + "</p>" +
         "<p><b>Your RSVP Details:</b></p>" +
         "<p>" + senderAttendingHtml + "</p>" +
         "<p>" + senderFoodOptionHtml + "</p>" +
-        "<p>" + senderCommentHtml + "</p>"
+        "<p>" + senderCommentHtml + "</p>" +
+        "<br><p>If any of these details aren't quite right, feel free to reply to this email address.</p>"
     };
 
     var mannaIntroHtml = 'We\'ve just received ' + name + '\'s RSVP.';

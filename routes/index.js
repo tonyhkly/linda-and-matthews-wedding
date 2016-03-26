@@ -74,6 +74,7 @@ router.post('/send-email', function (req, res) {
 
     var mannaIntroHtml = 'We\'ve just received ' + name + '\'s RSVP.';
     var mannaRsvp = '<b>RSVP Details:</b>';
+    var mannaEmailHtml = email ? '<b>Email Address: </b>' + email : '';
     var mannaAttendingHtml = '<b>Attending: </b>' + attending;
     var mannaFoodOptionHtml = '<b>Food Option: </b>' + foodOptionText;
     var mannaCommentHtml = comment ? '<b>Their message to you: </b>' + comment : '';
@@ -86,6 +87,7 @@ router.post('/send-email', function (req, res) {
         html: "<p>Hi there Anna & Michael!</p>" +
         "<p>" + mannaIntroHtml + "</p>" +
         "<p>" + mannaRsvp + "</p>" +
+        "<p>" + mannaEmailHtml + "</p>" +
         "<p>" + mannaAttendingHtml + "</p>" +
         "<p>" + mannaFoodOptionHtml + "</p>" +
         "<p>" + mannaCommentHtml + "</p>"

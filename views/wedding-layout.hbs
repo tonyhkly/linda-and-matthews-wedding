@@ -89,6 +89,15 @@
     initCalenderSettings();
     disableRightClickOnThumbnail();
     disableRightClickOnTeaPhoto();
+    $().validator({
+        custom: {
+            'odd': function($el) {
+                if (!$('#attending').is(':checked') && !$('#not-attending').is(':checked')) {
+                    return true;
+                }
+            }
+        }
+    })
 </script>
 </body>
 </html>

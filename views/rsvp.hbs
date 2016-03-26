@@ -12,12 +12,12 @@
             <img class="img-responsive display-inline-block hello-kitty" src="/images/hellokitty.jpg"/>
         </div>
     </div>
-    <form class="rsvp-form form" role="form" data-toggle="validator">
+    <form class="rsvp-form form" role="form" data-toggle="validator" data-delay=2500>
         <div class="form-group">
             <label class="control-label" for="pwd"><strong>Name:</strong></label>
 
             <div>
-                <input type="text" class="form-control" id="name" placeholder="Your name" required>
+                <input type="text" class="form-control" id="name" placeholder="Your name" data-error="Please fill in your name" required>
                 <div class="help-block with-errors"></div>
             </div>
         </div>
@@ -25,7 +25,7 @@
             <label class="control-label" for="email"><strong>Email:</strong></label>
 
             <div>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                <input type="email" class="form-control" data-error="Please include a valid email address." id="email" placeholder="Enter email" required>
                 <div class="help-block with-errors"></div>
             </div>
         </div>
@@ -37,13 +37,15 @@
 
         <label for="comment"><strong>RSVP Reply:</strong></label>
 
-        <div class="radio">
-            <label><input id="attending" type="radio" name="attendingOptions" value="" required>I will be attending. It's gonna be awesome!</label>
+        <div class="form-group">
+            <div class="radio">
+                <label><input id="attending" type="radio" name="attendingOptions" value="" data-error="Please select an RSVP reply." required>I will be attending. It's gonna be awesome!</label>
+            </div>
+            <div class="radio">
+                <label><input id="not-attending" type="radio" name="attendingOptions" value="" data-odd required>No I can't come, but i'm super sad about it <i class="em em-disappointed"></i></label>
+            </div>
+            <div class="help-block with-errors"></div>
         </div>
-        <div class="radio">
-            <label><input id="not-attending" type="radio" name="attendingOptions" value="" required>No I can't come, but i'm super sad about it <i class="em em-disappointed"></i></label>
-        </div>
-
         <label for="food"><strong>Food Option:</strong></label>
 
         <div class="radio">

@@ -70,7 +70,7 @@ router.post('/send-email', function (req, res) {
         "<p>" + senderAttendingHtml + "</p>" +
         "<p>" + senderFoodOptionHtml + "</p>" +
         "<p>" + senderCommentHtml + "</p>" +
-        "<br><p>If any of these details aren't quite right, feel free to reply to this email address.</p>"
+        "<br><p>If any of these details aren't quite right, feel free to send a reply to this email address.</p>"
     };
 
     var mannaIntroHtml = 'We\'ve just received ' + name + '\'s RSVP.';

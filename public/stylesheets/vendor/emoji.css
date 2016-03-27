@@ -1,0 +1,17 @@
+.em {
+    height: 1.5em;
+    width: 1.5em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.em-disappointed {
+    background-image: url("/images/emoji/disappointed.png")
+}
+
+.em-sunglasses {
+    background-image: url("/images/emoji/sunglasses.png")
+}

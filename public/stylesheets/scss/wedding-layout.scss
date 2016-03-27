@@ -7,6 +7,7 @@ $light-green6: #478970;
 $light-green7: #2E7057;
 $light-green8: #14563D;
 $h2-font-size: 54px;
+$h2-font-size-mobile: 50px;
 $h3-font-size: 28px;
 $h4-font-size: 22px;
 
@@ -43,9 +44,16 @@ h3, h4 {
 }
 
 .big-heading {
-  font-size: $h2-font-size !important;
-  color: #000 !important;
+  font-size: $h2-font-size;
+  color: #000;
 }
+
+@media only screen and (max-width: 768px) {
+  .big-heading {
+    font-size: $h2-font-size-mobile;
+  }
+}
+
 
 h3 {
   font-size: $h3-font-size;

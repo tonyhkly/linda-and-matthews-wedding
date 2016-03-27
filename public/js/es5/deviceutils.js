@@ -14,7 +14,9 @@ function isiOS() {
 
 function isTablet() {
     var userAgent = navigator.userAgent.toLowerCase();
-    return userAgent.indexOf("android") > -1 && !userAgent.indexOf("mobile") || navigator.userAgent.match("iPad");
+    var isKindle = /Kindle|Silk|KFAPW|KFARWI|KFASWI|KFFOWI|KFJW|KFMEWI|KFOT|KFSAW|KFSOWI|KFTBW|KFT‌​HW|KFTT|WFFOWI/i.test(userAgent);
+
+    return userAgent.indexOf("android") > -1 && !userAgent.indexOf("mobile") || navigator.userAgent.match("iPad") || isKindle;
 }
 
 function isAndroid() {

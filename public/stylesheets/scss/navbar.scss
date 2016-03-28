@@ -73,6 +73,28 @@ $default: #c4c4c4;
     margin-top: 10px;
     margin-bottom: 10px;
   }
+
+  //Make Icons fit on line
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .navbar-icon {
+      padding: 0 !important;
+      margin: 0 !important;
+      letter-spacing: 0 !important;
+    }
+
+    .navbar-brand {
+      font-size: 19px;
+    }
+
+    .nav > li > a {
+      padding: 14px 9px 9px 9px;
+    }
+
+    .navbar-icon {
+      width: 30px;
+    }
+
+  }
 }
 
 .home-page .nav-welcome a,

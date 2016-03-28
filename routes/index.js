@@ -5,7 +5,7 @@ var smtpTransport = require('nodemailer-smtp-transport');
 
 router.get('/', function (req, res) {
     res.render('wedding', {
-        title: 'Anna And Michael - Welcome',
+        title: 'Anna and Michael - Welcome',
         layout: 'wedding-layout',
         pageId: 'home-page'
     });
@@ -13,7 +13,7 @@ router.get('/', function (req, res) {
 
 router.get('/the-venue', function (req, res) {
     res.render('map', {
-        title: 'Anna And Michael - The Venue',
+        title: 'Anna and Michael - The Venue',
         layout: 'wedding-layout',
         pageId: 'map-page'
     });
@@ -21,7 +21,7 @@ router.get('/the-venue', function (req, res) {
 
 router.get('/tea-ceremony', function (req, res) {
     res.render('tea-ceremony', {
-        title: 'Anna And Michael - Tea Ceremony',
+        title: 'Anna and Michael - Tea Ceremony',
         layout: 'wedding-layout',
         pageId: 'tea-ceremony'
     });
@@ -29,7 +29,7 @@ router.get('/tea-ceremony', function (req, res) {
 
 router.get('/rsvp', function (req, res) {
     res.render('rsvp', {
-        title: 'Anna And Michael - RSVP',
+        title: 'Anna and Michael - RSVP',
         layout: 'wedding-layout',
         pageId: 'rsvp'
     });
@@ -115,14 +115,6 @@ router.post('/send-email', function (req, res) {
         }
 
         transporter.close();
-    });
-});
-
-router.get('/contact-us', function (req, res) {
-    res.render('contact-us', {
-        title: 'Anna And Michael - Contact Us',
-        layout: 'wedding-layout',
-        pageId: 'contact-us'
     });
 });
 

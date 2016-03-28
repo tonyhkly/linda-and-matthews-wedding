@@ -67,10 +67,6 @@
         <a href="/the-venue">The Venue</a>
         |
         <a href="/tea-ceremony">Tea Ceremony Photos</a>
-        |
-        <a href="http://www.facebook.com" target="_blank">Facebook</a>
-        |
-        <a href="https://www.instagram.com" target="_blank">Instagram</a>
     </p>
     <p class="footer-company-name">Ly Corp &copy; 2016</p>
 </footer>
@@ -85,19 +81,11 @@
 <script src="js/es5/scrollhelper.js"></script>
 <script src="js/es5/thumbnail.js"></script>
 <script src="js/es5/sendemail.js"></script>
-
+<script src="js/es5/custom-validator.js"></script>
 <script>
+    initCustomValidators();
     initCalenderSettings();
     disableRightClick();
-    $().validator({
-        custom: {
-            'odd': function($el) {
-                if (!$('#attending').is(':checked') && !$('#not-attending').is(':checked')) {
-                    return true;
-                }
-            }
-        }
-    })
 </script>
 </body>
 </html>

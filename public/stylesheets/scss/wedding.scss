@@ -2,7 +2,7 @@
 
 //Hero Images
 $hero-height: 800px;
-$ios-hero-height: 600px;
+$tablet-hero-height: 660px;
 $mobile-hero-height: 500px;
 //Colours
 $purple: rgba(167, 59, 115, 1);
@@ -28,13 +28,13 @@ $hero-p-font-size: 2rem;
   "\f107"
 }*/
 
-.ios .parallax-bg,
+.tablet .parallax-bg,
 .mobile .parallax-bg {
   background-attachment: scroll;
 }
 
-.ios .parallax-bg {
-  height: $ios-hero-height;
+.tablet .parallax-bg {
+  height: $tablet-hero-height;
 }
 
 .parallax-bg {

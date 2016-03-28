@@ -14,9 +14,10 @@ function isiOS() {
 
 function isTablet() {
     var userAgent = navigator.userAgent.toLowerCase();
-    var isKindle = /Kindle|Silk|KFAPW|KFARWI|KFASWI|KFFOWI|KFJW|KFMEWI|KFOT|KFSAW|KFSOWI|KFTBW|KFT‌​HW|KFTT|WFFOWI/i.test(userAgent);
+    var isSomeKindOfAndroidTablet = userAgent.indexOf("android") > -1 && !userAgent.indexOf("mobile");
+    var isTablet = /iPad|Hudl|Kindle|Silk|KFAPW|KFARWI|KFASWI|KFFOWI|KFJW|KFMEWI|KFOT|KFSAW|KFSOWI|KFTBW|KFT‌​HW|KFTT|WFFOWI|Nexus 10 Build|Nexus 9 Build|Nexus 8 Build|Nexus 7 Build|SM-T330|SM-T232|SM-T335|SM-T210|SM-T210R|GT-P5210|SM-T210R|SM-T311|GT-P5200|SM-T217S|SM-T310|SM-T315|SM-T110|SM-T530|SM-T211|SM-T110|GT-P5110|GT-P5100|GT-P3110|GT-P5113|GT-P3100B|GT-P3100|GT-P3100|SM-T350|SM-T550|SM-T230|SM-T800|SM-T700|SM-T805|SM-T705|SM-T533|Lenovo A7600-F|SM-T|A500|A1-810|Transformer|tablet/i.test(userAgent);
 
-    return userAgent.indexOf("android") > -1 && !userAgent.indexOf("mobile") || navigator.userAgent.match("iPad") || isKindle;
+    return isTablet || isSomeKindOfAndroidTablet;
 }
 
 function isAndroid() {

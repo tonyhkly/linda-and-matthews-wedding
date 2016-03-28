@@ -54,7 +54,7 @@ function AppViewModel() {
         new TeaPhoto("tea-5.JPG"),
         new TeaPhoto("tea-6.JPG"),
         new TeaPhoto("tea-7.JPG"),
-        new TeaPhoto("tea-8.JPG")
+        new TeaPhoto("tea-8.png")
     ];
 
     shuffle(this.photos);

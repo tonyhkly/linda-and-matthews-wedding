@@ -29,7 +29,7 @@ function photoDirectory() {
 function AppViewModel() {
     this.photos = [new Photo("manna-1.png"), new Photo("manna-2.png"), new Photo("manna-3.jpeg"), new Photo("manna-4.jpeg"), new Photo("manna-5.jpeg"), new Photo("manna-6.jpeg"), new Photo("manna-7.jpeg"), new Photo("manna-8.jpeg"), new Photo("manna-9.jpeg"), new Photo("manna-10.jpeg"), new Photo("manna-11.jpeg"), new Photo("manna-12.png"), new Photo("manna-13.png"), new Photo("manna-14.jpeg"), new Photo("manna-15.png"), new Photo("manna-16.jpeg")];
 
-    this.teaPhotos = [new TeaPhoto("tea-1.JPG"), new TeaPhoto("tea-2.JPG"), new TeaPhoto("tea-3.JPG"), new TeaPhoto("tea-4.JPG"), new TeaPhoto("tea-5.JPG"), new TeaPhoto("tea-6.JPG"), new TeaPhoto("tea-7.JPG"), new TeaPhoto("tea-8.JPG")];
+    this.teaPhotos = [new TeaPhoto("tea-1.JPG"), new TeaPhoto("tea-2.JPG"), new TeaPhoto("tea-3.JPG"), new TeaPhoto("tea-4.JPG"), new TeaPhoto("tea-5.JPG"), new TeaPhoto("tea-6.JPG"), new TeaPhoto("tea-7.JPG"), new TeaPhoto("tea-8.png")];
 
     shuffle(this.photos);
 

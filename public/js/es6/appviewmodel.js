@@ -2,15 +2,23 @@
 
 function Photo(photo) {
     var self = this;
-    self.thumbnailUrl = `${thumbDirectory()}/${photo}`;
+    self.thumbnailUrl = `${photoDirectory()}/${photo}`;
 }
 
 function TeaPhoto(photo) {
     var self = this;
-    self.url = `/images/tea/${photo}`;
+    self.url = `${teaPhotoDirectory()}/${photo}`;
 }
 
-function thumbDirectory() {
+function teaPhotoDirectory() {
+    if (isMobile()) {
+        return '/images/tea/mobile';
+    } else {
+        return '/images/tea';
+    }
+}
+
+function photoDirectory() {
     if (isMobile()) {
         return '/images/manna/mobile-thumb';
     } else {

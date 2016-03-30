@@ -17,7 +17,7 @@
             <label class="control-label" for="pwd"><strong>Name:</strong></label>
 
             <div>
-                <input type="text" class="form-control" id="name" placeholder="Your name" data-error="Please fill in your name" required />
+                <input type="text" class="form-control" id="name" placeholder="Your name" data-error="Hey, don't leave this empty!" required />
                 <div class="help-block with-errors"></div>
             </div>
         </div>
@@ -25,7 +25,7 @@
             <label class="control-label" for="email"><strong>Email:</strong></label>
 
             <div>
-                <input type="email" class="form-control" data-error="Please include a valid email address" id="email" placeholder="Enter email" required />
+                <input type="email" class="form-control" data-error="Hey, this isn't really your email address is it?" id="email" placeholder="Enter email" required />
                 <div class="help-block with-errors"></div>
             </div>
         </div>
@@ -35,11 +35,10 @@
             <textarea class="form-control" rows="4" id="comment"></textarea>
         </div>
 
-        <label for="comment"><strong>RSVP Reply:</strong></label>
-
-        <div class="form-group">
+        <div class="form-group rsvp-form-group">
+            <label for="comment"><strong>RSVP Reply:</strong></label>
             <div class="radio">
-                <label><input id="attending" type="radio" name="attendingOptions" value="" data-error="Please select an RSVP reply" data-rsvp-checked required />
+                <label><input id="attending" type="radio" name="attendingOptions" value="" data-error="So... are you coming or not? Please select an RSVP reply" data-rsvp-checked required />
                     I will be attending. It's gonna be awesome!
                 </label>
             </div>

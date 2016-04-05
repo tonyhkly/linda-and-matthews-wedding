@@ -17,8 +17,8 @@ $('.rsvp-form').validator().on('submit', function (e) {
             success: function success(data) {
                 console.log('RSVP Sent!' + data);
                 $('.overlay').removeClass('overlay-show');
-                $('.email-sent').addClass('display-block');
-                $('.rsvp-form').addClass('display-none');
+                $('.rsvp-form').addClass('hide');
+                $('.email-sent').removeClass('hide');
                 animatedScroll(0);
             }
         });

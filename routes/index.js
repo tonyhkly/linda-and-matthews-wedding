@@ -5,7 +5,7 @@ var smtpTransport = require('nodemailer-smtp-transport');
 
 router.get('/', function (req, res) {
     res.render('wedding', {
-        title: 'Anna and Michael - Welcome',
+        title: 'Anna and Michael\'s Wedding - Welcome',
         layout: 'wedding-layout',
         pageId: 'home-page'
     });
@@ -13,7 +13,7 @@ router.get('/', function (req, res) {
 
 router.get('/the-venue', function (req, res) {
     res.render('map', {
-        title: 'Anna and Michael - The Venue',
+        title: 'Anna and Michael\'s Wedding - The Venue',
         layout: 'wedding-layout',
         pageId: 'map-page'
     });
@@ -21,7 +21,7 @@ router.get('/the-venue', function (req, res) {
 
 router.get('/tea-ceremony', function (req, res) {
     res.render('tea-ceremony', {
-        title: 'Anna and Michael - Tea Ceremony',
+        title: 'Anna and Michael\'s Wedding - Tea Ceremony',
         layout: 'wedding-layout',
         pageId: 'tea-ceremony'
     });
@@ -29,7 +29,7 @@ router.get('/tea-ceremony', function (req, res) {
 
 router.get('/rsvp', function (req, res) {
     res.render('rsvp', {
-        title: 'Anna and Michael - RSVP',
+        title: 'Anna and Michael\'s Wedding - RSVP',
         layout: 'wedding-layout',
         pageId: 'rsvp'
     });
@@ -38,8 +38,8 @@ router.get('/rsvp', function (req, res) {
 router.post('/send-email', function (req, res) {
     var name = req.body.name;
     var email = req.body.email;
-    var attendingText = req.body.attendingText;
     var attending = req.body.attending;
+    var guestType = req.body.guestType;
     var foodOption = req.body.foodOption;
     var foodOptionText = foodOption != null  || foodOption != undefined ? foodOption : 'None Selected';
     var comment = req.body.comment;
@@ -57,6 +57,7 @@ router.post('/send-email', function (req, res) {
 
     var senderIntroHtml = 'Thanks ' + name + '! We\'ve got your RSVP.';
     var senderAttendingHtml = '<b>Attending: </b>' + attending;
+    var senderGuestTypeHtml = '<b>Guest: </b>' + guestType;
     var senderFoodOptionHtml = '<b>Food Option: </b>' + foodOptionText;
     var senderCommentHtml = comment ? '<b>Your message to them: </b>' + comment : '';
 
@@ -68,6 +69,7 @@ router.post('/send-email', function (req, res) {
         html: "<p>" + senderIntroHtml + "</p>" +
         "<p><b>Your RSVP Details:</b></p>" +
         "<p>" + senderAttendingHtml + "</p>" +
+        "<p>" + senderGuestTypeHtml + "</p>" +
         "<p>" + senderFoodOptionHtml + "</p>" +
         "<p>" + senderCommentHtml + "</p>" +
         "<br><p>If any of these details aren't quite right, feel free to send a reply to this email address.</p>"
@@ -76,6 +78,7 @@ router.post('/send-email', function (req, res) {
     var mannaIntroHtml = 'We\'ve just received ' + name + '\'s RSVP.';
     var mannaRsvp = '<b>RSVP Details:</b>';
     var mannaEmailHtml = email ? '<b>Email Address: </b>' + email : '';
+    var mannaGuestTypeHtml = '<b>Guest: </b>' + guestType;
     var mannaAttendingHtml = '<b>Attending: </b>' + attending;
     var mannaFoodOptionHtml = '<b>Food Option: </b>' + foodOptionText;
     var mannaCommentHtml = comment ? '<b>Their message to you: </b>' + comment : '';
@@ -90,6 +93,7 @@ router.post('/send-email', function (req, res) {
         "<p>" + mannaRsvp + "</p>" +
         "<p>" + mannaEmailHtml + "</p>" +
         "<p>" + mannaAttendingHtml + "</p>" +
+        "<p>" + mannaGuestTypeHtml + "</p>" +
         "<p>" + mannaFoodOptionHtml + "</p>" +
         "<p>" + mannaCommentHtml + "</p>"
     };

@@ -12,7 +12,26 @@
             <img class="img-responsive display-inline-block hello-kitty" src="/images/hellokitty.jpg"/>
         </div>
     </div>
+
     <form class="rsvp-form form" role="form" data-toggle="validator" data-delay=2500>
+
+        <div class="form-group rsvp-form-group">
+            <label class="guest-type-label" for="comment"><strong>RSVP Type:</strong></label>
+            <div class="radio-inline">
+                <label>
+                    <input id="proper-guest" type="radio" name="guestTypeOptions" value="" data-error="Please select an RSVP type, pretty please?" data-rsvp-type-checked required />
+                    Ceremony and Reception Guest
+                </label>
+            </div>
+            <div class="radio-inline">
+                <label>
+                    <input id="evening-guest" type="radio" name="guestTypeOptions" value="" data-rsvp-type-checked required />
+                    Evening Guest
+                </label>
+            </div>
+            <div class="help-block with-errors"></div>
+        </div>
+
         <div class="form-group">
             <label class="control-label" for="pwd"><strong>Name:</strong></label>
 
@@ -21,6 +40,7 @@
                 <div class="help-block with-errors"></div>
             </div>
         </div>
+
         <div class="form-group">
             <label class="control-label" for="email"><strong>Email:</strong></label>
 

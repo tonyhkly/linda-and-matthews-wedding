@@ -29,16 +29,20 @@ function getFormData() {
     var name = $('.rsvp #name').val();
     var email = $('.rsvp #email').val();
     var comment = $('.rsvp #comment').val();
-    var attendingText;
     var attending;
+    var guestType;
     var foodOption;
+
+    if ($('#proper-guest').is(':checked')) {
+        guestType = 'Ceremony and Reception Guest';
+    } else if ($('#evening-guest').is(':checked')) {
+        guestType = 'Evening Guest';
+    }
 
     if ($('#attending').is(':checked')) {
         attending = 'Yes';
-        attendingText = 'They will be attending!';
     } else if ($('#not-attending').is(':checked')) {
         attending = 'No';
-        attendingText = 'They will not be attending. Because they\'re gay';
     }
 
     if ($('#chicken').is(':checked')) {
@@ -51,11 +55,11 @@ function getFormData() {
     var toAnnaAndMichaelMailOptions;
 
     return {
+        guestType: guestType,
         name: name,
         email: email,
         comment: comment,
         attending: attending,
-        attendingText: attendingText,
         foodOption: foodOption,
         toSenderMailOptions: toSenderMailOptions,
         toAnnaAndMichaelMailOptions: toAnnaAndMichaelMailOptions

@@ -26,8 +26,19 @@ $light-green5: #478970;
 }
 
 .radio,
+.radio-inline,
 .control-label {
   color: #000 !important;
+}
+
+.guest-type-label {
+  display: block;
+}
+
+@media only screen and (max-width: 400px) {
+  .radio-inline + .radio-inline {
+    margin-left: 0;
+  }
 }
 
 .rsvp-form-group.has-error {

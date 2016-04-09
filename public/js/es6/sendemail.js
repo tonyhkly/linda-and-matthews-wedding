@@ -16,11 +16,19 @@ $('.rsvp-form').validator().on('submit', function (e) {
                 console.log('RSVP Sent!' + data);
                 $('.overlay').removeClass('overlay-show');
                 $('.rsvp-form').addClass('hide');
-                $('.email-sent').removeClass('hide');
+                $('.email-sent').fadeIn();
                 animatedScroll(0);
             }
         });
 
+    }
+});
+
+$("input[name='guestTypeOptions']").change(function () {
+    if ($('#proper-guest').is(':checked')) {
+        $('.food-group').fadeIn();
+    } else if ($('#evening-guest').is(':checked')) {
+        $('.food-group').fadeOut();
     }
 });
 
@@ -34,19 +42,19 @@ function getFormData() {
 
     if ($('#proper-guest').is(':checked')) {
         guestType = 'Ceremony and Reception Guest';
-    } else if($('#evening-guest').is(':checked')) {
+    } else if ($('#evening-guest').is(':checked')) {
         guestType = 'Evening Guest';
     }
 
     if ($('#attending').is(':checked')) {
         attending = 'Yes';
-    } else if($('#not-attending').is(':checked')) {
+    } else if ($('#not-attending').is(':checked')) {
         attending = 'No';
     }
 
     if ($('#chicken').is(':checked')) {
         foodOption = 'Chicken';
-    } else if($('#fish').is(':checked')) {
+    } else if ($('#fish').is(':checked')) {
         foodOption = 'Fish';
     }
 

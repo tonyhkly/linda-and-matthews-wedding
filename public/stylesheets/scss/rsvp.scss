@@ -17,7 +17,7 @@ $light-green5: #478970;
 }
 
 .form {
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .form-control:focus {
@@ -25,10 +25,22 @@ $light-green5: #478970;
   box-shadow: inset 0 1px 1px $light-green2, 0 0 8px $light-green3;
 }
 
+.rsvp-type {
+  margin-bottom: 10px;
+
+  label {
+    font-weight: normal;
+  }
+}
+
 .radio,
 .radio-inline,
 .control-label {
   color: #000 !important;
+}
+
+.radio {
+  margin-top: 0;
 }
 
 .guest-type-label {
@@ -45,6 +57,10 @@ $light-green5: #478970;
   color: #a94442;
 }
 
+.food-group {
+  display: none;
+}
+
 .send {
   margin-top: 10px;
   width: 210px;
@@ -52,13 +68,10 @@ $light-green5: #478970;
   font-size: 16px;
 }
 
-//.send-email {
-//  opacity: 0;
-//}
-
-//.fade-in {
-//  opacity: 1;
-//}
+.email-sent,
+.food-group {
+  display: none;
+}
 
 .hello-kitty {
   margin-top: 10px;
@@ -68,8 +81,6 @@ $light-green5: #478970;
 .em-disappointed {
   margin-bottom: 1px;
 }
-
-$results-loading-duration: 2s;
 
 .overlay {
   display: none;

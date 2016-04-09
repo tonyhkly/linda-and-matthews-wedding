@@ -18,10 +18,18 @@ $('.rsvp-form').validator().on('submit', function (e) {
                 console.log('RSVP Sent!' + data);
                 $('.overlay').removeClass('overlay-show');
                 $('.rsvp-form').addClass('hide');
-                $('.email-sent').removeClass('hide');
+                $('.email-sent').fadeIn();
                 animatedScroll(0);
             }
         });
+    }
+});
+
+$("input[name='guestTypeOptions']").change(function () {
+    if ($('#proper-guest').is(':checked')) {
+        $('.food-group').fadeIn();
+    } else if ($('#evening-guest').is(':checked')) {
+        $('.food-group').fadeOut();
     }
 });
 

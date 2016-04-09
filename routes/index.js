@@ -41,7 +41,8 @@ router.post('/send-email', function (req, res) {
     var attending = req.body.attending;
     var guestType = req.body.guestType;
     var foodOption = req.body.foodOption;
-    var foodOptionText = foodOption != null  || foodOption != undefined ? foodOption : 'None Selected';
+    var foodOptionIsPresent = foodOption != null || foodOption != undefined;
+    var foodOptionText = foodOptionIsPresent ? foodOption : 'None Selected';
     var comment = req.body.comment;
 
     var options = {
@@ -54,11 +55,11 @@ router.post('/send-email', function (req, res) {
 
     var transporter = nodemailer.createTransport(smtpTransport(options));
 
+    var attendingHtml = '<b>Attending: </b>' + attending;
+    var guestTypeHtml = '<b>Guest: </b>' + guestType;
+    var foodOptionHtml = foodOptionIsPresent ? '<b>Food Option: </b>' + foodOptionText : '';
 
     var senderIntroHtml = 'Thanks ' + name + '! We\'ve got your RSVP.';
-    var senderAttendingHtml = '<b>Attending: </b>' + attending;
-    var senderGuestTypeHtml = '<b>Guest: </b>' + guestType;
-    var senderFoodOptionHtml = '<b>Food Option: </b>' + foodOptionText;
     var senderCommentHtml = comment ? '<b>Your message to them: </b>' + comment : '';
 
     var toSenderMailOptions = {
@@ -68,20 +69,20 @@ router.post('/send-email', function (req, res) {
         subject: "Your RSVP to Anna & Michael's wedding",
         html: "<p>" + senderIntroHtml + "</p>" +
         "<p><b>Your RSVP Details:</b></p>" +
-        "<p>" + senderAttendingHtml + "</p>" +
-        "<p>" + senderGuestTypeHtml + "</p>" +
-        "<p>" + senderFoodOptionHtml + "</p>" +
+        "<p>" + guestTypeHtml + "</p>" +
+        "<p>" + attendingHtml + "</p>" +
         "<p>" + senderCommentHtml + "</p>" +
+        "<p>" + foodOptionHtml + "</p>" +
+        "<br><p><b>What Now?</b></p>" +
+        "<p>You can go back to the website to have a look at the venue by heading to this <a href='http://www.annaandmichael.co.uk/the-venue'>link</a></p>" +
+        "<p>Or you can have a look at some photos from <a href='http://www.annaandmichael.co.uk/tea-ceremony'>Anna and Michael's tea ceremony</a></p>" +
         "<br><p>If any of these details aren't quite right, feel free to send a reply to this email address.</p>"
     };
 
     var mannaIntroHtml = 'We\'ve just received ' + name + '\'s RSVP.';
     var mannaRsvp = '<b>RSVP Details:</b>';
-    var mannaEmailHtml = email ? '<b>Email Address: </b>' + email : '';
-    var mannaGuestTypeHtml = '<b>Guest: </b>' + guestType;
-    var mannaAttendingHtml = '<b>Attending: </b>' + attending;
-    var mannaFoodOptionHtml = '<b>Food Option: </b>' + foodOptionText;
     var mannaCommentHtml = comment ? '<b>Their message to you: </b>' + comment : '';
+    var mannaEmailHtml = email ? '<b>Email Address: </b>' + email : '';
 
     var toAnnaAndMichaelMailOptions = {
         from: "Anna and Michael <annaandmichael8@gmail.com>",
@@ -92,12 +93,11 @@ router.post('/send-email', function (req, res) {
         "<p>" + mannaIntroHtml + "</p>" +
         "<p>" + mannaRsvp + "</p>" +
         "<p>" + mannaEmailHtml + "</p>" +
-        "<p>" + mannaAttendingHtml + "</p>" +
-        "<p>" + mannaGuestTypeHtml + "</p>" +
-        "<p>" + mannaFoodOptionHtml + "</p>" +
+        "<p>" + attendingHtml + "</p>" +
+        "<p>" + guestTypeHtml + "</p>" +
+        "<p>" + foodOptionHtml + "</p>" +
         "<p>" + mannaCommentHtml + "</p>"
     };
-
 
     transporter.sendMail(toAnnaAndMichaelMailOptions, function (error, response) {
         if (error) {

@@ -75,7 +75,7 @@ router.post('/send-email', function (req, res) {
         "<p>" + foodOptionHtml + "</p>" +
         "<br><p><b>What Now?</b></p>" +
         "<p>You can go back to the website to have a look at the venue by heading to this <a href='http://www.annaandmichael.co.uk/the-venue'>link</a></p>" +
-        "<p>Or you can have a look at some photos from <a href='http://www.annaandmichael.co.uk/tea-ceremony'>Anna and Michael's tea ceremony</a></p>" +
+        "<p>Or you can have a look at some photos from <a href='http://www.annaandmichael.co.uk/tea-ceremony'>Anna and Michael's Tea Ceremony</a></p>" +
         "<br><p>If any of these details aren't quite right, feel free to send a reply to this email address.</p>"
     };
 

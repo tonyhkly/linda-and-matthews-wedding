@@ -77,3 +77,25 @@ h4 {
 .transform-none {
   text-transform: none;
 }
+
+.green-ul {
+  list-style: none;
+  padding: 5px 0 0 15px;
+  margin: 0;
+
+  li {
+    text-indent: -.7em;
+    margin-bottom: 5px;
+  }
+
+  li:before {
+    content: "■";
+    font-family: "Arial Black";
+    color: $light-green2;
+    vertical-align: text-bottom;
+  }
+
+  .inner-li {
+    padding-left: 7px;
+  }
+}

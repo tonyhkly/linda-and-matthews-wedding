@@ -16,10 +16,6 @@ $parallax-bg-h1-font-size: 5em;
 $parallax-bg-mobile-h1-font-size: 3.2em;
 $hero-p-font-size: 2rem;
 
-/*.fa-angle-down:before {
-  "\f107"
-}*/
-
 .tablet .parallax-bg,
 .mobile .parallax-bg {
   background-attachment: scroll;
@@ -46,6 +42,15 @@ $hero-p-font-size: 2rem;
 
 .mobile .parallax-bg {
   height: $mobile-hero-height;
+}
+
+.hero-angle-down {
+  i {
+    font-size: 54px;
+    color: #fff;
+    bottom: 7%;
+    position: absolute;
+  }
 }
 
 .peach-blossom {

@@ -46,9 +46,9 @@ router.post('/send-email', function (req, res) {
     var comment = req.body.comment;
 
     var options = {
-        service: 'gmail',
+        service: 'outlook',
         auth: {
-            user: "annaandmichael8@gmail.com",
+            user: "annaandmichael8@outlook.com",
             pass: "Pinguforce8"
         }
     };
@@ -63,7 +63,7 @@ router.post('/send-email', function (req, res) {
     var senderCommentHtml = comment ? '<b>Your message to them: </b>' + comment : '';
 
     var toSenderMailOptions = {
-        from: "Anna and Michael <annaandmichael8@gmail.com>",
+        from: "Anna and Michael <annaandmichael8@outlook.com>",
         to: email,
         text: "RSVP Anna & Michael's Wedding!",
         subject: "Your RSVP to Anna & Michael's wedding",
@@ -85,8 +85,8 @@ router.post('/send-email', function (req, res) {
     var mannaEmailHtml = email ? '<b>Email Address: </b>' + email : '';
 
     var toAnnaAndMichaelMailOptions = {
-        from: "Anna and Michael <annaandmichael8@gmail.com>",
-        to: 'annaandmichael8@gmail.com',
+        from: "Anna and Michael <annaandmichael8@outlook.com>",
+        to: 'annaandmichael8@outlook.com',
         subject: name + "'s RSVP",
         text: "RSVP Anna & Michael's Wedding!",
         html: "<p>Hi there Anna & Michael!</p>" +

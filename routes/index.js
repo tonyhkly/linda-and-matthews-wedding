@@ -49,7 +49,7 @@ router.post('/send-email', function (req, res) {
         service: 'gmail',
         auth: {
             user: "annaandmichael8@gmail.com",
-            pass: "hellokudo"
+            pass: "Pinguforce8"
         }
     };
 

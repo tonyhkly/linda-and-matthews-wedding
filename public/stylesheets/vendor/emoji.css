@@ -9,9 +9,13 @@
 }
 
 .em-disappointed {
-    background-image: url("/images/emoji/disappointed.png")
+    background-image: url("/images/emoji/disappointed.png");
 }
 
 .em-sunglasses {
-    background-image: url("/images/emoji/sunglasses.png")
+    background-image: url("/images/emoji/sunglasses.png");
+}
+
+.em-sob {
+    background-image: url("/images/emoji/sob.png");
 }

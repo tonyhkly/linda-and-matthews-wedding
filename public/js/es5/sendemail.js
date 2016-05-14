@@ -5,23 +5,13 @@ $('.rsvp-form').validator().on('submit', function (e) {
         console.log('An error occurred');
     } else {
         e.preventDefault();
-        $('.overlay').addClass('overlay-show');
 
-        var data = getFormData();
+        saveData();
 
-        $.ajax({
-            url: '/send-email',
-            data: data,
-            //data: {dto: JSON.stringify(data)},
-            type: 'POST',
-            success: function success(data) {
-                console.log('RSVP Sent!' + data);
-                $('.overlay').removeClass('overlay-show');
-                $('.rsvp-form').addClass('hide');
-                $('.email-sent').fadeIn();
-                animatedScroll(0);
-            }
-        });
+        $('.overlay').removeClass('overlay-show');
+        $('.rsvp-form').addClass('hide');
+        $('.email-sent').fadeIn();
+        animatedScroll(0);
     }
 });
 
@@ -33,7 +23,7 @@ $("input[name='guestTypeOptions']").change(function () {
     }
 });
 
-function getFormData() {
+function saveData() {
     var name = $('.rsvp #name').val();
     var email = $('.rsvp #email').val();
     var comment = $('.rsvp #comment').val();
@@ -59,17 +49,21 @@ function getFormData() {
         foodOption = 'Fish';
     }
 
-    var toSenderMailOptions;
-    var toAnnaAndMichaelMailOptions;
+    var foodOptionIsPresent = foodOption != null || foodOption != undefined;
+    var foodOptionText = foodOptionIsPresent ? foodOption : 'None Selected';
 
-    return {
-        guestType: guestType,
-        name: name,
-        email: email,
-        comment: comment,
-        attending: attending,
-        foodOption: foodOption,
-        toSenderMailOptions: toSenderMailOptions,
-        toAnnaAndMichaelMailOptions: toAnnaAndMichaelMailOptions
-    };
+    var dataRef = new Firebase('https://anna-and-michael.firebaseio.com');
+
+    var rsvpDataRef = dataRef.child("rsvps");
+    rsvpDataRef.push(
+        {
+            name: name,
+            email: email,
+            attending: attending,
+            guestType: guestType,
+            comment: comment,
+            foodOption: foodOptionText,
+            createDate: new Date().toISOString()
+        }
+    );
 }

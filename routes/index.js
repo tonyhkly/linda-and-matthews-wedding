@@ -59,28 +59,6 @@ router.post('/send-email', function (req, res) {
     var guestTypeHtml = '<b>Guest: </b>' + guestType;
     var foodOptionHtml = foodOptionIsPresent ? '<b>Food Option: </b>' + foodOptionText : '';
 
-/*
-    var senderIntroHtml = 'Thanks ' + name + '! We\'ve got your RSVP.';
-    var senderCommentHtml = comment ? '<b>Your message to them: </b>' + comment : '';
-
-    var toSenderMailOptions = {
-        from: "Anna and Michael <annaandmichael8@outlook.com>",
-        to: email,
-        text: "RSVP Anna & Michael's Wedding!",
-        subject: "Your RSVP to Anna & Michael's wedding",
-        html: "<p>" + senderIntroHtml + "</p>" +
-        "<p><b>Your RSVP Details:</b></p>" +
-        "<p>" + guestTypeHtml + "</p>" +
-        "<p>" + attendingHtml + "</p>" +
-        "<p>" + senderCommentHtml + "</p>" +
-        "<p>" + foodOptionHtml + "</p>" +
-        "<br><p><b>What Now?</b></p>" +
-        "<p>You can go back to the website to have a look at the venue by heading to this <a href='http://www.annaandmichael.co.uk/the-venue'>link</a></p>" +
-        "<p>Or you can have a look at some photos from <a href='http://www.annaandmichael.co.uk/tea-ceremony'>Anna and Michael's Tea Ceremony</a></p>" +
-        "<br><p>If any of these details aren't quite right, feel free to send a reply to this email address.</p>"
-    };
-*/
-
     var mannaIntroHtml = 'We\'ve just received ' + name + '\'s RSVP.';
     var mannaRsvp = '<b>RSVP Details:</b>';
     var mannaCommentHtml = comment ? '<b>Their message to you: </b>' + comment : '';
@@ -112,16 +90,6 @@ router.post('/send-email', function (req, res) {
 
         transporter.close();
     });
-
-/*    transporter.sendMail(toSenderMailOptions, function (error, response) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log("Message sent: " + response.message);
-        }
-
-        transporter.close();
-    });*/
 });
 
 module.exports = router;

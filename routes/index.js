@@ -19,6 +19,14 @@ router.get('/the-venue', function (req, res) {
     });
 });
 
+router.get('/itinerary', function (req, res) {
+    res.render('itinerary', {
+        title: 'Anna and Michael\'s Wedding - Itinerary',
+        layout: 'wedding-layout',
+        pageId: 'map-page'
+    });
+});
+
 router.get('/tea-ceremony', function (req, res) {
     res.render('tea-ceremony', {
         title: 'Anna and Michael\'s Wedding - Tea Ceremony',

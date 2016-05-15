@@ -3,9 +3,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" maximum-scale=1.0/>
     <title>{{title}}</title>
-    <link rel="stylesheet" href="/stylesheets/vendor/bootstrap-cut-3.3.5.css">
+    <link rel="stylesheet" href="/stylesheets/vendor/bootstrap-3.3.5.css">
     <link rel="stylesheet" href="/stylesheets/vendor/bootstrap-theme-3.3.5.css">
-    <!--<link rel="stylesheet" href="/stylesheets/vendor/font-awesome.css">-->
     <link rel='stylesheet' href='/stylesheets/css/font.css'/>
     <link rel='stylesheet' href='/stylesheets/css/wedding-layout.min.css'/>
     <link rel='stylesheet' href='/stylesheets/css/wedding.min.css'/>
@@ -15,6 +14,7 @@
     <link rel='stylesheet' href='/stylesheets/css/rsvp.min.css'/>
     <link rel="stylesheet" href="/stylesheets/vendor/emoji.css">
     <link rel='stylesheet' href='/stylesheets/css/map.min.css'/>
+    <link rel='stylesheet' href='/stylesheets/css/itinerary.min.css'/>
     <link rel='stylesheet' href='/stylesheets/css/tea.min.css'/>
     <link rel='stylesheet' href='/stylesheets/css/footer.min.css'/>
     <script src="/js/vendor/modernizr.js"></script>
@@ -53,7 +53,15 @@
                 </li>
                 <li class="nav-welcome"><a href="/">Welcome</a></li>
                 <li class="nav-rsvp"><a href="/rsvp" data-ajax="false">RSVP</a></li>
-                <li class="nav-map"><a href="/the-venue" data-ajax="false">The Venue</a></li>
+                <li class="nav-map dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        The Venue<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/itinerary">Wedding day details</a></li>
+                        <li><a href="/the-venue">Get Directions</a></li>
+                    </ul>
+                </li>
                 <li class="nav-tea"><a href="/tea-ceremony" data-ajax="false">Tea Ceremony</a></li>
             </ul>
         </div>

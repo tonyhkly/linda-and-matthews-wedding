@@ -25,6 +25,10 @@ $default: #c4c4c4;
     display: none;
   }
 
+  .dropdown-menu > li > a {
+    padding: 7px 20px;
+  }
+
   @media only screen and (max-width: 768px) {
     .navbar-icon {
       width: 35px;
@@ -87,11 +91,15 @@ $default: #c4c4c4;
     }
 
     .nav > li > a {
-      padding: 14px 9px 9px 9px;
+      padding: 14px 8px 8px 8px;
     }
 
     .navbar-icon {
       width: 30px;
+    }
+
+    .navbar-nav a {
+      font-size: 15px;
     }
 
   }
@@ -99,8 +107,16 @@ $default: #c4c4c4;
 
 .home-page .nav-welcome a,
 .map-page .nav-map a,
+.nav-map.dropdown.open a,
 .rsvp .nav-rsvp a,
 .tea-ceremony .nav-tea a {
   color: $black;
 }
+
+.nav-map.dropdown.open .dropdown-toggle:hover,
+.nav-map.dropdown.open .dropdown-toggle:visited,
+.nav-map.dropdown.open .dropdown-toggle:active {
+  color: $black !important;
+}
+
 

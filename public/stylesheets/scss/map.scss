@@ -110,3 +110,9 @@ $light-green2: #94D6BD;
     margin-bottom: 0;
   }
 }
+
+@media print {
+  img {
+    max-width: none !important;
+  }
+}

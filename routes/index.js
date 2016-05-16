@@ -19,6 +19,15 @@ router.get('/the-venue', function (req, res) {
     });
 });
 
+router.get('/wedding-details', function (req, res) {
+    res.render('wedding-day-details', {
+        title: 'Anna and Michael\'s Wedding - Wedding Day Details',
+        layout: 'wedding-layout',
+        pageId: 'map-page'
+    });
+});
+
+
 router.get('/itinerary', function (req, res) {
     res.render('itinerary', {
         title: 'Anna and Michael\'s Wedding - Itinerary',

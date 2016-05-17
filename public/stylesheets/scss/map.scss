@@ -7,6 +7,7 @@ $light-green2: #94D6BD;
 }
 
 #map {
+  margin-top: 17px;
   height: 80vh;
 }
 
@@ -14,12 +15,14 @@ $light-green2: #94D6BD;
   height: 600px;
 }
 
-.map-section {
-  margin-bottom: 10px;
-
+.map-page {
   h4 {
-    margin-bottom: 0;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 11px;
+  }
+
+  .sub-heading {
+    margin-bottom: 6px;
   }
 }
 
@@ -81,8 +84,8 @@ $light-green2: #94D6BD;
   .action-list {
     list-style: none;
     font-size: 14px;
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
     padding-left: 15px;
     padding-top: 5px;
 
@@ -97,7 +100,7 @@ $light-green2: #94D6BD;
 
   li:before {
     content: "■";
-    font-family:"Arial Black";
+    font-family: "Arial Black";
     color: $light-green2;
     vertical-align: text-bottom;
   }
@@ -114,5 +117,10 @@ $light-green2: #94D6BD;
 @media print {
   img {
     max-width: none !important;
+  }
+
+  #map {
+    margin-top: 100px !important;
+    height: 55vh !important;
   }
 }

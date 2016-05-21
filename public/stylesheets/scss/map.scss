@@ -7,12 +7,11 @@ $light-green2: #94D6BD;
 }
 
 #map {
-  height: 70vh;
-  margin-bottom: 8px;
+  height: 75vh;
 }
 
 .ios #map {
-  height: 520px;
+  height: 500px;
 }
 
 .map-page {
@@ -26,10 +25,23 @@ $light-green2: #94D6BD;
   }
 }
 
+#print {
+  font-weight: 700;
+}
+
+.print-icon {
+  margin-right: 4px;
+  width: 16px;
+}
+
 .directions {
   .first-p {
     margin-top: 10px;
   }
+}
+
+.bottom-map-h4 {
+  margin-top: 13px;
 }
 
 .above-map-link {
@@ -72,6 +84,10 @@ $light-green2: #94D6BD;
 
 .tube {
   background-image: url("/images/icons/tube.png");
+}
+
+#taxi {
+  margin-top: 30px;
 }
 
 #info-window {

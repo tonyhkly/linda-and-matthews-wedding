@@ -27,7 +27,6 @@ router.get('/wedding-details', function (req, res) {
     });
 });
 
-
 router.get('/itinerary', function (req, res) {
     res.render('itinerary', {
         title: 'Anna and Michael\'s Wedding - Itinerary',

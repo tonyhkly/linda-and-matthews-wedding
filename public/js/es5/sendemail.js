@@ -55,15 +55,13 @@ function saveData() {
     var dataRef = new Firebase('https://anna-and-michael.firebaseio.com');
 
     var rsvpDataRef = dataRef.child("rsvps");
-    rsvpDataRef.push(
-        {
-            name: name,
-            email: email,
-            attending: attending,
-            guestType: guestType,
-            comment: comment,
-            foodOption: foodOptionText,
-            createDate: new Date().toISOString()
-        }
-    );
+    rsvpDataRef.push({
+        name: name,
+        email: email,
+        attending: attending,
+        guestType: guestType,
+        comment: comment,
+        foodOption: foodOptionText,
+        createDate: new Date().toISOString()
+    });
 }

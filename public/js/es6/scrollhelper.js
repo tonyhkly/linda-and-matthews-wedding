@@ -8,10 +8,9 @@ function animatedScroll(scrollTop) {
         scrollTop: scrollTop
     }, 700);
 }
-/*
 
-$('.hero-angle-down').click(function (e) {
+$('.taxi-button').click(function (e) {
     e.preventDefault();
-    var href = $('.hero-angle-down').attr('href');
+    var href = $('.taxi-button').attr('href');
     animatedScroll($(href).offset().top);
-});*/
+});

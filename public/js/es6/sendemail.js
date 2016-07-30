@@ -54,16 +54,22 @@ function saveData() {
 
     var dataRef = new Firebase('https://anna-and-michael.firebaseio.com');
 
-    var rsvpDataRef = dataRef.child("rsvps");
-    rsvpDataRef.push(
-        {
-            name: name,
-            email: email,
-            attending: attending,
-            guestType: guestType,
-            comment: comment,
-            foodOption: foodOptionText,
-            createDate: new Date().toISOString()
+    dataRef.authAnonymously(function(error, authData) {
+        if (error) {
+            console.log("Login Failed!", error);
+        } else {
+            var rsvpDataRef = dataRef.child("rsvps");
+            rsvpDataRef.push(
+                {
+                    name: name,
+                    email: email,
+                    attending: attending,
+                    guestType: guestType,
+                    comment: comment,
+                    foodOption: foodOptionText,
+                    createDate: new Date().toISOString()
+                }
+            );
         }
-    );
+    });
 }

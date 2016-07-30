@@ -12,7 +12,7 @@ Technologies Used
 * Handlebars
 * Knockout
 
-##### Getting Started
+##### Getting Started:
 **Run:** npm start
 
 ##### Gulp Commands:

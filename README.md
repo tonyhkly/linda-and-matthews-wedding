@@ -1,26 +1,22 @@
 Michael and Anna Web
 ====================
 
-A Node web app
+A wedding webapp I built as a gift for my brother's wedding. Feel free to suggest any improvements you have for the project!
 
 Technologies Used
 -------------
-* Node
+* Node - Express js starter project
 * Gulp
 * Babel
 * Sass
 * Handlebars
+* Knockout
 
 ##### Getting Started
-**To Run:** npm start
+**Run:** npm start
 
 ##### Gulp Commands:
-* gulp watch
-* gulp build
-* gulp sass
-* gulp js
-
-//col-xs <768px
-//col-sm >=768px
-//col-md>=992px
-//col-lg>=1200px
+* gulp sass - Compiles sass files to css files
+* gulp js - Compiles es6 js to es5 js files using Babel
+* gulp build - Runs gulp sass and gulp watch
+* gulp watch - Build and watch for css and js changes

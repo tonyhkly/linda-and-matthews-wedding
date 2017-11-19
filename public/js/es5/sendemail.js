@@ -33,7 +33,9 @@ function saveData() {
 
     if ($('#proper-guest').is(':checked')) {
         guestType = 'Ceremony and Reception Guest';
+        dataLayer.push({'guestType': 'reception'});
     } else if ($('#evening-guest').is(':checked')) {
+        dataLayer.push({'guestType': 'evening'});
         guestType = 'Evening Guest';
     }
 

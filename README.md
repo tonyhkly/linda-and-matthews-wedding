@@ -1,7 +1,7 @@
-Michael and Anna Web
+Linda and Matthew
 ====================
 
-A wedding webapp I built as a gift for my brother's wedding. Feel free to suggest any improvements you have for the project!
+A wedding webapp I built as a gift for my sister's wedding. Feel free to suggest any improvements you have for the project!
 
 Technologies Used
 -------------

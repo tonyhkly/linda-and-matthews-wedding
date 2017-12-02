@@ -1,11 +1,11 @@
 $light-purple: #A73B73;
-$light-green: #adefd6;
-$light-green2: #94D6BD;
-$light-green3: #7ABCA3;
-$light-green4: #61A38A;
-$light-green6: #478970;
-$light-green7: #2E7057;
-$light-green8: #14563D;
+$light-red: #ff8080;
+$light-red2: #ff6666; //Main Red/Green Colour
+$light-red3: #ff4d4d;
+$light-red4: #ff3333;
+$light-red6: #ff1a1a;
+$light-red7: #ff0000;
+$light-red8: #e60000;
 $h2-font-size: 54px;
 $h2-font-size-mobile: 50px;
 $h3-font-size: 28px;
@@ -26,7 +26,7 @@ $h4-font-size: 22px;
 .navbar-seperator {
   margin-top: 0;
   margin-bottom: 0;
-  border-color: $light-green4;
+  border-color: $light-red4;
 }
 
 h1,
@@ -38,7 +38,7 @@ strong {
 }
 
 h3, h4 {
-  color: $light-green2;
+  color: $light-red2;
 }
 
 .big-heading {
@@ -78,7 +78,7 @@ h4 {
   text-transform: none;
 }
 
-.green-ul {
+.red-ul {
   /* Make sure to use a span in your li with inner-li class */
 
   list-style: none;
@@ -93,7 +93,7 @@ h4 {
   li:before {
     content: "■";
     font-family: "Arial Black";
-    color: $light-green2;
+    color: $light-red2;
     vertical-align: text-bottom;
   }
 

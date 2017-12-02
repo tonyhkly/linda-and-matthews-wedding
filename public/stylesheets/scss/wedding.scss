@@ -3,10 +3,10 @@ $hero-height: 800px;
 $tablet-hero-height: 660px;
 $mobile-hero-height: 500px;
 //Colours
-$light-green: #adefd6;
-$light-green2: #94D6BD;
-$light-green3: #7ABCA3;
-$light-green4: #61A38A;
+$light-red: #ff8080;
+$light-red2: #ff6666; //Main Red/Green Colour
+$light-red3: #ff4d4d;
+$light-red4: #ff3333;
 //Font Sizes
 $h2-font-size: 54px;
 $h3-font-size: 28px;
@@ -213,10 +213,10 @@ $hero-p-font-size: 2rem;
   padding: 20px 0;
   float: none;
   border: 3px solid;
-  border-color: $light-green2 $light-green3 $light-green2;
+  border-color: $light-red2 $light-red3 $light-red2;
 
   h2 {
-    color: $light-green2;
+    color: $light-red2;
   }
 
   p {
@@ -242,14 +242,14 @@ $hero-p-font-size: 2rem;
     border-radius: 18px;
     height: 47px;
     width: 178px;
-    color: $light-green3;
-    border: 2px solid $light-green3;
+    color: $light-red3;
+    border: 2px solid $light-red3;
     font-size: 15px;
   }
 
   .snack-bar:hover {
-    background: $light-green2;
-    border-color: $light-green2;
+    background: $light-red2;
+    border-color: $light-red2;
     color: #fff;
   }
 

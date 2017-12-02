@@ -1,8 +1,8 @@
-$light-green: #adefd6;
-$light-green2: #94D6BD;
-$light-green3: #7ABCA3;
-$light-green4: #61A38A;
-$light-green5: #478970;
+$light-red: #ff8080;
+$light-red2: #ff6666; //Main Red/Green Colour
+$light-red3: #ff4d4d;
+$light-red4: #ff3333;
+$light-red5: #ff1a1a;
 
 @media (min-width: 1200px) {
   .form-container {
@@ -21,8 +21,8 @@ $light-green5: #478970;
 }
 
 .form-control:focus {
-  border-color: $light-green4;
-  box-shadow: inset 0 1px 1px $light-green2, 0 0 8px $light-green3;
+  border-color: $light-red4;
+  box-shadow: inset 0 1px 1px $light-red2, 0 0 8px $light-red3;
 }
 
 .rsvp-type {

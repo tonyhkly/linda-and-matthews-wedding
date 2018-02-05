@@ -30,6 +30,7 @@ function saveData() {
     var attending;
     var guestType;
     var foodOption;
+    var hotelOption;
 
     if ($('#proper-guest').is(':checked')) {
         guestType = 'Ceremony and Reception Guest';
@@ -51,6 +52,12 @@ function saveData() {
         foodOption = 'Fish';
     }
 
+    if ($('#yes-hotel').is(':checked')) {
+        hotelOption = 'Yes';
+    } else if ($('#no-hotel').is(':checked')) {
+        hotelOption = 'No';
+    }
+
     var foodOptionIsPresent = foodOption != null || foodOption != undefined;
     var foodOptionText = foodOptionIsPresent ? foodOption : 'None Selected';
 
@@ -59,6 +66,7 @@ function saveData() {
     dataRef.authAnonymously(function (error, authData) {
         if (error) {
             console.log("Login Failed!", error);
+            dataLayer.push({ 'error': 'Error Sending enquiry' });
         } else {
             var rsvpDataRef = dataRef.child("rsvps");
             rsvpDataRef.push({
@@ -68,6 +76,7 @@ function saveData() {
                 guestType: guestType,
                 comment: comment,
                 foodOption: foodOptionText,
+                hotelOption: hotelOption,
                 createDate: new Date().toISOString()
             });
         }

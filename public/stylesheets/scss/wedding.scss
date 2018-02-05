@@ -121,7 +121,7 @@ $parallax-bg-mobile-h1-font-size: 3.2em;
 
   p {
     line-height: 1.75em;
-    font-weight: 200;
+    font-weight: 400;
     font-size: 3rem;
     text-align: center;
     margin-top: 13px;
@@ -154,8 +154,14 @@ $parallax-bg-mobile-h1-font-size: 3.2em;
     .text-shadow {
       background: rgba(0, 0, 0, 0.1);
     }
+
     p {
       margin-top: 0;
+      font-weight: 600;
+
+      span {
+        letter-spacing: 4px;
+      }
     }
   }
 }

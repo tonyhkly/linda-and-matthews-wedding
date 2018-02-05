@@ -30,7 +30,7 @@ function saveData() {
     var attending;
     var guestType;
     var foodOption;
-    var hotelOption;
+    var hotelOption = 'Not provided';
 
     if ($('#proper-guest').is(':checked')) {
         guestType = 'Ceremony and Reception Guest';

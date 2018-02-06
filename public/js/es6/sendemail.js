@@ -34,10 +34,10 @@ function saveData() {
 
     if ($('#proper-guest').is(':checked')) {
         guestType = 'Ceremony and Reception Guest';
-        dataLayer.push({'guestType': 'reception'});
+        dataLayer.push({ 'guestType': 'reception' });
     } else if ($('#evening-guest').is(':checked')) {
         guestType = 'Evening Guest';
-        dataLayer.push({'guestType': 'evening'});
+        dataLayer.push({ 'guestType': 'evening' });
     }
 
     if ($('#attending').is(':checked')) {
@@ -61,26 +61,16 @@ function saveData() {
     var foodOptionIsPresent = foodOption != null || foodOption != undefined;
     var foodOptionText = foodOptionIsPresent ? foodOption : 'None Selected';
 
-    var dataRef = new Firebase('https://anna-and-michael.firebaseio.com');
+    var randomInt = Math.floor(Math.random() * (50000 - 10000 + 1)) + 1000;
 
-    dataRef.authAnonymously(function(error, authData) {
-        if (error) {
-            console.log("Login Failed!", error);
-            dataLayer.push({'error': 'Error Sending enquiry'});
-        } else {
-            var rsvpDataRef = dataRef.child("rsvps");
-            rsvpDataRef.push(
-                {
-                    name: name,
-                    email: email,
-                    attending: attending,
-                    guestType: guestType,
-                    comment: comment,
-                    foodOption: foodOptionText,
-                    hotelOption: hotelOption,
-                    createDate: new Date().toISOString()
-                }
-            );
-        }
+    firebase.database().ref(`rsvp/${new Date().getTime()}-${randomInt.toString()}`).set({
+        name: name,
+        email: email,
+        attending: attending,
+        guestType: guestType,
+        comment: comment,
+        foodOption: foodOptionText,
+        hotelOption: hotelOption,
+        createDate: new Date().toISOString()
     });
 }

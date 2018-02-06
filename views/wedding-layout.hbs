@@ -1,95 +1,119 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" maximum-scale=1.0/>
     <title>{{title}}</title>
     <link rel="stylesheet" href="/stylesheets/vendor/bootstrap-3.3.5.css">
     <link rel="stylesheet" href="/stylesheets/vendor/bootstrap-theme-3.3.5.css">
-    <link rel='stylesheet' href='/stylesheets/css/font.css'/>
-    <link rel='stylesheet' href='/stylesheets/css/wedding-layout.min.css'/>
-    <link rel='stylesheet' href='/stylesheets/css/wedding.min.css'/>
-    <link rel='stylesheet' href='/stylesheets/css/scrollspy.min.css'/>
-    <link rel='stylesheet' href='/stylesheets/css/navbar.min.css'/>
-    <link rel='stylesheet' href='/stylesheets/css/thumbnail.min.css'/>
-    <link rel='stylesheet' href='/stylesheets/css/rsvp.min.css'/>
+    <link rel='stylesheet' href='/stylesheets/css/font.css' />
+    <link rel='stylesheet' href='/stylesheets/css/wedding-layout.min.css' />
+    <link rel='stylesheet' href='/stylesheets/css/wedding.min.css' />
+    <link rel='stylesheet' href='/stylesheets/css/scrollspy.min.css' />
+    <link rel='stylesheet' href='/stylesheets/css/navbar.min.css' />
+    <link rel='stylesheet' href='/stylesheets/css/thumbnail.min.css' />
+    <link rel='stylesheet' href='/stylesheets/css/rsvp.min.css' />
     <link rel="stylesheet" href="/stylesheets/vendor/emoji.css">
-    <link rel='stylesheet' href='/stylesheets/css/map.min.css'/>
-    <link rel='stylesheet' href='/stylesheets/css/tea.min.css'/>
-    <link rel='stylesheet' href='/stylesheets/css/footer.min.css'/>
+    <link rel='stylesheet' href='/stylesheets/css/map.min.css' />
+    <link rel='stylesheet' href='/stylesheets/css/tea.min.css' />
+    <link rel='stylesheet' href='/stylesheets/css/footer.min.css' />
     <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
-    <link rel="icon" href="/images/wedding2.ico"/>
+    <link rel="icon" href="/images/wedding2.ico" />
     <script src="/js/vendor/modernizr.js"></script>
-    <script src="js/es5/map.js"></script>
-    <script src="js/es5/calendersettings.js"></script>
-    <script src="js/es5/deviceutils.js"></script>
-    <script src="js/es5/googleanalytics.js"></script>
-    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src="/js/es5/map.js"></script>
+    <script src="/js/es5/calendersettings.js"></script>
+    <script src="/js/es5/deviceutils.js"></script>
+    <script src="/js/es5/googleanalytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
     <script>
         initGoogleAnalytics();
     </script>
 </head>
+
 <body data-bind="css: deviceClasses" class={{{pageId}}}>
     <script>
-      dataLayer = [{'name':'Tony'}];
+        dataLayer = [{ 'name': 'Tony' }];
     </script>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TWD3MGQ');</script>
-<div class="wrapper">
-<nav class="navbar navbar-static-top">
-    <div class="container text-uppercase">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Linda + Matthew
-                <img class="navbar-icon" src="/images/double-happiness.jpg"/>
-            </a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="hidden-sm nav-welcome"><a href="/">Welcome</a></li>
-                <li class="nav-rsvp"><a href="/rsvp" data-ajax="false">RSVP</a></li>
-                <li class="nav-map"><a href="/wedding-details" data-ajax="false">Wedding Day Details</a></li>
-            </ul>
-        </div>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TWD3MGQ');</script>
+    <div class="wrapper">
+        <nav class="navbar navbar-static-top">
+            <div class="container text-uppercase">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                        aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Linda + Matthew
+                        <img class="navbar-icon" src="/images/double-happiness.jpg" />
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden-sm nav-welcome">
+                            <a href="/">Welcome</a>
+                        </li>
+                        <li class="nav-rsvp">
+                            <a href="/rsvp" data-ajax="false">RSVP</a>
+                        </li>
+                        <li class="nav-map">
+                            <a href="/wedding-details" data-ajax="false">Wedding Day Details</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        {{{body}}}
+
+        <footer class="footer-basic-centered hidden-print">
+            <p class="footer-title footer-company-motto">Linda and Matthew's Wedding</p>
+            <p class="footer-company-motto">www.LindaAndMatthew.co.uk</p>
+            <p class="footer-links">
+                <a href="/the-venue">RSVP</a>
+                |
+                <a href="/wedding-details">Wedding Day Details</a>
+            </p>
+            <p class="footer-company-name">Ly Corp &copy; 2016</p>
+        </footer>
     </div>
-</nav>
-
-{{{body}}}
-
-<footer class="footer-basic-centered hidden-print">
-    <p class="footer-title footer-company-motto">Linda and Matthew's Wedding</p>
-    <p class="footer-company-motto">www.LindaAndMatthew.co.uk</p>
-    <p class="footer-links">
-        <a href="/the-venue">RSVP</a>
-        |
-        <a href="/wedding-details">Wedding Day Details</a>
-    </p>
-    <p class="footer-company-name">Ly Corp &copy; 2016</p>
-</footer>
-</div>
-<script src="js/vendor/jquery-2.1.4.js"></script>
-<script src="js/vendor/scrollspy.js"></script>
-<script src="js/vendor/bootstrap-3.3.5.js"></script>
-<script src="js/vendor/validator.js"></script>
-<script type="text/javascript" src="/js/vendor/addtocalender.min.js"></script>
-<script src="js/vendor/knockout-3.3.0.js"></script>
-<script src="js/es5/appviewmodel.js"></script>
-<script src="js/es5/scrollhelper.js"></script>
-<script src="js/es5/image.js"></script>
-<script src="js/es5/sendemail.js"></script>
-<script src="js/es5/custom-validator.js"></script>
-<script>
-    initCustomValidators();
-    initCalenderSettings();
-    disableRightClick();
-</script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDQ-3XviDW9aQdhN2iBEq7vz2iCpII2Gds",
+            authDomain: "linda-and-matthew.firebaseapp.com",
+            databaseURL: "https://linda-and-matthew.firebaseio.com",
+            projectId: "linda-and-matthew",
+            storageBucket: "linda-and-matthew.appspot.com",
+            messagingSenderId: "331757122398"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="/js/vendor/jquery-2.1.4.js"></script>
+    <script src="/js/vendor/scrollspy.js"></script>
+    <script src="/js/vendor/bootstrap-3.3.5.js"></script>
+    <script src="/js/vendor/validator.js"></script>
+    <script type="text/javascript" src="/js/vendor/addtocalender.min.js"></script>
+    <script src="/js/vendor/knockout-3.3.0.js"></script>
+    <script src="/js/es5/appviewmodel.js"></script>
+    <script src="/js/es5/scrollhelper.js"></script>
+    <script src="/js/es5/image.js"></script>
+    <script src="/js/es5/sendemail.js"></script>
+    <script src="/js/es5/custom-validator.js"></script>
+    <script>
+        initCustomValidators();
+        initCalenderSettings();
+        disableRightClick();
+    </script>
 </body>
+
 </html>

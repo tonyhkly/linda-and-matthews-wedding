@@ -1,4 +1,4 @@
-<hr class="navbar-seperator"/>
+<hr class="navbar-seperator" />
 <div class="overlay">
     <span class="overlay-text">Loading...</span>
 </div>
@@ -7,110 +7,127 @@
 
     <div class="email-sent">
         <div class="alert alert-success" role="alert">
-            <strong>RSVP Sent!     </strong><i class="em em-sunglasses"></i>
+            <strong>RSVP Sent! </strong>
+            <i class="em em-sunglasses"></i>
         </div>
 
         <div class="what-now">
             <h4>What Now?</h4>
             <ul class="red-ul">
-                <li><span class="inner-li">You can check out the location of the wedding reception <a href="/the-venue">on our venue page</a></span></li>
-                <li><span class="inner-li">Or you can have a look at some photos from <a href="/tea-ceremony">Linda and Matthew's Tea Ceremony!</a></span></li>
+                <li>
+                    <span class="inner-li">You can check out the location of the wedding reception
+                        <a href="/wedding-details">on our venue page</a>
+                    </span>
+                </li>
             </ul>
             <br>
 
         </div>
         <div class="center-block text-center">
-            <img class="img-responsive display-inline-block hello-kitty" src="/images/hellokitty.jpg"/>
+            <img class="img-responsive display-inline-block hello-kitty" src="/images/hellokitty.jpg" />
         </div>
     </div>
 
     <form class="rsvp-form form" role="form" data-toggle="validator" data-delay=2500>
 
         <div class="form-group rsvp-type rsvp-form-group">
-            <label class="guest-type-label" for="comment"><strong>RSVP Type:</strong></label>
+            <label class="guest-type-label" for="comment">
+                <strong>RSVP Type:</strong>
+            </label>
 
             <div class="radio-inline">
                 <label>
-                    <input id="proper-guest" type="radio" name="guestTypeOptions" value=""
-                           data-error="Please select an RSVP type, pretty please?" data-rsvp-type-checked required/>
-                    Ceremony and Reception Guest
+                    <input id="proper-guest" type="radio" name="guestTypeOptions" value="" data-error="Please select an RSVP type, pretty please?"
+                        data-rsvp-type-checked required/> Ceremony and Reception Guest
                 </label>
             </div>
             <div class="radio-inline">
                 <label>
-                    <input id="evening-guest" type="radio" name="guestTypeOptions" value="" data-rsvp-type-checked
-                           required/>
-                    Evening Guest
+                    <input id="evening-guest" type="radio" name="guestTypeOptions" value="" data-rsvp-type-checked required/> Evening Guest
                 </label>
             </div>
             <div class="help-block with-errors"></div>
         </div>
 
         <div class="form-group">
-            <label class="control-label" for="pwd"><strong>Name:</strong></label>
+            <label class="control-label" for="pwd">
+                <strong>Full Name:</strong>
+            </label>
 
             <div>
-                <input type="text" class="form-control" id="name" placeholder="Your name"
-                       data-error="Hey, don't leave this empty!" required/>
+                <input type="text" class="form-control" id="name" placeholder="Your name" data-error="Hey, don't leave this empty!" required/>
 
                 <div class="help-block with-errors"></div>
             </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label" for="email"><strong>Email:</strong></label>
+            <label class="control-label" for="email">
+                <strong>Email:</strong>
+            </label>
 
             <div>
-                <input type="email" class="form-control" data-error="Hey, this isn't really your email address is it?"
-                       id="email" placeholder="Enter email" required/>
+                <input type="email" class="form-control" data-error="Hey, this isn't really your email address is it?" id="email" placeholder="Enter email"
+                    required/>
 
                 <div class="help-block with-errors"></div>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="comment"><strong>Message to Linda and Matthew:</strong></label>
+            <label for="comment">
+                <strong>Message to Linda and Matthew:</strong>
+            </label>
             <textarea class="form-control" rows="4" id="comment"></textarea>
         </div>
 
         <div class="form-group rsvp-form-group">
-            <label for="comment"><strong>RSVP Reply:</strong></label>
+            <label for="comment">
+                <strong>RSVP Reply:</strong>
+            </label>
 
             <div class="radio">
-                <label><input id="attending" type="radio" name="attendingOptions" value=""
-                              data-error="So... are you coming or not? Please select an RSVP reply" data-rsvp-checked
-                              required/>
-                    I will be attending. It's gonna be awesome!
+                <label>
+                    <input id="attending" type="radio" name="attendingOptions" value="" data-error="So... are you coming or not? Please select an RSVP reply"
+                        data-rsvp-checked required/> I will be attending. It's gonna be awesome!
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input id="not-attending" type="radio" name="attendingOptions" value="" data-rsvp-checked required/>No
-                    I can't come, but i'm super sad about it <i class="em em-sob"></i>
+                    <input id="not-attending" type="radio" name="attendingOptions" value="" data-rsvp-checked required/>No I can't come, but i'm super sad about it
+                    <i class="em em-sob"></i>
                 </label>
             </div>
             <div class="help-block with-errors"></div>
         </div>
 
         <div class="form-group hotel-group">
-            <label for="food"><strong>Do you need a hotel room for the night (&pound;140):</strong></label>
+            <label for="food">
+                <strong>Do you need a hotel room for the night (&pound;140):</strong>
+            </label>
 
             <div class="radio">
-                <label><input id="yes-hotel" type="radio" name="hotelOptions" value=""/>Yes</label>
+                <label>
+                    <input id="yes-hotel" type="radio" name="hotelOptions" value="" />Yes</label>
             </div>
             <div class="radio">
-                <label><input id="no-hotel" type="radio" name="hotelOptions" value=""/>No</label>
+                <label>
+                    <input id="no-hotel" type="radio" name="hotelOptions" value="" />No</label>
             </div>
         </div>
 
         <div class="form-group food-group">
-            <label for="food"><strong>Food Option:</strong></label>
+            <label for="food">
+                <strong>Food Option:</strong>
+            </label>
 
             <div class="radio">
-                <label><input id="chicken" type="radio" name="foodOptions" value=""/>Chicken</label>
+                <label>
+                    <input id="chicken" type="radio" name="foodOptions" value="" />Chicken</label>
             </div>
             <div class="radio">
-                <label><input id="fish" type="radio" name="foodOptions" value=""/>Fish</label>
+                <label>
+                    <input id="fish" type="radio" name="foodOptions" value="" />Fish</label>
             </div>
         </div>
 

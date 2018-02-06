@@ -41,4 +41,12 @@ router.get('/rsvp', function (req, res) {
     });
 });
 
+router.get('/admin/rsvp-list', function (req, res) {
+    res.render('rsvp-list', {
+        title: 'Linda and Matthew\'s Wedding - RSVP List',
+        layout: 'wedding-layout',
+        pageId: 'rsvp-list'
+    });
+});
+
 module.exports = router;

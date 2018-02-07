@@ -25,7 +25,7 @@ function AppViewModel() {
 
             var numTd = document.createElement('td');
             var nameTd = document.createElement('td');
-            var emailTd = document.createElement('td');
+            // var emailTd = document.createElement('td');
             var attendingTd = document.createElement('td');
             var foodOptionTd = document.createElement('td');
             var guestTypeTd = document.createElement('td');
@@ -35,7 +35,7 @@ function AppViewModel() {
 
             numTd.innerText = tableIndex++;
             nameTd.innerText = child.val().name;
-            emailTd.innerText = child.val().email;
+            // emailTd.innerText = child.val().email;
             attendingTd.innerText = child.val().attending;
             foodOptionTd.innerText = child.val().foodOption;
             guestTypeTd.innerText = child.val().guestType;
@@ -45,7 +45,7 @@ function AppViewModel() {
 
             tr.appendChild(numTd);
             tr.appendChild(nameTd);
-            tr.appendChild(emailTd);
+            // tr.appendChild(emailTd);
             tr.appendChild(attendingTd);
             tr.appendChild(foodOptionTd);
             tr.appendChild(guestTypeTd);

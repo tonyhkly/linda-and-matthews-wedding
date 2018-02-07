@@ -25,7 +25,7 @@ $("input[name='guestTypeOptions']").change(function () {
 
 function saveData() {
     var name = $('.rsvp #name').val();
-    var email = $('.rsvp #email').val();
+    // var email = $('.rsvp #email').val();
     var comment = $('.rsvp #comment').val();
     var attending;
     var guestType;
@@ -62,7 +62,7 @@ function saveData() {
 
     firebase.database().ref('rsvp/' + new Date().getTime() + '-' + randomInt.toString()).set({
         name: name,
-        email: email,
+        // email: email,
         attending: attending,
         guestType: guestType,
         comment: comment,

@@ -29,7 +29,7 @@ function saveData() {
     var comment = $('.rsvp #comment').val();
     var attending;
     var guestType;
-    var foodOption;
+    var foodOption = 'None Selected';
     // var hotelOption = 'Not provided';
 
     if ($('#proper-guest').is(':checked')) {
@@ -46,20 +46,17 @@ function saveData() {
         attending = 'No';
     }
 
-    if ($('#chicken').is(':checked')) {
-        foodOption = 'Chicken';
-    } else if ($('#fish').is(':checked')) {
-        foodOption = 'Fish';
+    if ($('#meat').is(':checked')) {
+        foodOption = 'Meat';
+    } else if ($('#vege').is(':checked')) {
+        foodOption = 'Vegetarian';
     }
 
-/*    if ($('#yes-hotel').is(':checked')) {
-        hotelOption = 'Yes';
-    } else if ($('#no-hotel').is(':checked')) {
-        hotelOption = 'No';
-    }*/
-
-    var foodOptionIsPresent = foodOption != null || foodOption != undefined;
-    var foodOptionText = foodOptionIsPresent ? foodOption : 'None Selected';
+    /*    if ($('#yes-hotel').is(':checked')) {
+            hotelOption = 'Yes';
+        } else if ($('#no-hotel').is(':checked')) {
+            hotelOption = 'No';
+        }*/
 
     var randomInt = Math.floor(Math.random() * (50000 - 10000 + 1)) + 1000;
 
@@ -69,7 +66,7 @@ function saveData() {
         attending: attending,
         guestType: guestType,
         comment: comment,
-        foodOption: foodOptionText,
+        foodOption: foodOption,
         // hotelOption: hotelOption,
         createDate: new Date().toISOString()
     });

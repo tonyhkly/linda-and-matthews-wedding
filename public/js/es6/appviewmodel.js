@@ -41,7 +41,7 @@ function AppViewModel() {
             foodOptionTd.innerText = child.val().foodOption;
             guestTypeTd.innerText = child.val().guestType;
             hotelOptionTd.innerText = child.val().hotelOption;
-            createDateTd.innerText = new Date(child.val().createDate).toDateString();
+            createDateTd.innerText = new Date(child.val().createDate).toLocaleString();
             commentTd.innerText = child.val().comment;
 
             tr.appendChild(nameTd);

@@ -29,7 +29,7 @@ function AppViewModel() {
             var attendingTd = document.createElement('td');
             var foodOptionTd = document.createElement('td');
             var guestTypeTd = document.createElement('td');
-            var hotelOptionTd = document.createElement('td');
+            // var hotelOptionTd = document.createElement('td');
             var createDateTd = document.createElement('td');
             var commentTd = document.createElement('td');
 
@@ -39,7 +39,7 @@ function AppViewModel() {
             attendingTd.innerText = child.val().attending;
             foodOptionTd.innerText = child.val().foodOption;
             guestTypeTd.innerText = child.val().guestType;
-            hotelOptionTd.innerText = child.val().hotelOption;
+            // hotelOptionTd.innerText = child.val().hotelOption;
             createDateTd.innerText = new Date(child.val().createDate).toLocaleString();
             commentTd.innerText = child.val().comment;
 
@@ -49,7 +49,7 @@ function AppViewModel() {
             tr.appendChild(attendingTd);
             tr.appendChild(foodOptionTd);
             tr.appendChild(guestTypeTd);
-            tr.appendChild(hotelOptionTd);
+            // tr.appendChild(hotelOptionTd);
             tr.appendChild(createDateTd);
             tr.appendChild(commentTd);
 

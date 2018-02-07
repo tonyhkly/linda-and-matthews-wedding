@@ -30,7 +30,7 @@ function saveData() {
     var attending;
     var guestType;
     var foodOption;
-    var hotelOption = 'Not provided';
+    // var hotelOption = 'Not provided';
 
     if ($('#proper-guest').is(':checked')) {
         guestType = 'Ceremony and Reception Guest';
@@ -52,11 +52,11 @@ function saveData() {
         foodOption = 'Fish';
     }
 
-    if ($('#yes-hotel').is(':checked')) {
-        hotelOption = 'Yes';
-    } else if ($('#no-hotel').is(':checked')) {
-        hotelOption = 'No';
-    }
+    /*    if ($('#yes-hotel').is(':checked')) {
+            hotelOption = 'Yes';
+        } else if ($('#no-hotel').is(':checked')) {
+            hotelOption = 'No';
+        }*/
 
     var foodOptionIsPresent = foodOption != null || foodOption != undefined;
     var foodOptionText = foodOptionIsPresent ? foodOption : 'None Selected';
@@ -70,7 +70,7 @@ function saveData() {
         guestType: guestType,
         comment: comment,
         foodOption: foodOptionText,
-        hotelOption: hotelOption,
+        // hotelOption: hotelOption,
         createDate: new Date().toISOString()
     });
 }

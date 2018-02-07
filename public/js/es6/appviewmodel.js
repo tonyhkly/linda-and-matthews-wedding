@@ -22,10 +22,13 @@ function AppViewModel() {
     ];
 
     var table = document.getElementsByTagName('tbody')[0];
+    var tableIndex = 1;
+
     firebase.database().ref('rsvp').on("value", function (snapshot) {
         snapshot.forEach(function (child) {
             var tr = document.createElement('tr');
 
+            var numTd = document.createElement('td');
             var nameTd = document.createElement('td');
             var emailTd = document.createElement('td');
             var attendingTd = document.createElement('td');
@@ -35,6 +38,7 @@ function AppViewModel() {
             var createDateTd = document.createElement('td');
             var commentTd = document.createElement('td');
 
+            numTd.innerText = tableIndex++;
             nameTd.innerText = child.val().name;
             emailTd.innerText = child.val().email;
             attendingTd.innerText = child.val().attending;
@@ -44,6 +48,7 @@ function AppViewModel() {
             createDateTd.innerText = new Date(child.val().createDate).toLocaleString();
             commentTd.innerText = child.val().comment;
 
+            tr.appendChild(numTd);
             tr.appendChild(nameTd);
             tr.appendChild(emailTd);
             tr.appendChild(attendingTd);

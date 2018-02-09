@@ -13,30 +13,23 @@ function photoDirectory() {
     }
 }
 
-function AppViewModel() {
-    this.photos = [
-        new Photo("manna-1.jpeg"),
-        new Photo("manna-3.jpeg"),
-        new Photo("manna-2.jpeg"),
-        new Photo("manna-4.jpeg")
-    ];
-
-    var table = document.getElementsByTagName('tbody')[0];
-    var tableIndex = 1;
+function createRsvpTable() {
+    let table = document.getElementsByTagName('tbody')[0];
+    let tableIndex = 1;
 
     firebase.database().ref('rsvp').on("value", function (snapshot) {
         snapshot.forEach(function (child) {
-            var tr = document.createElement('tr');
+            let tr = document.createElement('tr');
 
-            var numTd = document.createElement('td');
-            var nameTd = document.createElement('td');
+            let numTd = document.createElement('td');
+            let nameTd = document.createElement('td');
             // var emailTd = document.createElement('td');
-            var attendingTd = document.createElement('td');
-            var foodOptionTd = document.createElement('td');
-            var guestTypeTd = document.createElement('td');
+            let attendingTd = document.createElement('td');
+            let foodOptionTd = document.createElement('td');
+            let guestTypeTd = document.createElement('td');
             // var hotelOptionTd = document.createElement('td');
-            var createDateTd = document.createElement('td');
-            var commentTd = document.createElement('td');
+            let createDateTd = document.createElement('td');
+            let commentTd = document.createElement('td');
 
             numTd.innerText = tableIndex++;
             nameTd.innerText = child.val().name;
@@ -61,6 +54,20 @@ function AppViewModel() {
             table.appendChild(tr);
         });
     });
+
+}
+
+function AppViewModel() {
+    this.photos = [
+        new Photo("manna-1.jpeg"),
+        new Photo("manna-3.jpeg"),
+        new Photo("manna-2.jpeg"),
+        new Photo("manna-4.jpeg")
+    ];
+
+    if (document.getElementsByClassName("rsvp-list").length !== 0) {
+        createRsvpTable();
+    }
 
     this.deviceClasses = addDeviceClasses();
 }

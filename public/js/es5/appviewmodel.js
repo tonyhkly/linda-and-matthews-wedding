@@ -13,9 +13,7 @@ function photoDirectory() {
     }
 }
 
-function AppViewModel() {
-    this.photos = [new Photo("manna-1.jpeg"), new Photo("manna-3.jpeg"), new Photo("manna-2.jpeg"), new Photo("manna-4.jpeg")];
-
+function createRsvpTable() {
     var table = document.getElementsByTagName('tbody')[0];
     var tableIndex = 1;
 
@@ -56,6 +54,14 @@ function AppViewModel() {
             table.appendChild(tr);
         });
     });
+}
+
+function AppViewModel() {
+    this.photos = [new Photo("manna-1.jpeg"), new Photo("manna-3.jpeg"), new Photo("manna-2.jpeg"), new Photo("manna-4.jpeg")];
+
+    if (document.getElementsByClassName("rsvp-list").length !== 0) {
+        createRsvpTable();
+    }
 
     this.deviceClasses = addDeviceClasses();
 }

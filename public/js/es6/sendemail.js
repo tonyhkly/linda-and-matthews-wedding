@@ -25,7 +25,6 @@ $("input[name='guestTypeOptions']").change(function () {
 
 function saveData() {
     var name = $('.rsvp #name').val();
-    // var email = $('.rsvp #email').val();
     var comment = $('.rsvp #comment').val();
     var attending;
     var guestType;
@@ -34,10 +33,8 @@ function saveData() {
 
     if ($('#proper-guest').is(':checked')) {
         guestType = 'Ceremony and Reception Guest';
-        dataLayer.push({ 'guestType': 'reception' });
     } else if ($('#evening-guest').is(':checked')) {
         guestType = 'Evening Guest';
-        dataLayer.push({ 'guestType': 'evening' });
     }
 
     if ($('#attending').is(':checked')) {
@@ -58,11 +55,21 @@ function saveData() {
             hotelOption = 'No';
         }*/
 
+    var attendingText = '';
+    if (attending == 'Yes') {
+        attendingText = 'Attending';
+    } else if (attending == 'No') {
+        attendingText = 'Not Attending';
+    }
+
+    dataLayer.push({ 'guestType': guestType });
+    dataLayer.push({ 'attending': attendingText });
+    dataLayer.push({ 'foodOption': foodOption });
+
     var randomInt = Math.floor(Math.random() * (50000 - 10000 + 1)) + 1000;
 
     firebase.database().ref(`rsvp/${new Date().getTime()}-${randomInt.toString()}`).set({
         name: name,
-        // email: email,
         attending: attending,
         guestType: guestType,
         comment: comment,

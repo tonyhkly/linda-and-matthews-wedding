@@ -133,6 +133,10 @@ $light-green2: #ff6666;
 
   #map {
     //margin-top: 220px !important;
-    height: 55vh !important;
+    height: 45vh !important;
+  }
+
+  .map-container {
+    page-break-before: always;
   }
 }

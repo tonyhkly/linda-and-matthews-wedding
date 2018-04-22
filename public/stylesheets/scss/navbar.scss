@@ -30,13 +30,14 @@ $default: #c4c4c4;
   }
 
   @media only screen and (max-width: 768px) {
-    .navbar-icon {
-      width: 33px;
-      padding-top: 8px;
+    .navbar-brand {
+      font-size: 19px;
     }
 
     .navbar-brand .navbar-icon {
-      padding-top: 1px;
+      width: 28px;
+      padding-top: 5px;
+      padding-bottom: 8px
     }
 
     .nav-icons {
